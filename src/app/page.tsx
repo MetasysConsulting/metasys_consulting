@@ -20,9 +20,9 @@ export default function Home() {
     // Start video reveal animation
     const timer = setTimeout(() => {
       setStartAnimation(true);
-    }, 400);
+    }, 200);
 
-    // Animate navigation after video reveal completes
+    // Animate navigation after video reveal completes (timings aligned to faster hero reveal)
     const navTimer = setTimeout(() => {
       if (navRef.current) {
         gsap.fromTo(navRef.current, 
@@ -35,7 +35,7 @@ export default function Home() {
             y: 0, 
             opacity: 1,
             backdropFilter: "blur(20px)",
-            duration: 1.2,
+            duration: 0.6,
             ease: "power3.out",
           }
         );
@@ -49,14 +49,14 @@ export default function Home() {
           { 
             y: 0, 
             opacity: 1,
-            duration: 0.8,
+            duration: 0.4,
             ease: "power2.out",
-            stagger: 0.1,
-            delay: 0.3,
+            stagger: 0.05,
+            delay: 0.15,
           }
         );
       }
-    }, 3200);
+    }, 1600);
 
     // Animate hero content after nav completes
     const heroTimer = setTimeout(() => {
@@ -72,7 +72,7 @@ export default function Home() {
             x: 0,
             opacity: 1,
             rotateY: 0,
-            duration: 1.5,
+            duration: 0.75,
             ease: "power3.out",
           }
         );
@@ -90,9 +90,9 @@ export default function Home() {
             x: 0,
             opacity: 1,
             rotateY: 0,
-            duration: 1.5,
+            duration: 0.75,
             ease: "power3.out",
-            delay: 0.3,
+            delay: 0.15,
           }
         );
       }
@@ -106,9 +106,9 @@ export default function Home() {
         {
           y: 0,
           opacity: 1,
-          duration: 1,
+          duration: 0.5,
           ease: "power2.out",
-          delay: 0.6,
+          delay: 0.3,
         }
       );
 
@@ -120,12 +120,12 @@ export default function Home() {
         {
           scale: 1,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.45,
           ease: "back.out(1.7)",
-          delay: 1,
+          delay: 0.5,
         }
       );
-    }, 4500);
+    }, 2500);
 
     // Setup scroll animations after a delay
     const scrollTimer = setTimeout(() => {
@@ -194,7 +194,7 @@ export default function Home() {
           }
         );
       });
-    }, 6000);
+    }, 3800);
 
     return () => {
       clearTimeout(timer);
@@ -281,7 +281,7 @@ export default function Home() {
               height: '100%',
               objectFit: 'cover',
               clipPath: startAnimation ? 'none' : 'inset(75% 35% 5% 35% round 24px)',
-              animation: startAnimation ? 'revealVideo 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards' : 'none',
+              animation: startAnimation ? 'revealVideo 1.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards' : 'none',
             }}
             autoPlay
             muted
@@ -349,6 +349,47 @@ export default function Home() {
                 gap: '40px',
                 alignItems: 'center',
               }}>
+                <Link href="/case-studies" style={{ textDecoration: "none" }}>
+                  <div
+                    className="nav-item"
+                    style={{
+                      fontFamily: '"Rajdhani", sans-serif',
+                      fontSize: "16px",
+                      fontWeight: "500",
+                      color: "rgba(255, 255, 255, 0.9)",
+                      cursor: "pointer",
+                      padding: "10px 20px",
+                      borderRadius: "8px",
+                      border: "1px solid transparent",
+                      transition: "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                      position: "relative",
+                      overflow: "hidden",
+                    }}
+                    onMouseEnter={(e) => {
+                      gsap.to(e.currentTarget, {
+                        scale: 1.05,
+                        backgroundColor: "rgba(0, 255, 255, 0.1)",
+                        borderColor: "rgba(0, 255, 255, 0.3)",
+                        color: "#00ffff",
+                        duration: 0.3,
+                        ease: "power2.out",
+                      });
+                    }}
+                    onMouseLeave={(e) => {
+                      gsap.to(e.currentTarget, {
+                        scale: 1,
+                        backgroundColor: "transparent",
+                        borderColor: "transparent",
+                        color: "rgba(255, 255, 255, 0.9)",
+                        duration: 0.3,
+                        ease: "power2.out",
+                      });
+                    }}
+                  >
+                    Case studies
+                  </div>
+                </Link>
+
                 {/* Services - Scroll to services section */}
                 <div
                   className="nav-item"
