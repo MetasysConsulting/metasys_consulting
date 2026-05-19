@@ -256,12 +256,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Load futuristic fonts */}
-      <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"
-      />
-
       <div style={{ backgroundColor: '#0a0a0a' }}>
         {/* Hero Section */}
         <div style={{ 
@@ -315,7 +309,7 @@ export default function Home() {
               padding: '20px 40px',
               background: 'rgba(0, 20, 40, 0.1)',
               backdropFilter: 'blur(20px)',
-              borderBottom: '1px solid rgba(0, 255, 255, 0.2)',
+              borderBottom: '1px solid rgba(200, 190, 170, 0.2)',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
             }}
           >
@@ -330,17 +324,17 @@ export default function Home() {
               <div 
                 className="nav-item"
                 style={{
-                  fontFamily: '"Orbitron", monospace',
+                  fontFamily: 'var(--font-display), Georgia, serif',
                   fontSize: '24px',
                   fontWeight: '700',
-                  background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                  background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                  textShadow: '0 0 20px rgba(0, 255, 255, 0.3)',
+                  textShadow: '0 0 20px rgba(200, 190, 170, 0.3)',
                 }}
               >
-                METASYS CONSULTING
+                Metasys Consulting
               </div>
 
               {/* Navigation Items */}
@@ -353,7 +347,7 @@ export default function Home() {
                   <div
                     className="nav-item"
                     style={{
-                      fontFamily: '"Rajdhani", sans-serif',
+                      fontFamily: 'var(--font-body), system-ui, sans-serif',
                       fontSize: "16px",
                       fontWeight: "500",
                       color: "rgba(255, 255, 255, 0.9)",
@@ -368,9 +362,9 @@ export default function Home() {
                     onMouseEnter={(e) => {
                       gsap.to(e.currentTarget, {
                         scale: 1.05,
-                        backgroundColor: "rgba(0, 255, 255, 0.1)",
-                        borderColor: "rgba(0, 255, 255, 0.3)",
-                        color: "#00ffff",
+                        backgroundColor: "rgba(200, 190, 170, 0.1)",
+                        borderColor: "rgba(200, 190, 170, 0.3)",
+                        color: "#d4cfc4",
                         duration: 0.3,
                         ease: "power2.out",
                       });
@@ -394,7 +388,7 @@ export default function Home() {
                 <div
                   className="nav-item"
                   style={{
-                    fontFamily: '"Rajdhani", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '16px',
                     fontWeight: '500',
                     color: 'rgba(255, 255, 255, 0.9)',
@@ -412,9 +406,9 @@ export default function Home() {
                   onMouseEnter={(e) => {
                     gsap.to(e.currentTarget, {
                       scale: 1.05,
-                      backgroundColor: 'rgba(0, 255, 255, 0.1)',
-                      borderColor: 'rgba(0, 255, 255, 0.3)',
-                      color: '#00ffff',
+                      backgroundColor: 'rgba(200, 190, 170, 0.1)',
+                      borderColor: 'rgba(200, 190, 170, 0.3)',
+                      color: '#d4cfc4',
                       duration: 0.3,
                       ease: "power2.out"
                     });
@@ -437,7 +431,7 @@ export default function Home() {
                 <div
                   className="nav-item"
                   style={{
-                    fontFamily: '"Rajdhani", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '16px',
                     fontWeight: '500',
                     color: 'rgba(255, 255, 255, 0.9)',
@@ -458,9 +452,9 @@ export default function Home() {
                   onMouseEnter={(e) => {
                     gsap.to(e.currentTarget, {
                       scale: 1.05,
-                      backgroundColor: 'rgba(0, 255, 255, 0.1)',
-                      borderColor: 'rgba(0, 255, 255, 0.3)',
-                      color: '#00ffff',
+                      backgroundColor: 'rgba(200, 190, 170, 0.1)',
+                      borderColor: 'rgba(200, 190, 170, 0.3)',
+                      color: '#d4cfc4',
                       duration: 0.3,
                       ease: "power2.out"
                     });
@@ -484,7 +478,7 @@ export default function Home() {
                   <div
                     className="nav-item"
                     style={{
-                      fontFamily: '"Rajdhani", sans-serif',
+                      fontFamily: 'var(--font-body), system-ui, sans-serif',
                       fontSize: '16px',
                       fontWeight: '500',
                       color: 'rgba(255, 255, 255, 0.9)',
@@ -499,9 +493,9 @@ export default function Home() {
                     onMouseEnter={(e) => {
                       gsap.to(e.currentTarget, {
                         scale: 1.05,
-                        backgroundColor: 'rgba(0, 255, 255, 0.1)',
-                        borderColor: 'rgba(0, 255, 255, 0.3)',
-                        color: '#00ffff',
+                        backgroundColor: 'rgba(200, 190, 170, 0.1)',
+                        borderColor: 'rgba(200, 190, 170, 0.3)',
+                        color: '#d4cfc4',
                         duration: 0.3,
                         ease: "power2.out"
                       });
@@ -525,22 +519,22 @@ export default function Home() {
                 <div
                   className="nav-item"
                   style={{
-                    fontFamily: '"Rajdhani", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '16px',
                     fontWeight: '600',
                     color: '#000',
-                    background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                    background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                     padding: '12px 24px',
                     borderRadius: '12px',
                     cursor: 'pointer',
                     border: 'none',
-                    boxShadow: '0 4px 15px rgba(0, 255, 255, 0.3)',
+                    boxShadow: '0 4px 15px rgba(200, 190, 170, 0.3)',
                     transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                   }}
                   onMouseEnter={(e) => {
                     gsap.to(e.currentTarget, {
                       scale: 1.05,
-                      boxShadow: '0 6px 25px rgba(0, 255, 255, 0.5)',
+                      boxShadow: '0 6px 25px rgba(200, 190, 170, 0.5)',
                       duration: 0.3,
                       ease: "power2.out"
                     });
@@ -548,7 +542,7 @@ export default function Home() {
                   onMouseLeave={(e) => {
                     gsap.to(e.currentTarget, {
                       scale: 1,
-                      boxShadow: '0 4px 15px rgba(0, 255, 255, 0.3)',
+                      boxShadow: '0 4px 15px rgba(200, 190, 170, 0.3)',
                       duration: 0.3,
                       ease: "power2.out"
                     });
@@ -581,15 +575,15 @@ export default function Home() {
               {/* Left Side - Heading */}
               <div ref={heroHeadingRef} style={{ opacity: 0 }}>
                 <h1 style={{
-                  fontFamily: '"Orbitron", monospace',
+                  fontFamily: 'var(--font-display), Georgia, serif',
                   fontSize: 'clamp(3rem, 6vw, 5rem)',
                   fontWeight: '900',
                   lineHeight: '1.1',
-                  background: 'linear-gradient(135deg, #00ffff, #ffffff, #0080ff)',
+                  background: 'linear-gradient(135deg, #f5f3ef, #e8e4dc, #b8a88a)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                  textShadow: '0 0 40px rgba(0, 255, 255, 0.4)',
+                  textShadow: '0 0 40px rgba(200, 190, 170, 0.4)',
                   marginBottom: '20px',
                 }}>
                   METASYS<br />
@@ -599,10 +593,10 @@ export default function Home() {
                 <div 
                   className="hero-subtitle"
                   style={{
-                    fontFamily: '"Space Grotesk", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '1.5rem',
                     fontWeight: '400',
-                    color: '#00ffff',
+                    color: '#d4cfc4',
                     marginBottom: '30px',
                     opacity: 0,
                   }}
@@ -613,16 +607,16 @@ export default function Home() {
                 <div
                   className="hero-cta"
                   style={{
-                    fontFamily: '"Rajdhani", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '18px',
                     fontWeight: '600',
                     color: '#000',
-                    background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                    background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                     padding: '16px 32px',
                     borderRadius: '12px',
                     cursor: 'pointer',
                     border: 'none',
-                    boxShadow: '0 8px 25px rgba(0, 255, 255, 0.4)',
+                    boxShadow: '0 8px 25px rgba(200, 190, 170, 0.4)',
                     display: 'inline-block',
                     opacity: 0,
                     transform: 'perspective(1000px)',
@@ -630,7 +624,7 @@ export default function Home() {
                   onMouseEnter={(e) => {
                     gsap.to(e.currentTarget, {
                       scale: 1.05,
-                      boxShadow: '0 12px 35px rgba(0, 255, 255, 0.6)',
+                      boxShadow: '0 12px 35px rgba(200, 190, 170, 0.6)',
                       duration: 0.3,
                       ease: "power2.out"
                     });
@@ -638,7 +632,7 @@ export default function Home() {
                   onMouseLeave={(e) => {
                     gsap.to(e.currentTarget, {
                       scale: 1,
-                      boxShadow: '0 8px 25px rgba(0, 255, 255, 0.4)',
+                      boxShadow: '0 8px 25px rgba(200, 190, 170, 0.4)',
                       duration: 0.3,
                       ease: "power2.out"
                     });
@@ -651,7 +645,7 @@ export default function Home() {
               {/* Right Side - Description */}
               <div ref={heroDescriptionRef} style={{ opacity: 0 }}>
                 <p style={{
-                  fontFamily: '"Space Grotesk", sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
                   lineHeight: '1.6',
                   color: 'rgba(255, 255, 255, 0.9)',
@@ -660,12 +654,12 @@ export default function Home() {
                   backdropFilter: 'blur(10px)',
                   padding: '40px',
                   borderRadius: '16px',
-                  border: '1px solid rgba(0, 255, 255, 0.2)',
+                  border: '1px solid rgba(200, 190, 170, 0.2)',
                   boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
                 }}>
-                  Metasys is a <span style={{ color: '#00ffff', fontWeight: '600' }}>digital agency and product innovation organization</span> that works with ambitious businesses and brands on strategy, design, and technology.
+                  Metasys is a <span style={{ color: '#d4cfc4', fontWeight: '600' }}>digital agency and product innovation organization</span> that works with ambitious businesses and brands on strategy, design, and technology.
                   <br /><br />
-                  We create captivating experiences for our clients and their customers by leveraging our design-driven approach to produce <span style={{ color: '#00ffff', fontWeight: '600' }}>leading-edge digital solutions</span> that drive growth and maximize efficiency.
+                  We create captivating experiences for our clients and their customers by leveraging our design-driven approach to produce <span style={{ color: '#d4cfc4', fontWeight: '600' }}>leading-edge digital solutions</span> that drive growth and maximize efficiency.
                 </p>
               </div>
             </div>
@@ -688,10 +682,10 @@ export default function Home() {
               marginBottom: '80px',
             }}>
               <h2 style={{
-                fontFamily: '"Orbitron", monospace',
+                fontFamily: 'var(--font-display), Georgia, serif',
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: '700',
-                background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -700,16 +694,16 @@ export default function Home() {
                 Our Vision
               </h2>
               <h3 style={{
-                fontFamily: '"Rajdhani", sans-serif',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
                 fontSize: '1.8rem',
                 fontWeight: '600',
-                color: '#00ffff',
+                color: '#d4cfc4',
                 marginBottom: '30px',
               }}>
                 Discover Comprehensive Insights About Metasys Consulting Services
               </h3>
               <p style={{
-                fontFamily: '"Space Grotesk", sans-serif',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
                 fontSize: '1.3rem',
                 color: 'rgba(255, 255, 255, 0.9)',
                 maxWidth: '900px',
@@ -726,31 +720,31 @@ export default function Home() {
               backdropFilter: 'blur(15px)',
               padding: '60px',
               borderRadius: '20px',
-              border: '1px solid rgba(0, 255, 255, 0.2)',
+              border: '1px solid rgba(200, 190, 170, 0.2)',
               textAlign: 'center',
               marginBottom: '80px',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
             }}>
               <h3 style={{
-                fontFamily: '"Rajdhani", sans-serif',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
                 fontSize: '2rem',
                 fontWeight: '700',
-                color: '#00ffff',
+                color: '#d4cfc4',
                 marginBottom: '30px',
               }}>
                 Our Core Mission
               </h3>
               <p style={{
-                fontFamily: '"Space Grotesk", sans-serif',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
                 fontSize: '1.4rem',
                 color: 'rgba(255, 255, 255, 0.9)',
                 lineHeight: '1.7',
                 marginBottom: '30px',
               }}>
-                <span style={{ color: '#00ffff', fontWeight: '600' }}>Help businesses enhance their agility and productivity.</span>
+                <span style={{ color: '#d4cfc4', fontWeight: '600' }}>Help businesses enhance their agility and productivity.</span>
               </p>
               <p style={{
-                fontFamily: '"Space Grotesk", sans-serif',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
                 fontSize: '1.2rem',
                 color: 'rgba(255, 255, 255, 0.8)',
                 lineHeight: '1.6',
@@ -766,10 +760,10 @@ export default function Home() {
               marginBottom: '60px',
             }}>
               <h2 style={{
-                fontFamily: '"Orbitron", monospace',
+                fontFamily: 'var(--font-display), Georgia, serif',
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: '700',
-                background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -807,7 +801,7 @@ export default function Home() {
                     backdropFilter: 'blur(10px)',
                     padding: '40px',
                     borderRadius: '16px',
-                    border: '1px solid rgba(0, 255, 255, 0.2)',
+                    border: '1px solid rgba(200, 190, 170, 0.2)',
                     position: 'relative',
                     overflow: 'hidden',
                   }}>
@@ -817,19 +811,19 @@ export default function Home() {
                       left: '0',
                       width: '100%',
                       height: '4px',
-                      background: 'linear-gradient(90deg, #00ffff, #0080ff)',
+                      background: 'linear-gradient(90deg, #d4cfc4, #0080ff)',
                     }} />
                     <h3 style={{
-                      fontFamily: '"Rajdhani", sans-serif',
+                      fontFamily: 'var(--font-body), system-ui, sans-serif',
                       fontSize: '1.6rem',
                       fontWeight: '600',
-                      color: '#00ffff',
+                      color: '#d4cfc4',
                       marginBottom: '20px',
                     }}>
                       {expertise.title}
                     </h3>
                     <p style={{
-                      fontFamily: '"Space Grotesk", sans-serif',
+                      fontFamily: 'var(--font-body), system-ui, sans-serif',
                       color: 'rgba(255, 255, 255, 0.8)',
                       lineHeight: '1.6',
                       fontSize: '1.1rem',
@@ -846,10 +840,10 @@ export default function Home() {
               marginBottom: '60px',
             }}>
               <h2 style={{
-                fontFamily: '"Orbitron", monospace',
+                fontFamily: 'var(--font-display), Georgia, serif',
                 fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
                 fontWeight: '700',
-                background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -864,7 +858,7 @@ export default function Home() {
                 backdropFilter: 'blur(10px)',
                 padding: '40px',
                 borderRadius: '16px',
-                border: '1px solid rgba(0, 255, 255, 0.2)',
+                border: '1px solid rgba(200, 190, 170, 0.2)',
                 textAlign: 'center',
               }}>
                 <div style={{
@@ -879,11 +873,11 @@ export default function Home() {
                     'QuickBooks', 'Jira', 'Confluence', 'Monday.com', 'Excel', 'Canva'
                   ].map((tech, index) => (
                     <div key={index} style={{
-                      background: 'rgba(0, 255, 255, 0.1)',
+                      background: 'rgba(200, 190, 170, 0.1)',
                       padding: '10px 15px',
                       borderRadius: '8px',
-                      border: '1px solid rgba(0, 255, 255, 0.2)',
-                      fontFamily: '"Rajdhani", sans-serif',
+                      border: '1px solid rgba(200, 190, 170, 0.2)',
+                      fontFamily: 'var(--font-body), system-ui, sans-serif',
                       fontSize: '0.9rem',
                       fontWeight: '500',
                       color: 'rgba(255, 255, 255, 0.9)',
@@ -893,17 +887,17 @@ export default function Home() {
                     onMouseEnter={(e) => {
                       gsap.to(e.currentTarget, {
                         scale: 1.05,
-                        backgroundColor: 'rgba(0, 255, 255, 0.2)',
-                        borderColor: 'rgba(0, 255, 255, 0.4)',
-                        color: '#00ffff',
+                        backgroundColor: 'rgba(200, 190, 170, 0.2)',
+                        borderColor: 'rgba(200, 190, 170, 0.4)',
+                        color: '#d4cfc4',
                         duration: 0.2,
                       });
                     }}
                     onMouseLeave={(e) => {
                       gsap.to(e.currentTarget, {
                         scale: 1,
-                        backgroundColor: 'rgba(0, 255, 255, 0.1)',
-                        borderColor: 'rgba(0, 255, 255, 0.2)',
+                        backgroundColor: 'rgba(200, 190, 170, 0.1)',
+                        borderColor: 'rgba(200, 190, 170, 0.2)',
                         color: 'rgba(255, 255, 255, 0.9)',
                         duration: 0.2,
                       });
@@ -914,7 +908,7 @@ export default function Home() {
                   ))}
                 </div>
                 <p style={{
-                  fontFamily: '"Space Grotesk", sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontSize: '1rem',
                   color: 'rgba(255, 255, 255, 0.7)',
                   fontStyle: 'italic',
@@ -926,48 +920,48 @@ export default function Home() {
 
             {/* Call to Action */}
             <div style={{
-              background: 'linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 128, 255, 0.1))',
+              background: 'linear-gradient(135deg, rgba(200, 190, 170, 0.1), rgba(0, 128, 255, 0.1))',
               backdropFilter: 'blur(15px)',
               padding: '50px',
               borderRadius: '20px',
-              border: '1px solid rgba(0, 255, 255, 0.3)',
+              border: '1px solid rgba(200, 190, 170, 0.3)',
               textAlign: 'center',
-              boxShadow: '0 8px 32px rgba(0, 255, 255, 0.1)',
+              boxShadow: '0 8px 32px rgba(200, 190, 170, 0.1)',
             }}>
               <p style={{
-                fontFamily: '"Space Grotesk", sans-serif',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
                 fontSize: '1.3rem',
                 color: 'rgba(255, 255, 255, 0.9)',
                 lineHeight: '1.6',
                 marginBottom: '30px',
               }}>
                 If you&apos;re interested in discovering how consulting services can contribute to your or your business&apos;s growth, 
-                <span style={{ color: '#00ffff', fontWeight: '600' }}> schedule an introductory meeting with us today.</span>
+                <span style={{ color: '#d4cfc4', fontWeight: '600' }}> schedule an introductory meeting with us today.</span>
               </p>
               <div style={{
-                background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                 padding: '16px 32px',
                 borderRadius: '12px',
                 cursor: 'pointer',
-                fontFamily: '"Rajdhani", sans-serif',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
                 fontSize: '1.2rem',
                 fontWeight: '600',
                 color: '#000',
                 display: 'inline-block',
-                boxShadow: '0 8px 25px rgba(0, 255, 255, 0.4)',
+                boxShadow: '0 8px 25px rgba(200, 190, 170, 0.4)',
                 transition: 'all 0.3s ease',
               }}
               onMouseEnter={(e) => {
                 gsap.to(e.currentTarget, {
                   scale: 1.05,
-                  boxShadow: '0 12px 35px rgba(0, 255, 255, 0.6)',
+                  boxShadow: '0 12px 35px rgba(200, 190, 170, 0.6)',
                   duration: 0.3,
                 });
               }}
               onMouseLeave={(e) => {
                 gsap.to(e.currentTarget, {
                   scale: 1,
-                  boxShadow: '0 8px 25px rgba(0, 255, 255, 0.4)',
+                  boxShadow: '0 8px 25px rgba(200, 190, 170, 0.4)',
                   duration: 0.3,
                 });
               }}
@@ -993,10 +987,10 @@ export default function Home() {
               marginBottom: '80px',
             }}>
               <h2 style={{
-                fontFamily: '"Orbitron", monospace',
+                fontFamily: 'var(--font-display), Georgia, serif',
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: '700',
-                background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -1005,7 +999,7 @@ export default function Home() {
                 Our Services
               </h2>
               <p style={{
-                fontFamily: '"Space Grotesk", sans-serif',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
                 fontSize: '1.3rem',
                 color: 'rgba(255, 255, 255, 0.8)',
                 maxWidth: '800px',
@@ -1039,7 +1033,7 @@ export default function Home() {
                            <div style={{
                              width: '60px',
                              height: '60px',
-                             background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                             background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                              borderRadius: '12px',
                              position: 'relative',
                              display: 'flex',
@@ -1092,7 +1086,7 @@ export default function Home() {
                            <div style={{
                              width: '60px',
                              height: '60px',
-                             background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                             background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                              borderRadius: '50% 50% 50% 10px',
                              position: 'relative',
                              transform: 'rotate(-45deg)',
@@ -1128,7 +1122,7 @@ export default function Home() {
                            <div style={{
                              width: '60px',
                              height: '60px',
-                             background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                             background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                              borderRadius: '50%',
                              position: 'relative',
                              display: 'flex',
@@ -1158,7 +1152,7 @@ export default function Home() {
                                  left: '8px',
                                  width: '14px',
                                  height: '2px',
-                                 background: '#00ffff',
+                                 background: '#d4cfc4',
                                  borderRadius: '1px',
                                }} />
                                <div style={{
@@ -1167,7 +1161,7 @@ export default function Home() {
                                  left: '8px',
                                  width: '14px',
                                  height: '2px',
-                                 background: '#00ffff',
+                                 background: '#d4cfc4',
                                  borderRadius: '1px',
                                }} />
                              </div>
@@ -1181,7 +1175,7 @@ export default function Home() {
                            <div style={{
                              width: '60px',
                              height: '60px',
-                             background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                             background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                              borderRadius: '12px',
                              position: 'relative',
                              display: 'flex',
@@ -1222,7 +1216,7 @@ export default function Home() {
                            <div style={{
                              width: '60px',
                              height: '60px',
-                             background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                             background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                              borderRadius: '12px',
                              position: 'relative',
                              display: 'flex',
@@ -1241,7 +1235,7 @@ export default function Home() {
                                fontSize: '20px',
                                fontWeight: 'bold',
                                fontFamily: 'monospace',
-                               color: '#00ffff',
+                               color: '#d4cfc4',
                              }}>
                                {'</>'}
                              </div>
@@ -1263,7 +1257,7 @@ export default function Home() {
                          backdropFilter: 'blur(15px)',
                          padding: '40px',
                          borderRadius: '20px',
-                         border: '1px solid rgba(0, 255, 255, 0.2)',
+                         border: '1px solid rgba(200, 190, 170, 0.2)',
                          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
                          cursor: 'pointer',
                          transition: 'all 0.3s ease',
@@ -1272,7 +1266,7 @@ export default function Home() {
                          gsap.to(e.currentTarget, {
                            y: -10,
                            scale: 1.02,
-                           boxShadow: '0 20px 40px rgba(0, 255, 255, 0.2)',
+                           boxShadow: '0 20px 40px rgba(200, 190, 170, 0.2)',
                            duration: 0.3,
                          });
                        }}
@@ -1287,16 +1281,16 @@ export default function Home() {
                      >
                      {getServiceIcon(service.icon)}
                   <h3 style={{
-                    fontFamily: '"Rajdhani", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '1.8rem',
                     fontWeight: '600',
-                    color: '#00ffff',
+                    color: '#d4cfc4',
                     marginBottom: '15px',
                   }}>
                     {service.title}
                   </h3>
                   <p style={{
-                    fontFamily: '"Space Grotesk", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     color: 'rgba(255, 255, 255, 0.8)',
                     lineHeight: '1.6',
                     marginBottom: '25px',
@@ -1309,7 +1303,7 @@ export default function Home() {
                   }}>
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} style={{
-                        fontFamily: '"Space Grotesk", sans-serif',
+                        fontFamily: 'var(--font-body), system-ui, sans-serif',
                         color: 'rgba(255, 255, 255, 0.7)',
                         marginBottom: '8px',
                         paddingLeft: '20px',
@@ -1318,7 +1312,7 @@ export default function Home() {
                         <span style={{
                           position: 'absolute',
                           left: '0',
-                          color: '#00ffff',
+                          color: '#d4cfc4',
                         }}>•</span>
                         {feature}
                       </li>
@@ -1344,10 +1338,10 @@ export default function Home() {
             textAlign: 'center',
           }}>
             <h2 style={{
-              fontFamily: '"Orbitron", monospace',
+              fontFamily: 'var(--font-display), Georgia, serif',
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: '700',
-              background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+              background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -1356,7 +1350,7 @@ export default function Home() {
               Our Prestigious Clients
             </h2>
             <p style={{
-              fontFamily: '"Space Grotesk", sans-serif',
+              fontFamily: 'var(--font-body), system-ui, sans-serif',
               fontSize: '1.3rem',
               color: 'rgba(255, 255, 255, 0.8)',
               marginBottom: '60px',
@@ -1379,7 +1373,7 @@ export default function Home() {
                     backdropFilter: 'blur(15px)',
                     padding: '40px 30px',
                     borderRadius: '20px',
-                    border: '1px solid rgba(0, 255, 255, 0.2)',
+                    border: '1px solid rgba(200, 190, 170, 0.2)',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
                     position: 'relative',
@@ -1395,8 +1389,8 @@ export default function Home() {
                     gsap.to(e.currentTarget, {
                       y: -8,
                       scale: 1.03,
-                      boxShadow: '0 20px 40px rgba(0, 255, 255, 0.2)',
-                      borderColor: 'rgba(0, 255, 255, 0.4)',
+                      boxShadow: '0 20px 40px rgba(200, 190, 170, 0.2)',
+                      borderColor: 'rgba(200, 190, 170, 0.4)',
                       duration: 0.3,
                     });
                   }}
@@ -1405,7 +1399,7 @@ export default function Home() {
                       y: 0,
                       scale: 1,
                       boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-                      borderColor: 'rgba(0, 255, 255, 0.2)',
+                      borderColor: 'rgba(200, 190, 170, 0.2)',
                       duration: 0.3,
                     });
                   }}
@@ -1417,12 +1411,12 @@ export default function Home() {
                     left: 0,
                     width: '100%',
                     height: '3px',
-                    background: 'linear-gradient(90deg, #00ffff, #0080ff)',
+                    background: 'linear-gradient(90deg, #d4cfc4, #0080ff)',
                   }} />
                   
                   {/* Client Name */}
                   <div style={{
-                    fontFamily: '"Rajdhani", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '1.5rem',
                     fontWeight: '700',
                     color: '#ffffff',
@@ -1434,10 +1428,10 @@ export default function Home() {
                   
                   {/* Industry */}
                   <div style={{
-                    fontFamily: '"Space Grotesk", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '0.9rem',
                     fontWeight: '400',
-                    color: '#00ffff',
+                    color: '#d4cfc4',
                     textAlign: 'center',
                     opacity: 0.8,
                   }}>
@@ -1451,17 +1445,17 @@ export default function Home() {
                     right: '15px',
                     width: '40px',
                     height: '40px',
-                    background: 'linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 128, 255, 0.1))',
+                    background: 'linear-gradient(135deg, rgba(200, 190, 170, 0.1), rgba(0, 128, 255, 0.1))',
                     borderRadius: '8px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    border: '1px solid rgba(0, 255, 255, 0.2)',
+                    border: '1px solid rgba(200, 190, 170, 0.2)',
                   }}>
                     <div style={{
                       width: '20px',
                       height: '20px',
-                      background: 'linear-gradient(45deg, #00ffff, #0080ff)',
+                      background: 'linear-gradient(45deg, #d4cfc4, #0080ff)',
                       borderRadius: '4px',
                       opacity: 0.6,
                     }} />
@@ -1486,10 +1480,10 @@ export default function Home() {
             textAlign: 'center',
           }}>
             <h2 style={{
-              fontFamily: '"Orbitron", monospace',
+              fontFamily: 'var(--font-display), Georgia, serif',
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: '700',
-              background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+              background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -1498,7 +1492,7 @@ export default function Home() {
               Let&apos;s Transform Your Business
             </h2>
             <p style={{
-              fontFamily: '"Space Grotesk", sans-serif',
+              fontFamily: 'var(--font-body), system-ui, sans-serif',
               fontSize: '1.3rem',
               color: 'rgba(255, 255, 255, 0.8)',
               marginBottom: '60px',
@@ -1522,19 +1516,19 @@ export default function Home() {
                 { service: "Web Development", duration: "25 min" }
               ].map((item, index) => (
                 <div key={index} style={{
-                  background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                  background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                   padding: '20px',
                   borderRadius: '12px',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
-                  fontFamily: '"Rajdhani", sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontWeight: '600',
                   color: '#000',
                 }}
                 onMouseEnter={(e) => {
                   gsap.to(e.currentTarget, {
                     scale: 1.05,
-                    boxShadow: '0 10px 30px rgba(0, 255, 255, 0.4)',
+                    boxShadow: '0 10px 30px rgba(200, 190, 170, 0.4)',
                     duration: 0.3,
                   });
                 }}
@@ -1561,27 +1555,27 @@ export default function Home() {
               backdropFilter: 'blur(15px)',
               padding: '40px',
               borderRadius: '20px',
-              border: '1px solid rgba(0, 255, 255, 0.2)',
+              border: '1px solid rgba(200, 190, 170, 0.2)',
               maxWidth: '600px',
               margin: '0 auto',
             }}>
               <h3 style={{
-                fontFamily: '"Rajdhani", sans-serif',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
                 fontSize: '1.8rem',
-                color: '#00ffff',
+                color: '#d4cfc4',
                 marginBottom: '20px',
               }}>
                 Contact Information
               </h3>
               <p style={{
-                fontFamily: '"Space Grotesk", sans-serif',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
                 color: 'rgba(255, 255, 255, 0.9)',
                 marginBottom: '10px',
               }}>
                 📧 consultmetasys@gmail.com
               </p>
               <p style={{
-                fontFamily: '"Space Grotesk", sans-serif',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
                 color: 'rgba(255, 255, 255, 0.9)',
                 marginBottom: '20px',
               }}>
@@ -1595,11 +1589,11 @@ export default function Home() {
               }}>
                 {['LinkedIn', 'Instagram', 'Facebook', 'Twitter'].map((social, index) => (
                   <div key={index} style={{
-                    background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                    background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                     padding: '10px 20px',
                     borderRadius: '8px',
                     cursor: 'pointer',
-                    fontFamily: '"Rajdhani", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontWeight: '600',
                     color: '#000',
                     fontSize: '0.9rem',

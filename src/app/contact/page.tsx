@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import { SiteHeader } from "@/components/site/SiteHeader";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -89,70 +90,8 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Load futuristic fonts */}
-      <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"
-      />
-
       <div style={{ backgroundColor: '#0a0a0a', minHeight: '100vh' }}>
-        {/* Navigation */}
-        <nav style={{
-          position: 'fixed',
-          top: '0',
-          left: '0',
-          width: '100%',
-          zIndex: 1000,
-          padding: '20px 40px',
-          background: 'rgba(0, 20, 40, 0.9)',
-          backdropFilter: 'blur(20px)',
-          borderBottom: '1px solid rgba(0, 255, 255, 0.2)',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-        }}>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            maxWidth: '1400px',
-            margin: '0 auto',
-          }}>
-            {/* Logo */}
-            <Link href="/" style={{ textDecoration: 'none' }}>
-              <div style={{
-                fontFamily: '"Orbitron", monospace',
-                fontSize: '24px',
-                fontWeight: '700',
-                background: 'linear-gradient(135deg, #00ffff, #0080ff)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                textShadow: '0 0 20px rgba(0, 255, 255, 0.3)',
-                cursor: 'pointer',
-              }}>
-                METASYS CONSULTING
-              </div>
-            </Link>
-
-            {/* Back to Home */}
-            <Link href="/" style={{ textDecoration: 'none' }}>
-              <div style={{
-                fontFamily: '"Rajdhani", sans-serif',
-                fontSize: '16px',
-                fontWeight: '600',
-                color: '#000',
-                background: 'linear-gradient(135deg, #00ffff, #0080ff)',
-                padding: '12px 24px',
-                borderRadius: '12px',
-                cursor: 'pointer',
-                border: 'none',
-                boxShadow: '0 4px 15px rgba(0, 255, 255, 0.3)',
-                transition: 'all 0.3s ease',
-              }}>
-                ← Back to Home
-              </div>
-            </Link>
-          </div>
-        </nav>
+        <SiteHeader variant="dark" />
 
         {/* Hero Section */}
         <section className="scroll-section" style={{
@@ -165,23 +104,23 @@ export default function ContactPage() {
             margin: '0 auto',
           }}>
             <h1 style={{
-              fontFamily: '"Orbitron", monospace',
+              fontFamily: 'var(--font-display), Georgia, serif',
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: '900',
-              background: 'linear-gradient(135deg, #00ffff, #ffffff, #0080ff)',
+              background: 'linear-gradient(135deg, #f5f3ef, #e8e4dc, #b8a88a)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               marginBottom: '30px',
-              textShadow: '0 0 40px rgba(0, 255, 255, 0.4)',
+              textShadow: '0 0 40px rgba(200, 190, 170, 0.4)',
             }}>
               Get In Touch With Us
             </h1>
 
             <p style={{
-              fontFamily: '"Space Grotesk", sans-serif',
+              fontFamily: 'var(--font-body), system-ui, sans-serif',
               fontSize: '1.4rem',
-              color: '#00ffff',
+              color: '#d4cfc4',
               marginBottom: '40px',
               fontWeight: '500',
             }}>
@@ -189,7 +128,7 @@ export default function ContactPage() {
             </p>
 
             <p style={{
-              fontFamily: '"Space Grotesk", sans-serif',
+              fontFamily: 'var(--font-body), system-ui, sans-serif',
               fontSize: '1.2rem',
               color: 'rgba(255, 255, 255, 0.8)',
               maxWidth: '800px',
@@ -222,7 +161,7 @@ export default function ContactPage() {
                 backdropFilter: 'blur(15px)',
                 padding: '40px',
                 borderRadius: '20px',
-                border: '1px solid rgba(0, 255, 255, 0.2)',
+                border: '1px solid rgba(200, 190, 170, 0.2)',
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
                 textAlign: 'center',
                 position: 'relative',
@@ -234,21 +173,21 @@ export default function ContactPage() {
                   left: 0,
                   width: '100%',
                   height: '4px',
-                  background: 'linear-gradient(90deg, #00ffff, #0080ff)',
+                  background: 'linear-gradient(90deg, #d4cfc4, #0080ff)',
                 }} />
                 <div style={{
                   fontSize: '3rem',
                   marginBottom: '20px',
                 }}>📧</div>
                 <h3 style={{
-                  fontFamily: '"Rajdhani", sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontSize: '1.5rem',
                   fontWeight: '600',
-                  color: '#00ffff',
+                  color: '#d4cfc4',
                   marginBottom: '15px',
                 }}>Email Us</h3>
                 <p style={{
-                  fontFamily: '"Space Grotesk", sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   color: 'rgba(255, 255, 255, 0.9)',
                   fontSize: '1.1rem',
                 }}>consultmetasys@gmail.com</p>
@@ -260,7 +199,7 @@ export default function ContactPage() {
                 backdropFilter: 'blur(15px)',
                 padding: '40px',
                 borderRadius: '20px',
-                border: '1px solid rgba(0, 255, 255, 0.2)',
+                border: '1px solid rgba(200, 190, 170, 0.2)',
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
                 textAlign: 'center',
                 position: 'relative',
@@ -272,21 +211,21 @@ export default function ContactPage() {
                   left: 0,
                   width: '100%',
                   height: '4px',
-                  background: 'linear-gradient(90deg, #00ffff, #0080ff)',
+                  background: 'linear-gradient(90deg, #d4cfc4, #0080ff)',
                 }} />
                 <div style={{
                   fontSize: '3rem',
                   marginBottom: '20px',
                 }}>📞</div>
                 <h3 style={{
-                  fontFamily: '"Rajdhani", sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontSize: '1.5rem',
                   fontWeight: '600',
-                  color: '#00ffff',
+                  color: '#d4cfc4',
                   marginBottom: '15px',
                 }}>Call Us</h3>
                 <p style={{
-                  fontFamily: '"Space Grotesk", sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   color: 'rgba(255, 255, 255, 0.9)',
                   fontSize: '1.1rem',
                 }}>Tel. 123-456-7890</p>
@@ -298,7 +237,7 @@ export default function ContactPage() {
                 backdropFilter: 'blur(15px)',
                 padding: '40px',
                 borderRadius: '20px',
-                border: '1px solid rgba(0, 255, 255, 0.2)',
+                border: '1px solid rgba(200, 190, 170, 0.2)',
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
                 textAlign: 'center',
                 position: 'relative',
@@ -310,21 +249,21 @@ export default function ContactPage() {
                   left: 0,
                   width: '100%',
                   height: '4px',
-                  background: 'linear-gradient(90deg, #00ffff, #0080ff)',
+                  background: 'linear-gradient(90deg, #d4cfc4, #0080ff)',
                 }} />
                 <div style={{
                   fontSize: '3rem',
                   marginBottom: '20px',
                 }}>📅</div>
                 <h3 style={{
-                  fontFamily: '"Rajdhani", sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontSize: '1.5rem',
                   fontWeight: '600',
-                  color: '#00ffff',
+                  color: '#d4cfc4',
                   marginBottom: '15px',
                 }}>Schedule Meeting</h3>
                 <p style={{
-                  fontFamily: '"Space Grotesk", sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   color: 'rgba(255, 255, 255, 0.9)',
                   fontSize: '1.1rem',
                 }}>25 min consultation</p>
@@ -347,14 +286,14 @@ export default function ContactPage() {
               backdropFilter: 'blur(15px)',
               padding: '60px',
               borderRadius: '20px',
-              border: '1px solid rgba(0, 255, 255, 0.2)',
+              border: '1px solid rgba(200, 190, 170, 0.2)',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
             }}>
               <h2 style={{
-                fontFamily: '"Orbitron", monospace',
+                fontFamily: 'var(--font-display), Georgia, serif',
                 fontSize: '2.5rem',
                 fontWeight: '700',
-                background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -373,10 +312,10 @@ export default function ContactPage() {
                 }}>
                   <div>
                     <label style={{
-                      fontFamily: '"Rajdhani", sans-serif',
+                      fontFamily: 'var(--font-body), system-ui, sans-serif',
                       fontSize: '1.1rem',
                       fontWeight: '600',
-                      color: '#00ffff',
+                      color: '#d4cfc4',
                       display: 'block',
                       marginBottom: '8px',
                     }}>Full Name *</label>
@@ -389,21 +328,21 @@ export default function ContactPage() {
                       style={{
                         width: '100%',
                         padding: '15px',
-                        background: 'rgba(0, 255, 255, 0.1)',
-                        border: '1px solid rgba(0, 255, 255, 0.3)',
+                        background: 'rgba(200, 190, 170, 0.1)',
+                        border: '1px solid rgba(200, 190, 170, 0.3)',
                         borderRadius: '8px',
                         color: 'white',
-                        fontFamily: '"Space Grotesk", sans-serif',
+                        fontFamily: 'var(--font-body), system-ui, sans-serif',
                         fontSize: '1rem',
                         outline: 'none',
                         transition: 'all 0.3s ease',
                       }}
                       onFocus={(e) => {
-                        e.target.style.borderColor = '#00ffff';
-                        e.target.style.boxShadow = '0 0 10px rgba(0, 255, 255, 0.3)';
+                        e.target.style.borderColor = '#d4cfc4';
+                        e.target.style.boxShadow = '0 0 10px rgba(200, 190, 170, 0.3)';
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = 'rgba(0, 255, 255, 0.3)';
+                        e.target.style.borderColor = 'rgba(200, 190, 170, 0.3)';
                         e.target.style.boxShadow = 'none';
                       }}
                     />
@@ -411,10 +350,10 @@ export default function ContactPage() {
 
                   <div>
                     <label style={{
-                      fontFamily: '"Rajdhani", sans-serif',
+                      fontFamily: 'var(--font-body), system-ui, sans-serif',
                       fontSize: '1.1rem',
                       fontWeight: '600',
-                      color: '#00ffff',
+                      color: '#d4cfc4',
                       display: 'block',
                       marginBottom: '8px',
                     }}>Email Address *</label>
@@ -427,21 +366,21 @@ export default function ContactPage() {
                       style={{
                         width: '100%',
                         padding: '15px',
-                        background: 'rgba(0, 255, 255, 0.1)',
-                        border: '1px solid rgba(0, 255, 255, 0.3)',
+                        background: 'rgba(200, 190, 170, 0.1)',
+                        border: '1px solid rgba(200, 190, 170, 0.3)',
                         borderRadius: '8px',
                         color: 'white',
-                        fontFamily: '"Space Grotesk", sans-serif',
+                        fontFamily: 'var(--font-body), system-ui, sans-serif',
                         fontSize: '1rem',
                         outline: 'none',
                         transition: 'all 0.3s ease',
                       }}
                       onFocus={(e) => {
-                        e.target.style.borderColor = '#00ffff';
-                        e.target.style.boxShadow = '0 0 10px rgba(0, 255, 255, 0.3)';
+                        e.target.style.borderColor = '#d4cfc4';
+                        e.target.style.boxShadow = '0 0 10px rgba(200, 190, 170, 0.3)';
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = 'rgba(0, 255, 255, 0.3)';
+                        e.target.style.borderColor = 'rgba(200, 190, 170, 0.3)';
                         e.target.style.boxShadow = 'none';
                       }}
                     />
@@ -456,10 +395,10 @@ export default function ContactPage() {
                 }}>
                   <div>
                     <label style={{
-                      fontFamily: '"Rajdhani", sans-serif',
+                      fontFamily: 'var(--font-body), system-ui, sans-serif',
                       fontSize: '1.1rem',
                       fontWeight: '600',
-                      color: '#00ffff',
+                      color: '#d4cfc4',
                       display: 'block',
                       marginBottom: '8px',
                     }}>Company</label>
@@ -471,21 +410,21 @@ export default function ContactPage() {
                       style={{
                         width: '100%',
                         padding: '15px',
-                        background: 'rgba(0, 255, 255, 0.1)',
-                        border: '1px solid rgba(0, 255, 255, 0.3)',
+                        background: 'rgba(200, 190, 170, 0.1)',
+                        border: '1px solid rgba(200, 190, 170, 0.3)',
                         borderRadius: '8px',
                         color: 'white',
-                        fontFamily: '"Space Grotesk", sans-serif',
+                        fontFamily: 'var(--font-body), system-ui, sans-serif',
                         fontSize: '1rem',
                         outline: 'none',
                         transition: 'all 0.3s ease',
                       }}
                       onFocus={(e) => {
-                        e.target.style.borderColor = '#00ffff';
-                        e.target.style.boxShadow = '0 0 10px rgba(0, 255, 255, 0.3)';
+                        e.target.style.borderColor = '#d4cfc4';
+                        e.target.style.boxShadow = '0 0 10px rgba(200, 190, 170, 0.3)';
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = 'rgba(0, 255, 255, 0.3)';
+                        e.target.style.borderColor = 'rgba(200, 190, 170, 0.3)';
                         e.target.style.boxShadow = 'none';
                       }}
                     />
@@ -493,10 +432,10 @@ export default function ContactPage() {
 
                   <div>
                     <label style={{
-                      fontFamily: '"Rajdhani", sans-serif',
+                      fontFamily: 'var(--font-body), system-ui, sans-serif',
                       fontSize: '1.1rem',
                       fontWeight: '600',
-                      color: '#00ffff',
+                      color: '#d4cfc4',
                       display: 'block',
                       marginBottom: '8px',
                     }}>Service Interested In</label>
@@ -507,21 +446,21 @@ export default function ContactPage() {
                       style={{
                         width: '100%',
                         padding: '15px',
-                        background: 'rgba(0, 255, 255, 0.1)',
-                        border: '1px solid rgba(0, 255, 255, 0.3)',
+                        background: 'rgba(200, 190, 170, 0.1)',
+                        border: '1px solid rgba(200, 190, 170, 0.3)',
                         borderRadius: '8px',
                         color: 'white',
-                        fontFamily: '"Space Grotesk", sans-serif',
+                        fontFamily: 'var(--font-body), system-ui, sans-serif',
                         fontSize: '1rem',
                         outline: 'none',
                         transition: 'all 0.3s ease',
                       }}
                       onFocus={(e) => {
-                        e.target.style.borderColor = '#00ffff';
-                        e.target.style.boxShadow = '0 0 10px rgba(0, 255, 255, 0.3)';
+                        e.target.style.borderColor = '#d4cfc4';
+                        e.target.style.boxShadow = '0 0 10px rgba(200, 190, 170, 0.3)';
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = 'rgba(0, 255, 255, 0.3)';
+                        e.target.style.borderColor = 'rgba(200, 190, 170, 0.3)';
                         e.target.style.boxShadow = 'none';
                       }}
                     >
@@ -538,10 +477,10 @@ export default function ContactPage() {
                 {/* Message */}
                 <div>
                   <label style={{
-                    fontFamily: '"Rajdhani", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '1.1rem',
                     fontWeight: '600',
-                    color: '#00ffff',
+                    color: '#d4cfc4',
                     display: 'block',
                     marginBottom: '8px',
                   }}>Message *</label>
@@ -555,22 +494,22 @@ export default function ContactPage() {
                     style={{
                       width: '100%',
                       padding: '15px',
-                      background: 'rgba(0, 255, 255, 0.1)',
-                      border: '1px solid rgba(0, 255, 255, 0.3)',
+                      background: 'rgba(200, 190, 170, 0.1)',
+                      border: '1px solid rgba(200, 190, 170, 0.3)',
                       borderRadius: '8px',
                       color: 'white',
-                      fontFamily: '"Space Grotesk", sans-serif',
+                      fontFamily: 'var(--font-body), system-ui, sans-serif',
                       fontSize: '1rem',
                       outline: 'none',
                       transition: 'all 0.3s ease',
                       resize: 'vertical',
                     }}
                     onFocus={(e) => {
-                      e.target.style.borderColor = '#00ffff';
-                      e.target.style.boxShadow = '0 0 10px rgba(0, 255, 255, 0.3)';
+                      e.target.style.borderColor = '#d4cfc4';
+                      e.target.style.boxShadow = '0 0 10px rgba(200, 190, 170, 0.3)';
                     }}
                     onBlur={(e) => {
-                      e.target.style.borderColor = 'rgba(0, 255, 255, 0.3)';
+                      e.target.style.borderColor = 'rgba(200, 190, 170, 0.3)';
                       e.target.style.boxShadow = 'none';
                     }}
                   />
@@ -580,16 +519,16 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   style={{
-                    background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                    background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                     padding: '20px 40px',
                     borderRadius: '12px',
                     border: 'none',
                     cursor: 'pointer',
-                    fontFamily: '"Rajdhani", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '1.3rem',
                     fontWeight: '700',
                     color: '#000',
-                    boxShadow: '0 8px 25px rgba(0, 255, 255, 0.4)',
+                    boxShadow: '0 8px 25px rgba(200, 190, 170, 0.4)',
                     transition: 'all 0.3s ease',
                     textTransform: 'uppercase',
                     letterSpacing: '1px',
@@ -598,7 +537,7 @@ export default function ContactPage() {
                   onMouseEnter={(e) => {
                     gsap.to(e.currentTarget, {
                       scale: 1.05,
-                      boxShadow: '0 12px 35px rgba(0, 255, 255, 0.6)',
+                      boxShadow: '0 12px 35px rgba(200, 190, 170, 0.6)',
                       duration: 0.3,
                       ease: "power2.out"
                     });
@@ -606,7 +545,7 @@ export default function ContactPage() {
                   onMouseLeave={(e) => {
                     gsap.to(e.currentTarget, {
                       scale: 1,
-                      boxShadow: '0 8px 25px rgba(0, 255, 255, 0.4)',
+                      boxShadow: '0 8px 25px rgba(200, 190, 170, 0.4)',
                       duration: 0.3,
                       ease: "power2.out"
                     });
@@ -630,10 +569,10 @@ export default function ContactPage() {
             margin: '0 auto',
           }}>
             <h3 style={{
-              fontFamily: '"Rajdhani", sans-serif',
+              fontFamily: 'var(--font-body), system-ui, sans-serif',
               fontSize: '2rem',
               fontWeight: '700',
-              color: '#00ffff',
+              color: '#d4cfc4',
               marginBottom: '30px',
             }}>
               Follow Us
@@ -648,28 +587,28 @@ export default function ContactPage() {
                 <div
                   key={social}
                   style={{
-                    background: 'linear-gradient(135deg, #00ffff, #0080ff)',
+                    background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
                     padding: '15px 30px',
                     borderRadius: '12px',
                     cursor: 'pointer',
-                    fontFamily: '"Rajdhani", sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontWeight: '600',
                     color: '#000',
                     fontSize: '1.1rem',
                     transition: 'all 0.3s ease',
-                    boxShadow: '0 4px 15px rgba(0, 255, 255, 0.3)',
+                    boxShadow: '0 4px 15px rgba(200, 190, 170, 0.3)',
                   }}
                   onMouseEnter={(e) => {
                     gsap.to(e.currentTarget, {
                       scale: 1.1,
-                      boxShadow: '0 8px 25px rgba(0, 255, 255, 0.5)',
+                      boxShadow: '0 8px 25px rgba(200, 190, 170, 0.5)',
                       duration: 0.3,
                     });
                   }}
                   onMouseLeave={(e) => {
                     gsap.to(e.currentTarget, {
                       scale: 1,
-                      boxShadow: '0 4px 15px rgba(0, 255, 255, 0.3)',
+                      boxShadow: '0 4px 15px rgba(200, 190, 170, 0.3)',
                       duration: 0.3,
                     });
                   }}

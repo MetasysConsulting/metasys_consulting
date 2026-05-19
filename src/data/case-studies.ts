@@ -17,6 +17,14 @@ export type CaseStudy = {
   closing?: string[];
 };
 
+export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
+  return CASE_STUDIES.find((study) => study.slug === slug);
+}
+
+export function getAllCaseStudySlugs(): string[] {
+  return CASE_STUDIES.map((study) => study.slug);
+}
+
 export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "medirate",
