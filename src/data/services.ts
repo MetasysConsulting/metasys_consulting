@@ -1,8 +1,14 @@
+export type ServiceIconId =
+  | "ai"
+  | "fullstack"
+  | "analytics"
+  | "delivery"
+  | "talent"
+  | "embedded";
+
 export type HomeService = {
-  /** Simple Icons slug — colored logos via cdn.simpleicons.org */
-  iconSlug: string;
-  iconColor: string;
-  iconLegacy?: boolean;
+  /** Conceptual icon — not a brand logo */
+  icon: ServiceIconId;
   title: string;
   description: string;
   features: string[];
@@ -12,9 +18,7 @@ export type HomeService = {
 /** Home page service cards */
 export const HOME_SERVICES: HomeService[] = [
   {
-    iconSlug: "openai",
-    iconColor: "412991",
-    iconLegacy: true,
+    icon: "ai",
     title: "AI & Machine Learning",
     description:
       "LLM integration, custom AI agents, RAG pipelines, and production AI systems for chatbots, automation, and intelligent products.",
@@ -28,8 +32,7 @@ export const HOME_SERVICES: HomeService[] = [
     link: "/services/ai-machine-learning",
   },
   {
-    iconSlug: "nextdotjs",
-    iconColor: "FFFFFF",
+    icon: "fullstack",
     title: "Full-Stack Development",
     description:
       "End-to-end web and mobile products with modern stacks, cloud deployment, UI/UX, and DevOps practices clients search for on Upwork.",
@@ -43,8 +46,7 @@ export const HOME_SERVICES: HomeService[] = [
     link: "/services/web-development",
   },
   {
-    iconSlug: "python",
-    iconColor: "3776AB",
+    icon: "analytics",
     title: "Data Analytics & Science",
     description:
       "Turn raw data into decisions with analytics, machine learning, BI dashboards, and reliable data pipelines.",
@@ -58,8 +60,7 @@ export const HOME_SERVICES: HomeService[] = [
     link: "/services/data-analytics",
   },
   {
-    iconSlug: "jira",
-    iconColor: "0052CC",
+    icon: "delivery",
     title: "Product & Project Management",
     description:
       "Product strategy and agile delivery—from roadmaps and prioritization to Scrum execution and transformation programs.",
@@ -73,8 +74,7 @@ export const HOME_SERVICES: HomeService[] = [
     link: "/services/project-management",
   },
   {
-    iconSlug: "upwork",
-    iconColor: "6FDA44",
+    icon: "talent",
     title: "Talent Resourcing",
     description:
       "Find and onboard the right specialists for critical technical and leadership roles.",
@@ -88,8 +88,7 @@ export const HOME_SERVICES: HomeService[] = [
     link: "/services/talent-resourcing",
   },
   {
-    iconSlug: "espressif",
-    iconColor: "E7352C",
+    icon: "embedded",
     title: "Embedded Systems & IoT",
     description:
       "Firmware, connected devices, and hardware–software integration from prototype to production—including edge AI on microcontrollers.",

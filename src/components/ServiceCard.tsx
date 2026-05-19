@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRef } from "react";
 import { gsap } from "gsap";
-import { BrandIcon } from "@/components/BrandIcon";
+import { ServiceCategoryIcon } from "@/components/ServiceCategoryIcon";
 import type { HomeService } from "@/data/services";
 
 type ServiceCardProps = {
@@ -74,13 +74,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
               border: "1px solid rgba(200, 190, 170, 0.2)",
             }}
           >
-            <BrandIcon
-              slug={service.iconSlug}
-              color={service.iconColor}
-              name={service.title}
-              size={44}
-              legacy={service.iconLegacy}
-            />
+            <ServiceCategoryIcon id={service.icon} size={44} />
           </div>
 
           <h3
