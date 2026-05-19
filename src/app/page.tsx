@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { consumeSkipHomeIntro } from "@/lib/home-intro";
 import { TechnologyLogos } from "@/components/TechnologyLogos";
+import { HOME_SERVICES } from "@/data/services";
 import { TECHNOLOGIES } from "@/data/technologies";
 
 // Register GSAP plugins
@@ -231,43 +232,7 @@ export default function Home() {
     };
   }, []);
 
-  const services = [
-    {
-      icon: "data-analytics",
-      title: "Data Analytics & Science",
-      description: "Unlock business insights with advanced analytics, machine learning, and data visualization.",
-      features: ["Python & R Analytics", "Machine Learning Models", "Business Intelligence", "Survey Analytics", "Mobile App Analytics"],
-      link: "/services/data-analytics"
-    },
-    {
-      icon: "project-management",
-      title: "Project Management",
-      description: "Versatile project management from small-scale to multibillion-dollar endeavors.",
-      features: ["Performance Improvement", "Workforce Transformation", "Culture Transformation", "Technology Enablement", "Change Management"],
-      link: "/services/project-management"
-    },
-    {
-      icon: "product-management",
-      title: "Product Management",
-      description: "Optimize strategies to achieve product-market fit and drive business success.",
-      features: ["Market Research", "Product Strategy", "Feature Prioritization", "User Experience", "Growth Analytics"],
-      link: "/services/product-management"
-    },
-    {
-      icon: "talent-resourcing",
-      title: "Talent Resourcing",
-      description: "Find and onboard the perfect talent for your organization's critical positions.",
-      features: ["Professional Search", "Interim Executives", "Recruitment Process Outsourcing", "Global Talent Network", "Industry Specialists"],
-      link: "/services/talent-resourcing"
-    },
-    {
-      icon: "web-development",
-      title: "Web Development",
-      description: "Comprehensive web development from design to deployment and optimization.",
-      features: ["Custom Web Development", "Mobile App Development", "SEO & Analytics", "Cloud Migration", "E-commerce Solutions"],
-      link: "/services/web-development"
-    }
-  ];
+  const services = HOME_SERVICES;
 
   const clients = [
     { name: "Barclays", industry: "Financial Services" },
@@ -1015,6 +980,93 @@ export default function Home() {
                    };
 
                    switch(iconType) {
+                     case 'ai-ml':
+                       return (
+                         <div
+                           style={iconStyles}
+                         >
+                           <div style={{
+                             width: '60px',
+                             height: '60px',
+                             background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
+                             borderRadius: '12px',
+                             display: 'flex',
+                             alignItems: 'center',
+                             justifyContent: 'center',
+                           }}>
+                             <div
+                               style={{
+                                 width: '36px',
+                                 height: '36px',
+                                 borderRadius: '50%',
+                                 border: '3px solid #000',
+                                 position: 'relative',
+                               }}
+                             >
+                               <div style={{
+                                 position: 'absolute',
+                                 top: '6px',
+                                 left: '50%',
+                                 transform: 'translateX(-50%)',
+                                 width: '8px',
+                                 height: '8px',
+                                 background: '#000',
+                                 borderRadius: '50%',
+                               }} />
+                               <div style={{
+                                 position: 'absolute',
+                                 bottom: '4px',
+                                 left: '4px',
+                                 right: '4px',
+                                 height: '12px',
+                                 border: '2px solid #000',
+                                 borderTop: 'none',
+                                 borderRadius: '0 0 8px 8px',
+                               }} />
+                             </div>
+                           </div>
+                         </div>
+                       );
+
+                     case 'embedded-systems':
+                       return (
+                         <div
+                           style={iconStyles}
+                         >
+                           <div style={{
+                             width: '60px',
+                             height: '60px',
+                             background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
+                             borderRadius: '8px',
+                             display: 'flex',
+                             alignItems: 'center',
+                             justifyContent: 'center',
+                             gap: '4px',
+                           }}>
+                             <div style={{ width: '14px', height: '18px', background: '#000', borderRadius: '2px' }} />
+                             <div
+                               style={{
+                                 width: '22px',
+                                 height: '22px',
+                                 border: '3px solid #000',
+                                 borderRadius: '4px',
+                                 display: 'grid',
+                                 gridTemplateColumns: '1fr 1fr',
+                                 gap: '2px',
+                                 padding: '3px',
+                               }}
+                             >
+                               <div style={{ background: '#000', borderRadius: '1px' }} />
+                               <div style={{ background: '#000', borderRadius: '1px' }} />
+                               <div
+                                 style={{ background: '#000', borderRadius: '1px' }}
+                               />
+                               <div style={{ background: '#000', borderRadius: '1px' }} />
+                             </div>
+                           </div>
+                         </div>
+                       );
+
                      case 'data-analytics':
                        return (
                          <div style={iconStyles}>
@@ -1268,15 +1320,39 @@ export default function Home() {
                        }}
                      >
                      {getServiceIcon(service.icon)}
-                  <h3 style={{
-                    fontFamily: 'var(--font-body), system-ui, sans-serif',
-                    fontSize: '1.8rem',
-                    fontWeight: '600',
-                    color: '#d4cfc4',
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    flexWrap: 'wrap',
                     marginBottom: '15px',
                   }}>
-                    {service.title}
-                  </h3>
+                    <h3 style={{
+                      fontFamily: 'var(--font-body), system-ui, sans-serif',
+                      fontSize: '1.8rem',
+                      fontWeight: '600',
+                      color: '#d4cfc4',
+                      margin: 0,
+                    }}>
+                      {service.title}
+                    </h3>
+                    {service.isNew && (
+                      <span style={{
+                        fontFamily: 'var(--font-body), system-ui, sans-serif',
+                        fontSize: '0.7rem',
+                        fontWeight: 700,
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                        padding: '4px 10px',
+                        borderRadius: '6px',
+                        background: 'rgba(200, 190, 170, 0.25)',
+                        border: '1px solid rgba(200, 190, 170, 0.45)',
+                        color: '#d4cfc4',
+                      }}>
+                        New
+                      </span>
+                    )}
+                  </div>
                   <p style={{
                     fontFamily: 'var(--font-body), system-ui, sans-serif',
                     color: 'rgba(255, 255, 255, 0.8)',

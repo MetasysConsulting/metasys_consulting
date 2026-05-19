@@ -4,28 +4,28 @@ import Link from "next/link";
 export default function DataAnalyticsPage() {
   const services = [
     {
-      title: "Data Science & Analytics",
-      description: "Classification models predict categorical outcomes, regression models handle continuous predictions, and NLP models extract insights from text data by processing and analyzing language patterns."
+      title: "Python & R Analytics",
+      description: "Statistical analysis, experimentation, and reporting with Python and R—built for the questions Upwork clients actually hire for."
     },
     {
-      title: "Machine Learning",
-      description: "Python and R are powerful tools for performing statistical analysis and building predictive models on-the-fly (ad hoc), allowing data scientists to quickly respond to specific business questions or research problems."
+      title: "Machine Learning & Predictive Modeling",
+      description: "Classification, regression, forecasting, and NLP models trained on your data and validated before deployment."
     },
     {
-      title: "Survey Analytics",
-      description: "Conducted a survey? Let's dive deep into analyzing the results! We'll break down the data, uncover patterns, and extract actionable insights to ensure you make data-driven decisions."
+      title: "Business Intelligence & Dashboards",
+      description: "Power BI, Tableau, and custom dashboards that turn live data into decisions stakeholders can act on."
     },
     {
-      title: "Business Intelligence",
-      description: "Simplifying decision-making through real-time reporting data dashboards involves integrating live data streams into interactive visualizations, enabling stakeholders to monitor key metrics as they change."
+      title: "Data Pipelines & ETL",
+      description: "Reliable ingestion, cleansing, and warehouse loads across SQL databases, cloud storage, and APIs."
     },
     {
-      title: "Mobile App Analytics",
-      description: "Gaining a deep understanding of user behavior within your Android/iOS mobile applications involves analyzing user interactions, such as navigation patterns, session duration, and feature engagement."
+      title: "Data Annotation & Labeling",
+      description: "High-quality labeled datasets for computer vision, NLP, and fine-tuning—aligned with fast-growing Upwork demand."
     },
     {
       title: "Digital Marketing Analytics",
-      description: "Monitor your digital marketing and SEO campaigns through dynamic live dashboards that offer real-time insights into key performance metrics such as traffic sources, conversion rates, and engagement levels."
+      description: "Campaign and SEO analytics with clear attribution, conversion tracking, and executive-ready reporting."
     }
   ];
 

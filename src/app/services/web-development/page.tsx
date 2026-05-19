@@ -58,16 +58,24 @@ export default function WebDevelopmentPage() {
 
   const services = [
     {
-      title: "Custom Web Development",
-      description: "We adeptly handle inventory management and office process transitions to the cloud."
+      title: "Next.js, React & Node.js",
+      description: "Full-stack applications with modern JavaScript frameworks—the stack clients search for on Upwork."
     },
     {
       title: "Mobile App Development",
-      description: "We design intuitive and engaging mobile apps for a superior user experience."
+      description: "Cross-platform and native mobile experiences with analytics, auth, and cloud backends."
     },
     {
-      title: "SEO and Analytics",
-      description: "Our SEO services are designed to increase your online visibility and drive more traffic to your site."
+      title: "UI/UX Design",
+      description: "Wireframes, responsive layouts, and polished interfaces that improve conversion and usability."
+    },
+    {
+      title: "AWS, Docker & CI/CD",
+      description: "Cloud deployment, containers, and automated pipelines for reliable releases."
+    },
+    {
+      title: "SEO, Analytics & E-commerce",
+      description: "Search optimization, tracking, and storefront builds that drive measurable growth."
     }
   ];
 
@@ -189,7 +197,7 @@ export default function WebDevelopmentPage() {
               marginBottom: '30px',
               textShadow: '0 0 40px rgba(0, 255, 255, 0.4)',
             }}>
-              Professional Web Development
+              Full-Stack Development
             </h1>
 
             <p style={{
@@ -199,7 +207,7 @@ export default function WebDevelopmentPage() {
               marginBottom: '40px',
               fontWeight: '500',
             }}>
-              Metasys Consulting is the Leading Destination for Professional Web Development Services!
+              Modern full-stack delivery with the tools Upwork clients search for—React, Next.js, Node, cloud, and DevOps.
             </p>
 
             <div style={{
