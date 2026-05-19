@@ -593,14 +593,28 @@ export default function Home() {
                   className="hero-subtitle"
                   style={{
                     fontFamily: 'var(--font-body), system-ui, sans-serif',
-                    fontSize: '1.5rem',
-                    fontWeight: '400',
-                    color: '#d4cfc4',
                     marginBottom: '30px',
                     opacity: showHeroChrome ? 1 : 0,
                   }}
                 >
-                  Digital Agency & Product Innovation Organization
+                  <p style={{
+                    fontSize: '1.35rem',
+                    fontWeight: '500',
+                    color: 'rgba(255, 255, 255, 0.92)',
+                    lineHeight: 1.45,
+                    marginBottom: '12px',
+                  }}>
+                    We build products. We ship code. We solve hard problems.
+                  </p>
+                  <p style={{
+                    fontSize: '1.15rem',
+                    fontWeight: '400',
+                    color: '#d4cfc4',
+                    lineHeight: 1.5,
+                    margin: 0,
+                  }}>
+                    Strategy, engineering, and AI — under one roof.
+                  </p>
                 </div>
 
                 <div
@@ -656,9 +670,7 @@ export default function Home() {
                   border: '1px solid rgba(200, 190, 170, 0.2)',
                   boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
                 }}>
-                  Metasys is a <span style={{ color: '#d4cfc4', fontWeight: '600' }}>digital agency and product innovation organization</span> that works with ambitious businesses and brands on strategy, design, and technology.
-                  <br /><br />
-                  We create captivating experiences for our clients and their customers by leveraging our design-driven approach to produce <span style={{ color: '#d4cfc4', fontWeight: '600' }}>leading-edge digital solutions</span> that drive growth and maximize efficiency.
+                  Metasys is a <span style={{ color: '#d4cfc4', fontWeight: '600' }}>technical agency</span> that works with startups, scaleups, and enterprises to design, build, and ship digital products. We bring together full-stack engineering, AI integration, data science, and embedded systems expertise to help businesses move faster and build smarter — from early-stage MVPs to production-scale platforms.
                 </p>
               </div>
             </div>
@@ -699,7 +711,7 @@ export default function Home() {
                 color: '#d4cfc4',
                 marginBottom: '30px',
               }}>
-                Discover Comprehensive Insights About Metasys Consulting Services
+                Strategy and execution, under one roof
               </h3>
               <p style={{
                 fontFamily: 'var(--font-body), system-ui, sans-serif',
@@ -709,7 +721,7 @@ export default function Home() {
                 margin: '0 auto 40px auto',
                 lineHeight: '1.7',
               }}>
-                Metasys, a Management and Technology Consulting firm, is dedicated to empowering individuals and teams, fostering high-performing cross-functional collaborations, and enabling mastery in their respective fields. We prioritize supporting seamless transformations in alignment with emerging technologies and market dynamics.
+                We believe the best technical work happens when strategy and execution sit in the same room. Our team combines deep domain expertise across software, AI, and hardware to help clients navigate complex problems and build solutions that last.
               </p>
             </div>
 
@@ -738,19 +750,9 @@ export default function Home() {
                 fontSize: '1.4rem',
                 color: 'rgba(255, 255, 255, 0.9)',
                 lineHeight: '1.7',
-                marginBottom: '30px',
+                margin: 0,
               }}>
-                <span style={{ color: '#d4cfc4', fontWeight: '600' }}>Help businesses enhance their agility and productivity.</span>
-              </p>
-              <p style={{
-                fontFamily: 'var(--font-body), system-ui, sans-serif',
-                fontSize: '1.2rem',
-                color: 'rgba(255, 255, 255, 0.8)',
-                lineHeight: '1.6',
-                maxWidth: '800px',
-                margin: '0 auto',
-              }}>
-                We offer clients a diverse array of services aimed at facilitating their success and expansion. From project planning and business analyses to crisis management, digital transformation, and supply chain optimization, we stand ready to support our clients wherever and whenever they need us.
+                <span style={{ color: '#d4cfc4', fontWeight: '600' }}>Help businesses build faster, smarter, and at scale.</span>
               </p>
             </div>
 
@@ -779,20 +781,20 @@ export default function Home() {
               }}>
                 {[
                   {
-                    title: "Digital Products Growth",
-                    description: "Experienced in propelling the expansion of digital products by devising strategic blueprints, fine-tuning user engagement tactics, and harnessing data analytics to amplify product efficacy and market penetration."
+                    title: "AI-Powered Product Development",
+                    description: "Build and scale AI-native products from MVP to production — LLM integrations, RAG pipelines, agents, and workflows that ship on real infrastructure, not slide decks."
                   },
                   {
-                    title: "Change Management",
-                    description: "Experienced in spearheading and guiding organizational change initiatives, with a talent for crafting and executing plans that foster seamless transitions, reduce disturbances, and bolster stakeholder engagement amidst substantial transformations."
+                    title: "Technical Transformation",
+                    description: "Migrate legacy systems, modernize stacks, and reduce technical debt with clear roadmaps, incremental delivery, and engineering teams that own the outcome."
                   },
                   {
-                    title: "Product Development",
-                    description: "Experienced in building products from Inception. Proficient in managing the entire product development lifecycle, from ideation and conceptualization to market launch, emphasizing user-centric design, agile methodologies, and cross-functional collaboration."
+                    title: "Full-Stack Engineering",
+                    description: "End-to-end web, mobile, and API development with Next.js, React, Node, cloud deployment, and CI/CD — the stack clients post jobs for on Upwork."
                   },
                   {
-                    title: "People Analytics",
-                    description: "Skilled in using People Analytics for digital transformation, enhancing workforce planning, engagement, and organizational effectiveness. Expert in integrating advanced tools to align HR processes with digital innovation for growth and adaptability."
+                    title: "Data & Business Intelligence",
+                    description: "Dashboards, data pipelines, ETL, and predictive models in Python and R — turning raw data into decisions stakeholders can act on."
                   }
                 ].map((expertise, index) => (
                   <div key={index} style={{
@@ -849,7 +851,7 @@ export default function Home() {
                 marginBottom: '30px',
                 textAlign: 'center',
               }}>
-                Technologies We Work With
+                Our Tech Stack
               </h2>
 
               <div style={{
@@ -867,7 +869,7 @@ export default function Home() {
                   color: 'rgba(255, 255, 255, 0.7)',
                   fontStyle: 'italic',
                 }}>
-                  And many more cutting-edge tools to deliver exceptional results
+                  Plus the tools your stack needs — we match the right tech to each project
                 </p>
               </div>
             </div>
@@ -889,7 +891,7 @@ export default function Home() {
                 lineHeight: '1.6',
                 marginBottom: '30px',
               }}>
-                If you&apos;re interested in discovering how consulting services can contribute to your or your business&apos;s growth, 
+                Have a project in mind? Tell us what you&apos;re building — we&apos;ll show you how we can help you ship it, 
                 <span style={{ color: '#d4cfc4', fontWeight: '600' }}> schedule an introductory meeting with us today.</span>
               </p>
               <div style={{
@@ -959,7 +961,7 @@ export default function Home() {
                 maxWidth: '800px',
                 margin: '0 auto',
               }}>
-                Comprehensive solutions spanning data analytics, project management, product innovation, talent acquisition, and web development.
+                AI, full-stack engineering, data science, embedded systems, and delivery — built for teams that need code shipped, not decks delivered.
               </p>
             </div>
 

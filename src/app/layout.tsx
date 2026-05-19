@@ -16,22 +16,24 @@ const body = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Metasys Consulting - Strategic Business Solutions",
+  title: "Metasys Consulting — Engineering, AI & Embedded Systems",
   description:
-    "Transform your business with expert consulting services. We deliver strategic solutions that drive growth, optimize operations, and accelerate success.",
+    "Technical agency for startups and enterprises. Full-stack development, AI integration, data science, and embedded systems — from MVP to production.",
   keywords:
-    "business consulting, strategy, operations, digital transformation, management consulting",
+    "full-stack development, AI integration, LLM, RAG, data science, embedded systems, ESP32, firmware, Upwork agency",
   authors: [{ name: "Metasys Consulting" }],
   openGraph: {
-    title: "Metasys Consulting - Strategic Business Solutions",
-    description: "Transform your business with expert consulting services.",
+    title: "Metasys Consulting — Engineering, AI & Embedded Systems",
+    description:
+      "We build products. We ship code. Strategy, engineering, and AI under one roof.",
     type: "website",
     url: "https://metasysconsulting.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Metasys Consulting - Strategic Business Solutions",
-    description: "Transform your business with expert consulting services.",
+    title: "Metasys Consulting — Engineering, AI & Embedded Systems",
+    description:
+      "We build products. We ship code. Strategy, engineering, and AI under one roof.",
   },
 };
 
