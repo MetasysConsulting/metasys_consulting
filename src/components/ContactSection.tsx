@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type CSSProperties, type FocusEvent } from "react";
-import { BOOKING_URL, CONTACT_EMAIL } from "@/lib/site-config";
+import { CONTACT_EMAIL } from "@/lib/site-config";
 
 const fieldStyle: CSSProperties = {
   width: "100%",
@@ -62,7 +62,7 @@ export function ContactSection({ showHeading = true }: ContactSectionProps) {
         background: "linear-gradient(135deg, #0a0a0a, #1a1a2e)",
       }}
     >
-      <div style={{ maxWidth: "1100px", margin: "0 auto", width: "100%" }}>
+      <div style={{ maxWidth: "640px", margin: "0 auto", width: "100%" }}>
         {showHeading && (
           <div style={{ textAlign: "center", marginBottom: "56px" }}>
             <h2
@@ -89,30 +89,21 @@ export function ContactSection({ showHeading = true }: ContactSectionProps) {
                 lineHeight: 1.6,
               }}
             >
-              Tell us about your project — we&apos;ll get back within one business day.
+              Send us a message and we&apos;ll get back to you.
             </p>
           </div>
         )}
 
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "40px",
-            alignItems: "start",
+            background: "rgba(0, 20, 40, 0.4)",
+            backdropFilter: "blur(15px)",
+            padding: "40px",
+            borderRadius: "20px",
+            border: "1px solid rgba(200, 190, 170, 0.2)",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
           }}
         >
-          {/* Message form */}
-          <div
-            style={{
-              background: "rgba(0, 20, 40, 0.4)",
-              backdropFilter: "blur(15px)",
-              padding: "40px",
-              borderRadius: "20px",
-              border: "1px solid rgba(200, 190, 170, 0.2)",
-              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
-            }}
-          >
             <form
               onSubmit={handleSubmit}
               style={{ display: "flex", flexDirection: "column", gap: "22px" }}
@@ -208,97 +199,25 @@ export function ContactSection({ showHeading = true }: ContactSectionProps) {
                 </p>
               )}
             </form>
-          </div>
 
-          {/* Discovery call + email */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            <div
+            <p
               style={{
-                background: "rgba(0, 20, 40, 0.35)",
-                backdropFilter: "blur(15px)",
-                padding: "36px",
-                borderRadius: "20px",
-                border: "1px solid rgba(200, 190, 170, 0.2)",
+                fontFamily: "var(--font-body), system-ui, sans-serif",
+                fontSize: "0.95rem",
+                color: "rgba(255, 255, 255, 0.6)",
+                marginTop: "28px",
+                marginBottom: 0,
+                textAlign: "center",
               }}
             >
-              <h3
-                style={{
-                  fontFamily: "var(--font-body), system-ui, sans-serif",
-                  fontSize: "1.35rem",
-                  fontWeight: 600,
-                  color: "#d4cfc4",
-                  marginBottom: "12px",
-                }}
-              >
-                Free 30-Min Discovery Call
-              </h3>
-              <p
-                style={{
-                  fontFamily: "var(--font-body), system-ui, sans-serif",
-                  fontSize: "1rem",
-                  color: "rgba(255, 255, 255, 0.8)",
-                  lineHeight: 1.65,
-                  marginBottom: "24px",
-                }}
-              >
-                Tell us about your project and we&apos;ll figure out the best path
-                forward together.
-              </p>
-              <a
-                href={BOOKING_URL}
-                target={BOOKING_URL.startsWith("mailto") ? undefined : "_blank"}
-                rel={BOOKING_URL.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                style={{
-                  display: "inline-block",
-                  textDecoration: "none",
-                  background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
-                  padding: "14px 28px",
-                  borderRadius: "12px",
-                  fontFamily: "var(--font-body), system-ui, sans-serif",
-                  fontSize: "1rem",
-                  fontWeight: 600,
-                  color: "#0a0a0a",
-                  textAlign: "center",
-                }}
-              >
-                Schedule a Call
-              </a>
-            </div>
-
-            <div
-              style={{
-                padding: "24px 28px",
-                borderRadius: "16px",
-                border: "1px solid rgba(200, 190, 170, 0.15)",
-                background: "rgba(200, 190, 170, 0.06)",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "var(--font-body), system-ui, sans-serif",
-                  fontSize: "0.85rem",
-                  color: "rgba(255, 255, 255, 0.55)",
-                  marginBottom: "8px",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                }}
-              >
-                Email
-              </p>
+              Or email us at{" "}
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                style={{
-                  fontFamily: "var(--font-body), system-ui, sans-serif",
-                  fontSize: "1.1rem",
-                  fontWeight: 500,
-                  color: "#d4cfc4",
-                  textDecoration: "none",
-                }}
+                style={{ color: "#d4cfc4", textDecoration: "none" }}
               >
                 {CONTACT_EMAIL}
               </a>
-            </div>
-          </div>
+            </p>
         </div>
       </div>
     </section>
