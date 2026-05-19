@@ -67,10 +67,10 @@ export function ContactSection({ showHeading = true }: ContactSectionProps) {
           <div style={{ textAlign: "center", marginBottom: "56px" }}>
             <h2
               style={{
-                fontFamily: "var(--font-display), Georgia, serif",
+                fontFamily: "var(--font-display), system-ui, sans-serif",
                 fontSize: "clamp(2.25rem, 5vw, 3.25rem)",
                 fontWeight: 700,
-                background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
+                background: "linear-gradient(90deg, #2563eb 0%, #e89b2b 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -165,15 +165,15 @@ export function ContactSection({ showHeading = true }: ContactSectionProps) {
               <button
                 type="submit"
                 style={{
-                  background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
+                  background: "#2563eb",
                   padding: "16px 28px",
-                  borderRadius: "12px",
+                  borderRadius: "9999px",
                   border: "none",
                   cursor: "pointer",
                   fontFamily: "var(--font-body), system-ui, sans-serif",
                   fontSize: "1.05rem",
                   fontWeight: 600,
-                  color: "#0a0a0a",
+                  color: "#ffffff",
                   marginTop: "4px",
                 }}
               >

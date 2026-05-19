@@ -14,7 +14,7 @@ export default function CaseStudyNotFound() {
       >
         <h1
           style={{
-            fontFamily: "var(--font-display), Georgia, serif",
+            fontFamily: "var(--font-display), system-ui, sans-serif",
             fontSize: "2.5rem",
             background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
             WebkitBackgroundClip: "text",

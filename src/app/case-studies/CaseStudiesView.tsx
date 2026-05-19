@@ -68,7 +68,7 @@ export function CaseStudiesView() {
         <div style={{ maxWidth: "1400px", margin: "0 auto", width: "100%", textAlign: "center" }}>
           <h1
             style={{
-              fontFamily: "var(--font-display), Georgia, serif",
+              fontFamily: "var(--font-display), system-ui, sans-serif",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
               fontWeight: "700",
               background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",

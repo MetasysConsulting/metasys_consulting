@@ -64,7 +64,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
           <Link href="/" style={{ textDecoration: "none" }}>
             <span
               style={{
-                fontFamily: "var(--font-display), Georgia, serif",
+                fontFamily: "var(--font-display), system-ui, sans-serif",
                 fontSize: "1.35rem",
                 fontWeight: 600,
                 color: "#d4cfc4",
@@ -103,7 +103,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <h1
             style={{
-              fontFamily: "var(--font-display), Georgia, serif",
+              fontFamily: "var(--font-display), system-ui, sans-serif",
               fontSize: "clamp(2.25rem, 5vw, 3.5rem)",
               fontWeight: 600,
               color: "#d4cfc4",
@@ -177,7 +177,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
       >
         <h2
           style={{
-            fontFamily: "var(--font-display), Georgia, serif",
+            fontFamily: "var(--font-display), system-ui, sans-serif",
             fontSize: "2rem",
             color: "#d4cfc4",
             marginBottom: "32px",

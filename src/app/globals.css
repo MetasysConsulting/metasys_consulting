@@ -21,30 +21,57 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-display), Georgia, 'Times New Roman', serif;
+  font-family: var(--font-display), system-ui, sans-serif;
 }
 
 .font-body {
   font-family: var(--font-body), system-ui, sans-serif;
 }
 
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
 :root {
-  --ink: #1c1c1c;
-  --muted: #6b6560;
-  --accent: #8b7355;
-  --accent-light: #a89078;
-  --surface: #f7f5f1;
-  --surface-elevated: #ffffff;
-  --border: #e5e0d8;
-  --border-strong: #d4cdc3;
-  --primary-blue: #2c3e50;
-  --primary-blue-dark: #1e2d3d;
-  --secondary-cyan: #8b7355;
-  --text-light: #e5e5e5;
-  --text-muted: #a0a0a0;
-  --surface-dark: #1a1a1a;
-  --surface-darker: #0f0f0f;
-  --border-subtle: #333;
+  --ink: #0a0a0a;
+  --surface: #141414;
+  --surface-elevated: #1a1a1a;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --accent: #e89b2b;
+  --text-primary: #f8fafc;
+  --text-secondary: #9ca3af;
+  --border: rgba(255, 255, 255, 0.1);
+  --glow-blue: rgba(37, 99, 235, 0.35);
+  --glow-amber: rgba(232, 155, 43, 0.3);
+  /* legacy aliases used in components */
+  --muted: var(--text-secondary);
+  --accent-light: #f0b04a;
+  --primary-blue: var(--primary);
+  --primary-blue-dark: var(--primary-hover);
+  --secondary-cyan: var(--accent);
+  --text-light: var(--text-primary);
+  --text-muted: var(--text-secondary);
+  --surface-dark: var(--surface);
+  --surface-darker: var(--ink);
+  --border-subtle: var(--border);
+  --border-strong: rgba(255, 255, 255, 0.14);
+}
+
+.brand-grad-text {
+  background: linear-gradient(90deg, #2563eb 0%, #e89b2b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-label {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 ::-webkit-scrollbar {
@@ -52,16 +79,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--surface);
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
+  background: #1f1f1f;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--muted);
+  background: #2a2a2a;
 }
 
 .gradient-blue {
@@ -151,7 +178,7 @@ body {
 }
 
 .prose-case h2 {
-  font-family: var(--font-display), Georgia, serif;
+  font-family: var(--font-display), system-ui, sans-serif;
   font-size: 1.75rem;
   font-weight: 500;
   color: var(--ink);
@@ -191,7 +218,7 @@ body {
 }
 
 .prose-case-dark h2 {
-  font-family: var(--font-display), Georgia, serif;
+  font-family: var(--font-display), system-ui, sans-serif;
   font-size: 1.75rem;
   font-weight: 500;
   color: #ffffff;

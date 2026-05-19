@@ -34,7 +34,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
   }, []);
 
   const sectionTitle = {
-    fontFamily: "var(--font-display), Georgia, serif",
+    fontFamily: "var(--font-display), system-ui, sans-serif",
     fontSize: "clamp(1.5rem, 3vw, 2rem)",
     fontWeight: "700",
     background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
@@ -87,7 +87,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
           </Link>
           <h1
             style={{
-              fontFamily: "var(--font-display), Georgia, serif",
+              fontFamily: "var(--font-display), system-ui, sans-serif",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
               fontWeight: "700",
               background: "linear-gradient(135deg, #f5f3ef, #e8e4dc, #b8a88a)",

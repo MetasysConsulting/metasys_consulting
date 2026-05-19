@@ -37,14 +37,14 @@ const navItemStyle: CSSProperties = {
 };
 
 const logoStyle: CSSProperties = {
-  fontFamily: "var(--font-display), Georgia, serif",
+  fontFamily: "var(--font-display), system-ui, sans-serif",
   fontSize: "24px",
-  fontWeight: "700",
-  background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
+  fontWeight: "800",
+  letterSpacing: "-0.02em",
+  background: "linear-gradient(90deg, #2563eb 0%, #e89b2b 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
   backgroundClip: "text",
-  textShadow: "0 0 20px rgba(200, 190, 170, 0.3)",
 };
 
 function hoverNavItem(e: MouseEvent<HTMLElement>, enter: boolean) {
@@ -62,8 +62,8 @@ function hoverCta(e: MouseEvent<HTMLElement>, enter: boolean) {
   gsap.to(e.currentTarget, {
     scale: enter ? 1.05 : 1,
     boxShadow: enter
-      ? "0 6px 25px rgba(200, 190, 170, 0.5)"
-      : "0 4px 15px rgba(200, 190, 170, 0.3)",
+      ? "0 6px 28px rgba(37, 99, 235, 0.5)"
+      : "0 4px 20px rgba(37, 99, 235, 0.35)",
     duration: 0.3,
     ease: "power2.out",
   });
@@ -118,13 +118,13 @@ export function AppNavigation({ variant = "static" }: AppNavigationProps) {
                 fontFamily: "var(--font-body), system-ui, sans-serif",
                 fontSize: "16px",
                 fontWeight: "600",
-                color: "#000",
-                background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
+                background: "#2563eb",
                 padding: "12px 24px",
-                borderRadius: "12px",
+                borderRadius: "9999px",
                 cursor: "pointer",
                 border: "none",
-                boxShadow: "0 4px 15px rgba(200, 190, 170, 0.3)",
+                color: "#fff",
+                boxShadow: "0 4px 20px rgba(37, 99, 235, 0.35)",
               }}
               onMouseEnter={(e) => hoverCta(e, true)}
               onMouseLeave={(e) => hoverCta(e, false)}

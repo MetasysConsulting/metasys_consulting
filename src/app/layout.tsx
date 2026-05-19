@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { JetBrains_Mono, Manrope, Outfit } from "next/font/google";
 import "./globals.css";
 import { SmoothScrolling } from "@/components/SmoothScrolling";
 
-const display = Cormorant_Garamond({
+const display = Outfit({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const body = DM_Sans({
+const body = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -24,16 +30,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Metasys Consulting" }],
   openGraph: {
     title: "Metasys Consulting — Engineering, AI & Embedded Systems",
-    description:
-      "Strategy, engineering, and AI — from idea to deployment.",
+    description: "Strategy, engineering, and AI — from idea to deployment.",
     type: "website",
     url: "https://metasysconsulting.com",
   },
   twitter: {
     card: "summary_large_image",
     title: "Metasys Consulting — Engineering, AI & Embedded Systems",
-    description:
-      "Strategy, engineering, and AI — from idea to deployment.",
+    description: "Strategy, engineering, and AI — from idea to deployment.",
   },
 };
 
@@ -43,7 +47,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html
+      lang="en"
+      className={`${display.variable} ${body.variable} ${mono.variable}`}
+    >
       <body className="font-body antialiased bg-[#0a0a0a] text-white overflow-x-hidden">
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
