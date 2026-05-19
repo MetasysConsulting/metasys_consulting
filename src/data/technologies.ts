@@ -1,28 +1,33 @@
 export type Technology = {
   name: string;
-  /** Simple Icons slug — https://simpleicons.org */
-  slug: string;
-  /** Brand hex without # */
-  color: string;
+  /** Direct URL to brand SVG (Simple Icons v12 — last release with most Microsoft/enterprise logos) */
+  logo: string;
 };
 
+/** Simple Icons on jsDelivr — pinned to v12 so logos like Power BI stay available */
+const si = (slug: string) =>
+  `https://cdn.jsdelivr.net/npm/simple-icons@12.4.0/icons/${slug}.svg`;
+
 export const TECHNOLOGIES: Technology[] = [
-  { name: "Google Analytics", slug: "googleanalytics", color: "E37400" },
-  { name: "Power BI", slug: "powerbi", color: "F2C811" },
-  { name: "Salesforce", slug: "salesforce", color: "00A1E0" },
-  { name: "Python", slug: "python", color: "3776AB" },
-  { name: "R", slug: "r", color: "276DC3" },
-  { name: "AWS", slug: "amazonaws", color: "FF9900" },
-  { name: "Azure", slug: "microsoftazure", color: "0078D4" },
-  { name: "SQL Server", slug: "microsoftsqlserver", color: "CC2927" },
-  { name: "HTML5", slug: "html5", color: "E34F26" },
-  { name: "GitHub", slug: "github", color: "FFFFFF" },
-  { name: "HubSpot", slug: "hubspot", color: "FF7A59" },
-  { name: "Tableau", slug: "tableau", color: "E97627" },
-  { name: "QuickBooks", slug: "quickbooks", color: "2CA01C" },
-  { name: "Jira", slug: "jira", color: "0052CC" },
-  { name: "Confluence", slug: "confluence", color: "172B4D" },
-  { name: "Monday.com", slug: "mondaydotcom", color: "F62B54" },
-  { name: "Excel", slug: "microsoftexcel", color: "217346" },
-  { name: "Canva", slug: "canva", color: "00C4CC" },
+  { name: "Google Analytics", logo: si("googleanalytics") },
+  { name: "Power BI", logo: si("powerbi") },
+  { name: "Salesforce", logo: si("salesforce") },
+  { name: "Python", logo: si("python") },
+  { name: "R", logo: si("r") },
+  { name: "AWS", logo: si("amazonwebservices") },
+  { name: "Azure", logo: si("microsoftazure") },
+  { name: "SQL Server", logo: si("microsoftsqlserver") },
+  { name: "HTML5", logo: si("html5") },
+  { name: "GitHub", logo: si("github") },
+  { name: "HubSpot", logo: si("hubspot") },
+  { name: "Tableau", logo: si("tableau") },
+  { name: "QuickBooks", logo: si("quickbooks") },
+  { name: "Jira", logo: si("jira") },
+  { name: "Confluence", logo: si("confluence") },
+  {
+    name: "Monday.com",
+    logo: "https://cdn.worldvectorlogo.com/logos/monday-1.svg",
+  },
+  { name: "Excel", logo: si("microsoftexcel") },
+  { name: "Canva", logo: si("canva") },
 ];

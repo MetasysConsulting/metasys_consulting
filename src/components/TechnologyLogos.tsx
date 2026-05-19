@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
 import { gsap } from "gsap";
 import type { Technology } from "@/data/technologies";
 
@@ -10,9 +8,6 @@ type TechnologyLogosProps = {
 };
 
 function TechLogoCard({ tech }: { tech: Technology }) {
-  const [failed, setFailed] = useState(false);
-  const logoSrc = `https://cdn.simpleicons.org/${tech.slug}/${tech.color}`;
-
   return (
     <div
       className="tech-logo-card"
@@ -49,35 +44,33 @@ function TechLogoCard({ tech }: { tech: Technology }) {
     >
       <div
         style={{
-          width: 48,
-          height: 48,
+          width: 56,
+          height: 56,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          position: "relative",
+          background: "rgba(255, 255, 255, 0.94)",
+          borderRadius: "10px",
+          padding: "6px",
         }}
       >
-        {!failed ? (
-          <Image
-            src={logoSrc}
-            alt={`${tech.name} logo`}
-            width={48}
-            height={48}
-            style={{ objectFit: "contain", width: "auto", height: "auto", maxWidth: 48, maxHeight: 48 }}
-            onError={() => setFailed(true)}
-          />
-        ) : (
-          <span
-            style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "1.25rem",
-              fontWeight: 600,
-              color: "#d4cfc4",
-            }}
-          >
-            {tech.name.charAt(0)}
-          </span>
-        )}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={tech.logo}
+          alt={`${tech.name} logo`}
+          width={48}
+          height={48}
+          loading="lazy"
+          decoding="async"
+          style={{
+            width: "auto",
+            height: "auto",
+            maxWidth: 48,
+            maxHeight: 48,
+            objectFit: "contain",
+            display: "block",
+          }}
+        />
       </div>
       <span
         style={{
@@ -106,7 +99,7 @@ export function TechnologyLogos({ technologies }: TechnologyLogosProps) {
       }}
     >
       {technologies.map((tech) => (
-        <TechLogoCard key={tech.slug} tech={tech} />
+        <TechLogoCard key={tech.name} tech={tech} />
       ))}
     </div>
   );
