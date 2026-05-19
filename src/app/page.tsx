@@ -10,14 +10,104 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+/** Persists for the tab session; reset on full page reload. */
+let homeHasMountedInSession = false;
+
+function shouldPlayHeroIntro(): boolean {
+  if (homeHasMountedInSession) return false;
+  homeHasMountedInSession = true;
+  return true;
+}
+
 export default function Home() {
-  const [startAnimation, setStartAnimation] = useState(false);
+  const playIntro = useRef(shouldPlayHeroIntro()).current;
+  const [startAnimation, setStartAnimation] = useState(!playIntro);
   const navRef = useRef<HTMLDivElement>(null);
   const heroHeadingRef = useRef<HTMLDivElement>(null);
   const heroDescriptionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Start video reveal animation
+    const setupScrollAnimations = () => {
+      gsap.utils.toArray(".scroll-section").forEach((section) => {
+        gsap.fromTo(
+          section as gsap.TweenTarget,
+          { y: 100, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section as Element,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+
+      gsap.utils.toArray(".service-card").forEach((card) => {
+        gsap.fromTo(
+          card as gsap.TweenTarget,
+          { y: 80, opacity: 0, scale: 0.9 },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card as Element,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+
+      gsap.utils.toArray(".client-logo").forEach((logo) => {
+        gsap.fromTo(
+          logo as gsap.TweenTarget,
+          { scale: 0, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.6,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+              trigger: logo as Element,
+              start: "top 90%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+    };
+
+    if (!playIntro) {
+      if (navRef.current) {
+        gsap.set(navRef.current, {
+          y: 0,
+          opacity: 1,
+          backdropFilter: "blur(20px)",
+        });
+      }
+      gsap.set(".nav-item", { y: 0, opacity: 1 });
+      if (heroHeadingRef.current) {
+        gsap.set(heroHeadingRef.current, { x: 0, opacity: 1, rotateY: 0 });
+      }
+      if (heroDescriptionRef.current) {
+        gsap.set(heroDescriptionRef.current, { x: 0, opacity: 1, rotateY: 0 });
+      }
+      gsap.set(".hero-subtitle", { y: 0, opacity: 1 });
+      gsap.set(".hero-cta", { scale: 1, opacity: 1 });
+
+      const scrollTimer = setTimeout(setupScrollAnimations, 100);
+      return () => clearTimeout(scrollTimer);
+    }
+
+    // Start video reveal animation (full page load / refresh only)
     const timer = setTimeout(() => {
       setStartAnimation(true);
     }, 200);
@@ -127,74 +217,7 @@ export default function Home() {
       );
     }, 2500);
 
-    // Setup scroll animations after a delay
-    const scrollTimer = setTimeout(() => {
-              // Animate sections on scroll
-    gsap.utils.toArray(".scroll-section").forEach((section) => {
-      gsap.fromTo(section as gsap.TweenTarget,
-          {
-            y: 100,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 1.2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: section as Element,
-              start: "top 80%",
-              end: "bottom 20%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      });
-
-      // Service cards animation
-      gsap.utils.toArray(".service-card").forEach((card) => {
-        gsap.fromTo(card as gsap.TweenTarget,
-          {
-            y: 80,
-            opacity: 0,
-            scale: 0.9,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: card as Element,
-              start: "top 85%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      });
-
-      // Client logos animation
-      gsap.utils.toArray(".client-logo").forEach((logo) => {
-        gsap.fromTo(logo as gsap.TweenTarget,
-          {
-            scale: 0,
-            opacity: 0,
-          },
-          {
-            scale: 1,
-            opacity: 1,
-            duration: 0.6,
-            ease: "back.out(1.7)",
-            scrollTrigger: {
-              trigger: logo as Element,
-              start: "top 90%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      });
-    }, 3800);
+    const scrollTimer = setTimeout(setupScrollAnimations, 3800);
 
     return () => {
       clearTimeout(timer);
@@ -202,7 +225,7 @@ export default function Home() {
       clearTimeout(heroTimer);
       clearTimeout(scrollTimer);
     };
-  }, []);
+  }, [playIntro]);
 
   const services = [
     {
@@ -263,7 +286,7 @@ export default function Home() {
           width: '100vw', 
           position: 'relative',
           overflow: 'hidden',
-          backgroundColor: 'white'
+          background: 'linear-gradient(135deg, #0a0a0a 0%, #101827 45%, #1a1a2e 100%)',
         }}>
           {/* Full-size background video with animated clip-path */}
           <video 
@@ -305,7 +328,7 @@ export default function Home() {
               left: '0',
               width: '100%',
               zIndex: 1000,
-              opacity: 0,
+              opacity: playIntro ? 0 : 1,
               padding: '20px 40px',
               background: 'rgba(0, 20, 40, 0.1)',
               backdropFilter: 'blur(20px)',
@@ -573,7 +596,7 @@ export default function Home() {
               alignItems: 'center',
             }}>
               {/* Left Side - Heading */}
-              <div ref={heroHeadingRef} style={{ opacity: 0 }}>
+              <div ref={heroHeadingRef} style={{ opacity: playIntro ? 0 : 1 }}>
                 <h1 style={{
                   fontFamily: 'var(--font-display), Georgia, serif',
                   fontSize: 'clamp(3rem, 6vw, 5rem)',
@@ -598,7 +621,7 @@ export default function Home() {
                     fontWeight: '400',
                     color: '#d4cfc4',
                     marginBottom: '30px',
-                    opacity: 0,
+                    opacity: playIntro ? 0 : 1,
                   }}
                 >
                   Digital Agency & Product Innovation Organization
@@ -618,7 +641,7 @@ export default function Home() {
                     border: 'none',
                     boxShadow: '0 8px 25px rgba(200, 190, 170, 0.4)',
                     display: 'inline-block',
-                    opacity: 0,
+                    opacity: playIntro ? 0 : 1,
                     transform: 'perspective(1000px)',
                   }}
                   onMouseEnter={(e) => {
@@ -643,7 +666,7 @@ export default function Home() {
               </div>
 
               {/* Right Side - Description */}
-              <div ref={heroDescriptionRef} style={{ opacity: 0 }}>
+              <div ref={heroDescriptionRef} style={{ opacity: playIntro ? 0 : 1 }}>
                 <p style={{
                   fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
