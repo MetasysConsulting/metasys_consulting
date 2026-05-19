@@ -5,50 +5,39 @@ import { CASE_STUDIES } from "@/data/case-studies";
 
 export default function CaseStudiesIndexPage() {
   return (
-    <div className="min-h-screen bg-[var(--surface)]">
-      <SiteHeader variant="light" />
-
+    <>
+      <SiteHeader />
       <main>
-        <section className="border-b border-[var(--border)] bg-white px-6 py-16 md:px-8 md:py-24">
-          <div className="mx-auto max-w-6xl">
-            <p className="font-body mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--accent)]">
-              Selected work
-            </p>
-            <h1 className="font-display mb-6 max-w-3xl text-4xl font-medium leading-tight text-[var(--ink)] md:text-5xl">
-              Case studies
+        <section className="px-6 pb-16 pt-12 md:px-10 md:pb-20 md:pt-16" style={{ background: "linear-gradient(135deg, #0a0a0a, #1a1a2e)" }}>
+          <div className="mx-auto max-w-[1400px]">
+            <p className="font-body mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#d4cfc4]">Selected work</p>
+            <h1 className="font-display mb-6 max-w-3xl text-4xl font-medium leading-tight md:text-5xl">
+              <span className="bg-gradient-to-br from-[#f5f3ef] via-[#e8e4dc] to-[#b8a88a] bg-clip-text text-transparent">Case studies</span>
             </h1>
-            <p className="font-body max-w-2xl text-lg leading-relaxed text-[var(--muted)]">
-              Engagements across healthcare, public programs, enterprise data, and digital
-              operations—presented with the clarity of a design practice portfolio.
+            <p className="font-body max-w-2xl text-lg leading-relaxed text-white/75">
+              Representative engagements across healthcare, public programs, enterprise data, and digital operations.
             </p>
           </div>
         </section>
-
-        <section className="px-6 py-16 md:px-8 md:py-20">
-          <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <section className="px-6 py-16 md:px-10 md:py-20" style={{ background: "linear-gradient(135deg, #1a1a2e, #16213e)" }}>
+          <div className="mx-auto grid max-w-[1400px] gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {CASE_STUDIES.map((study, index) => (
               <CaseStudyCard key={study.slug} study={study} index={index} />
             ))}
           </div>
         </section>
-
-        <section className="border-t border-[var(--border)] bg-white px-6 py-14 md:px-8">
-          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+        <section className="border-t border-[rgba(200,190,170,0.15)] px-6 py-14 md:px-10" style={{ background: "linear-gradient(135deg, #16213e, #0a0a0a)" }}>
+          <div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div>
-              <p className="font-display text-2xl text-[var(--ink)]">Discuss your initiative</p>
-              <p className="font-body mt-2 text-[var(--muted)]">
-                We partner with organizations on strategy, data, and product delivery.
-              </p>
+              <p className="font-display text-2xl text-white">Discuss your initiative</p>
+              <p className="font-body mt-2 text-white/65">We partner on strategy, data, and product delivery.</p>
             </div>
-            <Link
-              href="/contact"
-              className="font-body inline-flex border border-[var(--ink)] bg-[var(--ink)] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--accent)] hover:border-[var(--accent)]"
-            >
+            <Link href="/contact" className="font-body rounded-lg bg-gradient-to-br from-[#e8e4dc] to-[#b8a88a] px-6 py-3 text-sm font-semibold text-[#0a0a0a] shadow-[0_4px_16px_rgba(200,190,170,0.25)] hover:opacity-90">
               Contact us
             </Link>
           </div>
         </section>
       </main>
-    </div>
+    </>
   );
 }

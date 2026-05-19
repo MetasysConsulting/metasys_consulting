@@ -42,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body className="font-body antialiased bg-[var(--surface)] text-[var(--ink)] overflow-x-hidden">
+      <body className="font-body antialiased bg-[#0a0a0a] text-white overflow-x-hidden">
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>

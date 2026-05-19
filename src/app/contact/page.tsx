@@ -91,7 +91,7 @@ export default function ContactPage() {
   return (
     <>
       <div style={{ backgroundColor: '#0a0a0a', minHeight: '100vh' }}>
-        <SiteHeader variant="dark" />
+        <SiteHeader />
 
         {/* Hero Section */}
         <section className="scroll-section" style={{

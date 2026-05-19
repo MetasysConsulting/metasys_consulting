@@ -8,15 +8,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Case Studies | Metasys Consulting",
     description:
-      "Deep dives into how Metasys delivers data, AI, and product outcomes for complex, regulated, and high-scale environments.",
+      "How Metasys delivers data, AI, and product outcomes for complex, regulated, and high-scale environments.",
     type: "website",
   },
 };
 
-export default function CaseStudiesLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
-  return children;
+export default function CaseStudiesLayout({ children }: { children: ReactNode }) {
+  return (
+    <div className="min-h-screen bg-[#0a0a0a] text-white">{children}</div>
+  );
 }
