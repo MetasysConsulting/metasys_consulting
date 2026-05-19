@@ -33,7 +33,7 @@ export function ClientsSection() {
             marginBottom: "30px",
           }}
         >
-          Our Prestigious Clients
+          Our Clients
         </h2>
         <p
           style={{
