@@ -103,7 +103,7 @@ export const CLIENTS: Client[] = [
     industry: "Manufacturing · Retail",
     description:
       "Order-management product redesign and inventory analytics — built quoting workflow + reporting for ops team.",
-    logo: "/clients/designer-metals.png",
+    logo: "/clients/designer-metals.jpeg",
   },
   {
     name: "Empire Sports",

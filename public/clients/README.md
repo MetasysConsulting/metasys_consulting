@@ -10,12 +10,12 @@ If a logo file is missing, the site shows a letter fallback. Replace or add PNG/
 | `cook-boardman.png` | Cook & Boardman | Favicon (cookandboardman.com) |
 | `prepay-nation.png` | Prepay Nation | Favicon (prepaynation.com) |
 | `innovative-analytics.png` | Innovative Analytics — CDAP | Favicon (innovative-analytics.com) |
-| `medirate.png` | MediRate | Favicon (medirate.com) |
+| `medirate.png` | MediRate | Official logo (top-black) |
 | `trusum-solutions.png` | Trusum Solutions | Favicon (trusum.com) — verify official mark |
 | `timebox-solutions.png` | Timebox Solutions | Favicon (timebox.ai) |
 | `everstell.svg` | Everstell | Placeholder cube — replace with official asset |
 | `ebunch-marketing.png` | Ebunch Marketing | **Missing** — add official logo |
-| `designer-metals.png` | Designer Metals | **Missing** — add official logo |
+| `designer-metals.jpeg` | Designer Metals | Official logo |
 | `empire-sports.png` | Empire Sports | **Missing** — add official logo |
 
 | `barclays.svg` | Barclays | Official brand asset |
