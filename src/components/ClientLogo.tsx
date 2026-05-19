@@ -20,15 +20,15 @@ export function ClientLogo({ name, logo, size = 56 }: ClientLogoProps) {
           height: size,
           borderRadius: 12,
           background:
-            "linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(232, 155, 43, 0.1))",
-          border: "1px solid rgba(255, 255, 255, 0.12)",
+            "linear-gradient(135deg, rgba(232, 228, 220, 0.2), rgba(184, 168, 138, 0.12))",
+          border: "1px solid rgba(200, 190, 170, 0.3)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontFamily: "var(--font-mono), ui-monospace, monospace",
+          fontFamily: "var(--font-display), system-ui, sans-serif",
           fontSize: size * 0.42,
           fontWeight: 600,
-          color: "#e89b2b",
+          color: "#d4cfc4",
         }}
         aria-hidden
       >
@@ -43,7 +43,7 @@ export function ClientLogo({ name, logo, size = 56 }: ClientLogoProps) {
         width: size + 16,
         height: size + 16,
         borderRadius: 14,
-        background: "#ffffff",
+        background: "rgba(255, 255, 255, 0.96)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -72,4 +72,3 @@ export function ClientLogo({ name, logo, size = 56 }: ClientLogoProps) {
     </div>
   );
 }
-

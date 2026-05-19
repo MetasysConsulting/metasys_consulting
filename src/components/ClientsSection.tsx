@@ -10,45 +10,49 @@ export function ClientsSection() {
       className="scroll-section"
       style={{
         padding: "120px 40px",
-        background: "linear-gradient(180deg, #0f0f0f 0%, #0a0a0a 100%)",
+        background: "linear-gradient(135deg, #16213e, #0a0a0a)",
       }}
     >
-      <div style={{ maxWidth: "1200px", margin: "0 auto", width: "100%" }}>
-        <p className="section-label" style={{ textAlign: "center", marginBottom: "16px" }}>
-          Trusted partners
-        </p>
+      <div
+        style={{
+          maxWidth: "1400px",
+          margin: "0 auto",
+          width: "100%",
+          textAlign: "center",
+        }}
+      >
         <h2
-          className="brand-grad-text"
           style={{
             fontFamily: "var(--font-display), system-ui, sans-serif",
-            fontSize: "clamp(2rem, 4.5vw, 3.25rem)",
-            fontWeight: 800,
-            letterSpacing: "-0.03em",
-            textAlign: "center",
-            marginBottom: "16px",
+            fontSize: "clamp(2.5rem, 5vw, 4rem)",
+            fontWeight: 700,
+            background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            marginBottom: "30px",
           }}
         >
-          Organizations we&apos;ve worked with
+          Our Prestigious Clients
         </h2>
         <p
           style={{
             fontFamily: "var(--font-body), system-ui, sans-serif",
-            fontSize: "1.05rem",
-            color: "rgba(255, 255, 255, 0.65)",
-            textAlign: "center",
-            maxWidth: "560px",
-            margin: "0 auto 56px",
-            lineHeight: 1.65,
+            fontSize: "1.3rem",
+            color: "rgba(255, 255, 255, 0.8)",
+            marginBottom: "60px",
           }}
         >
-          Finance, media, fintech, and technology teams who rely on us for delivery.
+          Trusted by world-class organizations across finance, technology, media,
+          and analytics
         </p>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-            gap: "20px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "30px",
+            alignItems: "stretch",
           }}
         >
           {CLIENTS.map((client) => (
@@ -56,59 +60,88 @@ export function ClientsSection() {
               key={client.name}
               className="client-logo"
               style={{
-                background: "#141414",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                borderRadius: "16px",
-                padding: "28px 20px 22px",
+                background: "rgba(0, 20, 40, 0.4)",
+                backdropFilter: "blur(15px)",
+                padding: "40px 30px",
+                borderRadius: "20px",
+                border: "1px solid rgba(200, 190, 170, 0.2)",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+                position: "relative",
+                overflow: "hidden",
+                minHeight: "120px",
                 display: "flex",
                 flexDirection: "column",
+                justifyContent: "center",
                 alignItems: "center",
-                gap: "14px",
-                transition: "border-color 0.25s ease, box-shadow 0.25s ease",
-                cursor: "default",
+                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
               }}
               onMouseEnter={(e) => {
                 gsap.to(e.currentTarget, {
-                  borderColor: "rgba(37, 99, 235, 0.5)",
-                  boxShadow: "0 8px 32px rgba(37, 99, 235, 0.12)",
-                  y: -4,
-                  duration: 0.25,
+                  y: -8,
+                  scale: 1.03,
+                  boxShadow: "0 20px 40px rgba(200, 190, 170, 0.2)",
+                  borderColor: "rgba(200, 190, 170, 0.4)",
+                  duration: 0.3,
                 });
               }}
               onMouseLeave={(e) => {
                 gsap.to(e.currentTarget, {
-                  borderColor: "rgba(255, 255, 255, 0.1)",
-                  boxShadow: "0 0 0 rgba(0,0,0,0)",
                   y: 0,
-                  duration: 0.25,
+                  scale: 1,
+                  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
+                  borderColor: "rgba(200, 190, 170, 0.2)",
+                  duration: 0.3,
                 });
               }}
             >
-              <ClientLogo name={client.name} logo={client.logo} size={48} />
-              <div style={{ textAlign: "center" }}>
-                <div
-                  style={{
-                    fontFamily: "var(--font-body), system-ui, sans-serif",
-                    fontSize: "0.95rem",
-                    fontWeight: 600,
-                    color: "#f8fafc",
-                    marginBottom: "4px",
-                  }}
-                >
-                  {client.name}
-                </div>
-                <div
-                  className="font-mono"
-                  style={{
-                    fontSize: "0.65rem",
-                    fontWeight: 500,
-                    color: "rgba(255, 255, 255, 0.45)",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                  }}
-                >
-                  {client.industry}
-                </div>
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "3px",
+                  background: "linear-gradient(90deg, #d4cfc4, #0080ff)",
+                }}
+              />
+
+              <div
+                style={{
+                  marginBottom: "20px",
+                  minHeight: 56,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <ClientLogo name={client.name} logo={client.logo} size={56} />
+              </div>
+
+              <div
+                style={{
+                  fontFamily: "var(--font-body), system-ui, sans-serif",
+                  fontSize: "1.25rem",
+                  fontWeight: 700,
+                  color: "#ffffff",
+                  marginBottom: "6px",
+                  textAlign: "center",
+                }}
+              >
+                {client.name}
+              </div>
+
+              <div
+                style={{
+                  fontFamily: "var(--font-body), system-ui, sans-serif",
+                  fontSize: "0.85rem",
+                  fontWeight: 400,
+                  color: "#d4cfc4",
+                  textAlign: "center",
+                  opacity: 0.8,
+                }}
+              >
+                {client.industry}
               </div>
             </div>
           ))}
