@@ -225,7 +225,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
           ))}
         </div>
         <div style={{ textAlign: "center", marginTop: "48px" }}>
-          <Link href="/contact" style={{ textDecoration: "none" }}>
+          <Link href="/#contact" style={{ textDecoration: "none" }}>
             <span
               style={{
                 display: "inline-block",

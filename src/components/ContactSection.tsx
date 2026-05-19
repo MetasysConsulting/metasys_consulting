@@ -1,220 +1,306 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useState } from "react";
+import { useState, type CSSProperties, type FocusEvent } from "react";
+import { BOOKING_URL, CONTACT_EMAIL } from "@/lib/site-config";
 
-export function ContactSection() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+const fieldStyle: CSSProperties = {
+  width: "100%",
+  padding: "14px 16px",
+  background: "rgba(200, 190, 170, 0.08)",
+  border: "1px solid rgba(200, 190, 170, 0.25)",
+  borderRadius: "10px",
+  color: "white",
+  fontFamily: "var(--font-body), system-ui, sans-serif",
+  fontSize: "1rem",
+  outline: "none",
+  transition: "border-color 0.2s ease, box-shadow 0.2s ease",
+};
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: "",
-  });
+const labelStyle: CSSProperties = {
+  fontFamily: "var(--font-body), system-ui, sans-serif",
+  fontSize: "0.9rem",
+  fontWeight: 600,
+  color: "#d4cfc4",
+  display: "block",
+  marginBottom: "8px",
+};
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+function focusField(e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  e.target.style.borderColor = "#d4cfc4";
+  e.target.style.boxShadow = "0 0 0 3px rgba(200, 190, 170, 0.15)";
+}
+
+function blurField(e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  e.target.style.borderColor = "rgba(200, 190, 170, 0.25)";
+  e.target.style.boxShadow = "none";
+}
+
+type ContactSectionProps = {
+  showHeading?: boolean;
+};
+
+export function ContactSection({ showHeading = true }: ContactSectionProps) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // You would typically send this to your backend or email service
+    const subject = `Website inquiry from ${name}`;
+    const body = `${message}\n\n—\n${name}\n${email}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSent(true);
   };
 
-  const contactInfo = [
-    {
-      icon: "📞",
-      title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
-    },
-    {
-      icon: "✉️",
-      title: "Email",
-      value: "hello@metasysconsulting.com",
-      link: "mailto:hello@metasysconsulting.com"
-    },
-    {
-      icon: "📍",
-      title: "Address",
-      value: "123 Business Ave, Suite 100\nNew York, NY 10001",
-      link: "#"
-    }
-  ];
-
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-black to-gray-900">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Let&apos;s <span className="text-gradient">Connect</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to transform your business? Get in touch with our experts to discuss 
-            how we can help you achieve your goals.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, x: -50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="glass p-8 rounded-xl"
-          >
-            <h3 className="text-2xl font-bold mb-6 text-white">Send us a Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div whileFocus={{ scale: 1.02 }}>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
-                  />
-                </motion.div>
-                
-                <motion.div whileFocus={{ scale: 1.02 }}>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
-                  />
-                </motion.div>
-              </div>
-              
-              <motion.div whileFocus={{ scale: 1.02 }}>
-                <input
-                  type="text"
-                  name="company"
-                  placeholder="Company Name"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
-                />
-              </motion.div>
-              
-              <motion.div whileFocus={{ scale: 1.02 }}>
-                <textarea
-                  name="message"
-                  placeholder="Tell us about your project..."
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors resize-none"
-                />
-              </motion.div>
-              
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full btn-primary text-lg py-4"
-              >
-                Send Message
-              </motion.button>
-            </form>
-          </motion.div>
-
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
-          >
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-white">Get in Touch</h3>
-              <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                Whether you&apos;re looking to optimize operations, drive digital transformation, 
-                or explore new market opportunities, our team is ready to help you succeed.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.02, x: 10 }}
-                  className="glass p-6 rounded-xl hover-lift group cursor-pointer"
-                >
-                  <a href={info.link} className="flex items-start space-x-4">
-                    <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-semibold text-white mb-2">{info.title}</h4>
-                      <p className="text-gray-300 whitespace-pre-line">{info.value}</p>
-                    </div>
-                  </a>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="pt-8"
+    <section
+      id="contact"
+      className="scroll-section"
+      style={{
+        padding: "120px 40px",
+        background: "linear-gradient(135deg, #0a0a0a, #1a1a2e)",
+      }}
+    >
+      <div style={{ maxWidth: "1100px", margin: "0 auto", width: "100%" }}>
+        {showHeading && (
+          <div style={{ textAlign: "center", marginBottom: "56px" }}>
+            <h2
+              style={{
+                fontFamily: "var(--font-display), Georgia, serif",
+                fontSize: "clamp(2.25rem, 5vw, 3.25rem)",
+                fontWeight: 700,
+                background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                marginBottom: "16px",
+              }}
             >
-              <h4 className="text-xl font-semibold text-white mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                {['LinkedIn', 'Twitter', 'Facebook'].map((social) => (
-                  <motion.a
-                    key={social}
-                    href="#"
-                    whileHover={{ scale: 1.1, y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="glass p-3 rounded-lg hover-lift text-blue-400 hover:text-white transition-colors"
-                  >
-                    {social}
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
+              Let&apos;s Talk
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-body), system-ui, sans-serif",
+                fontSize: "1.15rem",
+                color: "rgba(255, 255, 255, 0.75)",
+                maxWidth: "520px",
+                margin: "0 auto",
+                lineHeight: 1.6,
+              }}
+            >
+              Tell us about your project — we&apos;ll get back within one business day.
+            </p>
+          </div>
+        )}
 
-        {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center mt-16 pt-8 border-t border-gray-700"
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "40px",
+            alignItems: "start",
+          }}
         >
-          <p className="text-gray-400">
-            © 2024 Metasys Consulting. All rights reserved.
-          </p>
-        </motion.div>
+          {/* Message form */}
+          <div
+            style={{
+              background: "rgba(0, 20, 40, 0.4)",
+              backdropFilter: "blur(15px)",
+              padding: "40px",
+              borderRadius: "20px",
+              border: "1px solid rgba(200, 190, 170, 0.2)",
+              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
+            }}
+          >
+            <form
+              onSubmit={handleSubmit}
+              style={{ display: "flex", flexDirection: "column", gap: "22px" }}
+            >
+              <div>
+                <label htmlFor="contact-name" style={labelStyle}>
+                  Your name *
+                </label>
+                <input
+                  id="contact-name"
+                  type="text"
+                  name="name"
+                  required
+                  autoComplete="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  style={fieldStyle}
+                  onFocus={focusField}
+                  onBlur={blurField}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="contact-email" style={labelStyle}>
+                  Email *
+                </label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  name="email"
+                  required
+                  autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  style={fieldStyle}
+                  onFocus={focusField}
+                  onBlur={blurField}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="contact-message" style={labelStyle}>
+                  Your message *
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  required
+                  rows={6}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="What are you building? Timeline, goals, anything that helps us prepare."
+                  style={{ ...fieldStyle, resize: "vertical", minHeight: "140px" }}
+                  onFocus={focusField}
+                  onBlur={blurField}
+                />
+              </div>
+
+              <button
+                type="submit"
+                style={{
+                  background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
+                  padding: "16px 28px",
+                  borderRadius: "12px",
+                  border: "none",
+                  cursor: "pointer",
+                  fontFamily: "var(--font-body), system-ui, sans-serif",
+                  fontSize: "1.05rem",
+                  fontWeight: 600,
+                  color: "#0a0a0a",
+                  marginTop: "4px",
+                }}
+              >
+                Send message
+              </button>
+
+              {sent && (
+                <p
+                  style={{
+                    fontFamily: "var(--font-body), system-ui, sans-serif",
+                    fontSize: "0.9rem",
+                    color: "rgba(255, 255, 255, 0.7)",
+                    margin: 0,
+                  }}
+                >
+                  Opening your email app… If it didn&apos;t open, write us at{" "}
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    style={{ color: "#d4cfc4" }}
+                  >
+                    {CONTACT_EMAIL}
+                  </a>
+                </p>
+              )}
+            </form>
+          </div>
+
+          {/* Discovery call + email */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+            <div
+              style={{
+                background: "rgba(0, 20, 40, 0.35)",
+                backdropFilter: "blur(15px)",
+                padding: "36px",
+                borderRadius: "20px",
+                border: "1px solid rgba(200, 190, 170, 0.2)",
+              }}
+            >
+              <h3
+                style={{
+                  fontFamily: "var(--font-body), system-ui, sans-serif",
+                  fontSize: "1.35rem",
+                  fontWeight: 600,
+                  color: "#d4cfc4",
+                  marginBottom: "12px",
+                }}
+              >
+                Free 30-Min Discovery Call
+              </h3>
+              <p
+                style={{
+                  fontFamily: "var(--font-body), system-ui, sans-serif",
+                  fontSize: "1rem",
+                  color: "rgba(255, 255, 255, 0.8)",
+                  lineHeight: 1.65,
+                  marginBottom: "24px",
+                }}
+              >
+                Tell us about your project and we&apos;ll figure out the best path
+                forward together.
+              </p>
+              <a
+                href={BOOKING_URL}
+                target={BOOKING_URL.startsWith("mailto") ? undefined : "_blank"}
+                rel={BOOKING_URL.startsWith("mailto") ? undefined : "noopener noreferrer"}
+                style={{
+                  display: "inline-block",
+                  textDecoration: "none",
+                  background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
+                  padding: "14px 28px",
+                  borderRadius: "12px",
+                  fontFamily: "var(--font-body), system-ui, sans-serif",
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                  color: "#0a0a0a",
+                  textAlign: "center",
+                }}
+              >
+                Schedule a Call
+              </a>
+            </div>
+
+            <div
+              style={{
+                padding: "24px 28px",
+                borderRadius: "16px",
+                border: "1px solid rgba(200, 190, 170, 0.15)",
+                background: "rgba(200, 190, 170, 0.06)",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "var(--font-body), system-ui, sans-serif",
+                  fontSize: "0.85rem",
+                  color: "rgba(255, 255, 255, 0.55)",
+                  marginBottom: "8px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                }}
+              >
+                Email
+              </p>
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                style={{
+                  fontFamily: "var(--font-body), system-ui, sans-serif",
+                  fontSize: "1.1rem",
+                  fontWeight: 500,
+                  color: "#d4cfc4",
+                  textDecoration: "none",
+                }}
+              >
+                {CONTACT_EMAIL}
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
-} 
+}

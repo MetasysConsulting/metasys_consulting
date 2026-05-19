@@ -111,8 +111,8 @@ export function AppNavigation({ variant = "static" }: AppNavigationProps) {
           <NavItem href="/case-studies">Case studies</NavItem>
           <NavItem href="/#services">Services</NavItem>
           <NavItem href="/#about">About</NavItem>
-          <NavItem href="/contact">Contact</NavItem>
-          <Link href="/contact" style={{ textDecoration: "none" }}>
+          <NavItem href="/#contact">Contact</NavItem>
+          <Link href="/#contact" style={{ textDecoration: "none" }} onClick={markSkipHomeIntro}>
             <div
               style={{
                 fontFamily: "var(--font-body), system-ui, sans-serif",

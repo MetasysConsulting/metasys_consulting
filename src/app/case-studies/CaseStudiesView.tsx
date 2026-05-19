@@ -137,7 +137,7 @@ export function CaseStudiesView() {
         >
           Ready to discuss your initiative? Schedule a consultation with our team.
         </p>
-        <Link href="/contact" style={{ textDecoration: "none" }}>
+        <Link href="/#contact" style={{ textDecoration: "none" }}>
           <div
             style={{
               background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",

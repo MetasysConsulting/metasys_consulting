@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { consumeSkipHomeIntro } from "@/lib/home-intro";
 import { ServiceCard } from "@/components/ServiceCard";
+import { ContactSection } from "@/components/ContactSection";
 import { TechnologyLogos } from "@/components/TechnologyLogos";
 import { ClientLogo } from "@/components/ClientLogo";
 import { CLIENTS } from "@/data/clients";
@@ -465,7 +466,7 @@ export default function Home() {
                 </div>
 
                 {/* Contact - Link to contact page */}
-                <Link href="/contact" style={{ textDecoration: 'none' }}>
+                <Link href="/#contact" style={{ textDecoration: 'none' }}>
                   <div
                     className="nav-item"
                     style={{
@@ -506,41 +507,42 @@ export default function Home() {
                   </div>
                 </Link>
 
-                {/* CTA Button */}
-                <div
-                  className="nav-item"
-                  style={{
-                    fontFamily: 'var(--font-body), system-ui, sans-serif',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                    color: '#000',
-                    background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
-                    padding: '12px 24px',
-                    borderRadius: '12px',
-                    cursor: 'pointer',
-                    border: 'none',
-                    boxShadow: '0 4px 15px rgba(200, 190, 170, 0.3)',
-                    transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                  }}
-                  onMouseEnter={(e) => {
-                    gsap.to(e.currentTarget, {
-                      scale: 1.05,
-                      boxShadow: '0 6px 25px rgba(200, 190, 170, 0.5)',
-                      duration: 0.3,
-                      ease: "power2.out"
-                    });
-                  }}
-                  onMouseLeave={(e) => {
-                    gsap.to(e.currentTarget, {
-                      scale: 1,
+                <Link href="/#contact" style={{ textDecoration: 'none' }}>
+                  <div
+                    className="nav-item"
+                    style={{
+                      fontFamily: 'var(--font-body), system-ui, sans-serif',
+                      fontSize: '16px',
+                      fontWeight: '600',
+                      color: '#000',
+                      background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
+                      padding: '12px 24px',
+                      borderRadius: '12px',
+                      cursor: 'pointer',
+                      border: 'none',
                       boxShadow: '0 4px 15px rgba(200, 190, 170, 0.3)',
-                      duration: 0.3,
-                      ease: "power2.out"
-                    });
-                  }}
-                >
-                  Get Started
-                </div>
+                      transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                    }}
+                    onMouseEnter={(e) => {
+                      gsap.to(e.currentTarget, {
+                        scale: 1.05,
+                        boxShadow: '0 6px 25px rgba(200, 190, 170, 0.5)',
+                        duration: 0.3,
+                        ease: "power2.out"
+                      });
+                    }}
+                    onMouseLeave={(e) => {
+                      gsap.to(e.currentTarget, {
+                        scale: 1,
+                        boxShadow: '0 4px 15px rgba(200, 190, 170, 0.3)',
+                        duration: 0.3,
+                        ease: "power2.out"
+                      });
+                    }}
+                  >
+                    Get Started
+                  </div>
+                </Link>
               </div>
             </div>
           </nav>
@@ -1087,143 +1089,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section className="scroll-section" style={{
-          padding: '120px 40px',
-          background: 'linear-gradient(135deg, #0a0a0a, #1a1a2e)',
-        }}>
-          <div style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            width: '100%',
-            textAlign: 'center',
-          }}>
-            <h2 style={{
-              fontFamily: 'var(--font-display), Georgia, serif',
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              fontWeight: '700',
-              background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              marginBottom: '30px',
-            }}>
-              Let&apos;s Transform Your Business
-            </h2>
-            <p style={{
-              fontFamily: 'var(--font-body), system-ui, sans-serif',
-              fontSize: '1.3rem',
-              color: 'rgba(255, 255, 255, 0.8)',
-              marginBottom: '60px',
-              maxWidth: '600px',
-              margin: '0 auto 60px auto',
-            }}>
-              Ready to unlock your organization&apos;s full potential? Schedule a consultation with our experts.
-            </p>
-
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '30px',
-              marginBottom: '60px',
-            }}>
-              {[
-                { service: "Data Analytics", duration: "25 min" },
-                { service: "Project Management", duration: "25 min" },
-                { service: "Product Management", duration: "25 min" },
-                { service: "Talent Resourcing", duration: "25 min" },
-                { service: "Web Development", duration: "25 min" }
-              ].map((item, index) => (
-                <div key={index} style={{
-                  background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
-                  padding: '20px',
-                  borderRadius: '12px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  fontFamily: 'var(--font-body), system-ui, sans-serif',
-                  fontWeight: '600',
-                  color: '#000',
-                }}
-                onMouseEnter={(e) => {
-                  gsap.to(e.currentTarget, {
-                    scale: 1.05,
-                    boxShadow: '0 10px 30px rgba(200, 190, 170, 0.4)',
-                    duration: 0.3,
-                  });
-                }}
-                onMouseLeave={(e) => {
-                  gsap.to(e.currentTarget, {
-                    scale: 1,
-                    boxShadow: 'none',
-                    duration: 0.3,
-                  });
-                }}
-                >
-                  <div style={{ fontSize: '1.2rem', marginBottom: '5px' }}>
-                    {item.service}
-                  </div>
-                  <div style={{ fontSize: '0.9rem', opacity: 0.8 }}>
-                    {item.duration}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div style={{
-              background: 'rgba(0, 20, 40, 0.3)',
-              backdropFilter: 'blur(15px)',
-              padding: '40px',
-              borderRadius: '20px',
-              border: '1px solid rgba(200, 190, 170, 0.2)',
-              maxWidth: '600px',
-              margin: '0 auto',
-            }}>
-              <h3 style={{
-                fontFamily: 'var(--font-body), system-ui, sans-serif',
-                fontSize: '1.8rem',
-                color: '#d4cfc4',
-                marginBottom: '20px',
-              }}>
-                Contact Information
-              </h3>
-              <p style={{
-                fontFamily: 'var(--font-body), system-ui, sans-serif',
-                color: 'rgba(255, 255, 255, 0.9)',
-                marginBottom: '10px',
-              }}>
-                📧 consultmetasys@gmail.com
-              </p>
-              <p style={{
-                fontFamily: 'var(--font-body), system-ui, sans-serif',
-                color: 'rgba(255, 255, 255, 0.9)',
-                marginBottom: '20px',
-              }}>
-                📞 Tel. 123-456-7890
-              </p>
-              <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                gap: '20px',
-                marginTop: '30px',
-              }}>
-                {['LinkedIn', 'Instagram', 'Facebook', 'Twitter'].map((social, index) => (
-                  <div key={index} style={{
-                    background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
-                    padding: '10px 20px',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    fontFamily: 'var(--font-body), system-ui, sans-serif',
-                    fontWeight: '600',
-                    color: '#000',
-                    fontSize: '0.9rem',
-                  }}>
-                    {social}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <ContactSection />
 
         <style jsx>{`
           @keyframes revealVideo {

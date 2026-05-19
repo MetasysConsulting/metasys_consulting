@@ -220,7 +220,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
           ))}
 
           <div style={{ marginTop: "48px", textAlign: "center" }}>
-            <Link href="/contact" style={{ textDecoration: "none" }}>
+            <Link href="/#contact" style={{ textDecoration: "none" }}>
               <div
                 style={{
                   background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
