@@ -1,11 +1,115 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
-import type { Technology } from "@/data/technologies";
+import {
+  coloredLogoUrl,
+  LEGACY_ICON_BASE,
+  type Technology,
+} from "@/data/technologies";
 
 type TechnologyLogosProps = {
   technologies: Technology[];
 };
+
+function applyBrandColor(svgText: string, color: string): string {
+  const hex = color.startsWith("#") ? color : `#${color}`;
+  if (svgText.includes('fill="')) {
+    return svgText.replace(/fill="[^"]*"/, `fill="${hex}"`);
+  }
+  return svgText.replace("<svg ", `<svg fill="${hex}" `);
+}
+
+function BrandLogo({ tech }: { tech: Technology }) {
+  const [inlineSvg, setInlineSvg] = useState<string | null>(null);
+  const [cdnFailed, setCdnFailed] = useState(false);
+
+  const cdnSrc = coloredLogoUrl(tech.slug, tech.color);
+  const legacySrc = `${LEGACY_ICON_BASE}/${tech.slug}.svg`;
+  const useLegacySvg = Boolean(tech.legacy) || cdnFailed;
+
+  useEffect(() => {
+    if (tech.logo || !useLegacySvg) return;
+
+    let cancelled = false;
+    fetch(legacySrc)
+      .then((res) => (res.ok ? res.text() : Promise.reject()))
+      .then((svg) => {
+        if (!cancelled) setInlineSvg(applyBrandColor(svg, tech.color));
+      })
+      .catch(() => {
+        if (!cancelled) setInlineSvg(null);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [useLegacySvg, tech.logo, tech.slug, tech.color, legacySrc]);
+
+  const iconStyle = {
+    width: "auto" as const,
+    height: "auto" as const,
+    maxWidth: 48,
+    maxHeight: 48,
+    objectFit: "contain" as const,
+    display: "block" as const,
+  };
+
+  return (
+    <div
+      style={{
+        width: 52,
+        height: 52,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      {tech.logo ? (
+        /* eslint-disable-next-line @next/next/no-img-element */
+        <img
+          src={tech.logo}
+          alt={`${tech.name} logo`}
+          width={48}
+          height={48}
+          loading="lazy"
+          decoding="async"
+          style={iconStyle}
+        />
+      ) : inlineSvg ? (
+        <span
+          role="img"
+          aria-label={`${tech.name} logo`}
+          style={{
+            display: "flex",
+            width: 48,
+            height: 48,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          dangerouslySetInnerHTML={{
+            __html: inlineSvg.replace(
+              "<svg ",
+              '<svg width="48" height="48" style="width:48px;height:48px" ',
+            ),
+          }}
+        />
+      ) : useLegacySvg ? null : (
+        /* eslint-disable-next-line @next/next/no-img-element */
+        <img
+          src={cdnSrc}
+          alt={`${tech.name} logo`}
+          width={48}
+          height={48}
+          loading="lazy"
+          decoding="async"
+          onError={() => setCdnFailed(true)}
+          style={iconStyle}
+        />
+      )}
+    </div>
+  );
+}
 
 function TechLogoCard({ tech }: { tech: Technology }) {
   return (
@@ -42,36 +146,7 @@ function TechLogoCard({ tech }: { tech: Technology }) {
         });
       }}
     >
-      <div
-        style={{
-          width: 56,
-          height: 56,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "rgba(255, 255, 255, 0.94)",
-          borderRadius: "10px",
-          padding: "6px",
-        }}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={tech.logo}
-          alt={`${tech.name} logo`}
-          width={48}
-          height={48}
-          loading="lazy"
-          decoding="async"
-          style={{
-            width: "auto",
-            height: "auto",
-            maxWidth: 48,
-            maxHeight: 48,
-            objectFit: "contain",
-            display: "block",
-          }}
-        />
-      </div>
+      <BrandLogo tech={tech} />
       <span
         style={{
           fontFamily: "var(--font-body), system-ui, sans-serif",

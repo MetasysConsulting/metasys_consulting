@@ -1,33 +1,47 @@
 export type Technology = {
   name: string;
-  /** Direct URL to brand SVG (Simple Icons v12 — last release with most Microsoft/enterprise logos) */
-  logo: string;
+  /** Simple Icons slug */
+  slug: string;
+  /** Brand hex without # */
+  color: string;
+  /** Icon removed from latest CDN — load from Simple Icons v12 and apply color client-side */
+  legacy?: boolean;
+  /** Full logo URL when not using Simple Icons */
+  logo?: string;
 };
 
-/** Simple Icons on jsDelivr — pinned to v12 so logos like Power BI stay available */
-const si = (slug: string) =>
-  `https://cdn.jsdelivr.net/npm/simple-icons@12.4.0/icons/${slug}.svg`;
+/** Colored brand icon from Simple Icons CDN */
+export function coloredLogoUrl(slug: string, color: string): string {
+  return `https://cdn.simpleicons.org/${slug}/${color}`;
+}
+
+export const LEGACY_ICON_BASE =
+  "https://cdn.jsdelivr.net/npm/simple-icons@12.4.0/icons";
 
 export const TECHNOLOGIES: Technology[] = [
-  { name: "Google Analytics", logo: si("googleanalytics") },
-  { name: "Power BI", logo: si("powerbi") },
-  { name: "Salesforce", logo: si("salesforce") },
-  { name: "Python", logo: si("python") },
-  { name: "R", logo: si("r") },
-  { name: "AWS", logo: si("amazonwebservices") },
-  { name: "Azure", logo: si("microsoftazure") },
-  { name: "SQL Server", logo: si("microsoftsqlserver") },
-  { name: "HTML5", logo: si("html5") },
-  { name: "GitHub", logo: si("github") },
-  { name: "HubSpot", logo: si("hubspot") },
-  { name: "Tableau", logo: si("tableau") },
-  { name: "QuickBooks", logo: si("quickbooks") },
-  { name: "Jira", logo: si("jira") },
-  { name: "Confluence", logo: si("confluence") },
-  {
-    name: "Monday.com",
-    logo: "https://cdn.worldvectorlogo.com/logos/monday-1.svg",
-  },
-  { name: "Excel", logo: si("microsoftexcel") },
-  { name: "Canva", logo: si("canva") },
+  { name: "Next.js", slug: "nextdotjs", color: "FFFFFF" },
+  { name: "Vercel", slug: "vercel", color: "FFFFFF" },
+  { name: "Supabase", slug: "supabase", color: "3FCF8E" },
+  { name: "PostgreSQL", slug: "postgresql", color: "4169E1" },
+  { name: "MySQL", slug: "mysql", color: "4479A1" },
+  { name: "SQLite", slug: "sqlite", color: "003B57" },
+  { name: "MariaDB", slug: "mariadb", color: "003545" },
+  { name: "SQL Server", slug: "microsoftsqlserver", color: "CC2927", legacy: true },
+  { name: "Python", slug: "python", color: "3776AB" },
+  { name: "R", slug: "r", color: "276DC3" },
+  { name: "Google Analytics", slug: "googleanalytics", color: "E37400" },
+  { name: "Power BI", slug: "powerbi", color: "F2C811", legacy: true },
+  { name: "Tableau", slug: "tableau", color: "E97627", legacy: true },
+  { name: "Salesforce", slug: "salesforce", color: "00A1E0", legacy: true },
+  { name: "AWS", slug: "amazonwebservices", color: "FF9900", legacy: true },
+  { name: "Azure", slug: "microsoftazure", color: "0078D4", legacy: true },
+  { name: "HTML5", slug: "html5", color: "E34F26" },
+  { name: "GitHub", slug: "github", color: "FFFFFF" },
+  { name: "HubSpot", slug: "hubspot", color: "FF7A59" },
+  { name: "QuickBooks", slug: "quickbooks", color: "2CA01C" },
+  { name: "Jira", slug: "jira", color: "0052CC" },
+  { name: "Confluence", slug: "confluence", color: "2684FF", legacy: true },
+  { name: "Monday.com", slug: "mondaydotcom", color: "F62B54", logo: "https://cdn.worldvectorlogo.com/logos/monday-1.svg" },
+  { name: "Excel", slug: "microsoftexcel", color: "217346", legacy: true },
+  { name: "Canva", slug: "canva", color: "00C4CC", legacy: true },
 ];
