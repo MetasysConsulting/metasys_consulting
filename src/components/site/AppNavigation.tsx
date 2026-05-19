@@ -16,34 +16,36 @@ const navShellStyle: CSSProperties = {
   left: 0,
   width: "100%",
   zIndex: 1000,
-  padding: "20px 40px",
-  background: "rgba(0, 20, 40, 0.1)",
-  backdropFilter: "blur(20px)",
-  borderBottom: "1px solid rgba(200, 190, 170, 0.2)",
-  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
+  padding: "18px 48px",
+  background: "rgba(6, 9, 18, 0.5)",
+  backdropFilter: "blur(20px) saturate(1.4)",
+  WebkitBackdropFilter: "blur(20px) saturate(1.4)",
+  borderBottom: "1px solid rgba(201, 169, 110, 0.15)",
+  boxShadow: "0 1px 40px rgba(0, 0, 0, 0.45)",
 };
 
+const ff = "var(--font-body), system-ui, sans-serif";
+
 const navItemStyle: CSSProperties = {
-  fontFamily: "var(--font-body), system-ui, sans-serif",
-  fontSize: "16px",
+  fontFamily: ff,
+  fontSize: "15px",
   fontWeight: "500",
-  color: "rgba(255, 255, 255, 0.9)",
+  color: "rgba(244, 241, 236, 0.82)",
   cursor: "pointer",
-  padding: "10px 20px",
+  padding: "9px 18px",
   borderRadius: "8px",
   border: "1px solid transparent",
-  transition: "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+  letterSpacing: "0.01em",
   position: "relative",
-  overflow: "hidden",
 };
 
 function hoverNavItem(e: MouseEvent<HTMLElement>, enter: boolean) {
   gsap.to(e.currentTarget, {
-    scale: enter ? 1.05 : 1,
-    backgroundColor: enter ? "rgba(200, 190, 170, 0.1)" : "transparent",
-    borderColor: enter ? "rgba(200, 190, 170, 0.3)" : "transparent",
-    color: enter ? "#d4cfc4" : "rgba(255, 255, 255, 0.9)",
-    duration: 0.3,
+    scale: enter ? 1.04 : 1,
+    backgroundColor: enter ? "rgba(201,169,110,0.09)" : "transparent",
+    borderColor: enter ? "rgba(201,169,110,0.25)" : "transparent",
+    color: enter ? "#e8d9b8" : "rgba(244,241,236,0.82)",
+    duration: 0.25,
     ease: "power2.out",
   });
 }
@@ -52,9 +54,9 @@ function hoverCta(e: MouseEvent<HTMLElement>, enter: boolean) {
   gsap.to(e.currentTarget, {
     scale: enter ? 1.05 : 1,
     boxShadow: enter
-      ? "0 6px 28px rgba(37, 99, 235, 0.5)"
-      : "0 4px 20px rgba(37, 99, 235, 0.35)",
-    duration: 0.3,
+      ? "0 6px 28px rgba(201,169,110,0.55)"
+      : "0 4px 18px rgba(201,169,110,0.35)",
+    duration: 0.25,
     ease: "power2.out",
   });
 }
@@ -69,6 +71,7 @@ function NavItem({ href, children }: { href: string; children: ReactNode }) {
       onClick={goesHome ? markSkipHomeIntro : undefined}
     >
       <div
+        className="nav-link-wrap"
         style={navItemStyle}
         onMouseEnter={(e) => hoverNavItem(e, true)}
         onMouseLeave={(e) => hoverNavItem(e, false)}
@@ -95,24 +98,30 @@ export function AppNavigation({ variant = "static" }: AppNavigationProps) {
       >
         <SiteLogo />
 
-        <div style={{ display: "flex", gap: "40px", alignItems: "center" }}>
+        <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
           <NavItem href="/case-studies">Case studies</NavItem>
           <NavItem href="/#services">Services</NavItem>
           <NavItem href="/#about">About</NavItem>
           <NavItem href="/#contact">Contact</NavItem>
-          <Link href="/#contact" style={{ textDecoration: "none" }} onClick={markSkipHomeIntro}>
+
+          <Link
+            href="/#contact"
+            style={{ textDecoration: "none", marginLeft: "8px" }}
+            onClick={markSkipHomeIntro}
+          >
             <div
               style={{
-                fontFamily: "var(--font-body), system-ui, sans-serif",
-                fontSize: "16px",
+                fontFamily: ff,
+                fontSize: "15px",
                 fontWeight: "600",
-                background: "#2563eb",
-                padding: "12px 24px",
-                borderRadius: "9999px",
+                color: "#0a0a0a",
+                background: "linear-gradient(135deg, #e8dfc8 0%, #c9a96e 100%)",
+                padding: "10px 22px",
+                borderRadius: "10px",
                 cursor: "pointer",
                 border: "none",
-                color: "#fff",
-                boxShadow: "0 4px 20px rgba(37, 99, 235, 0.35)",
+                boxShadow: "0 4px 18px rgba(201,169,110,0.35)",
+                letterSpacing: "0.01em",
               }}
               onMouseEnter={(e) => hoverCta(e, true)}
               onMouseLeave={(e) => hoverCta(e, false)}
