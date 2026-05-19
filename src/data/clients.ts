@@ -1,38 +1,54 @@
 export type Client = {
   name: string;
   industry: string;
-  /** Brand logo URL (Simple Icons, Wikimedia, or site favicon) */
-  logo?: string;
+  /** Logo in /public/clients — add your own SVG/PNG to replace placeholders */
+  logo: string;
 };
 
 export const CLIENTS: Client[] = [
   {
     name: "Barclays",
     industry: "Financial Services",
-    logo: "https://cdn.simpleicons.org/barclays/FFFFFF",
+    logo: "/clients/barclays.svg",
   },
   {
     name: "Al Jazeera",
     industry: "Media & Broadcasting",
-    logo: "https://upload.wikimedia.org/wikipedia/en/7/71/Aljazeera.svg",
+    logo: "/clients/al-jazeera.svg",
   },
   {
     name: "EY",
     industry: "Professional Services",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/3/34/EY_logo_2019.svg",
+    logo: "/clients/ey.svg",
   },
   {
     name: "Prepay Nation",
     industry: "Fintech",
-    logo: "https://icons.duckduckgo.com/ip3/prepaynation.com.ico",
+    logo: "/clients/prepay-nation.png",
   },
   {
     name: "Trusum Visions",
     industry: "Business Solutions",
-    logo: "https://icons.duckduckgo.com/ip3/trusumvisions.com.ico",
+    logo: "/clients/trusum-visions.png",
   },
-  { name: "Everstell", industry: "Technology" },
-  { name: "Innova Analytics", industry: "Data Analytics" },
-  { name: "TimeBox", industry: "Software Solutions" },
-  { name: "Odessa", industry: "Technology" },
+  {
+    name: "Everstell",
+    industry: "Technology",
+    logo: "/clients/everstell.svg",
+  },
+  {
+    name: "Innova Analytics",
+    industry: "Data Analytics",
+    logo: "/clients/innova.png",
+  },
+  {
+    name: "TimeBox",
+    industry: "Software Solutions",
+    logo: "/clients/timebox.png",
+  },
+  {
+    name: "Odessa",
+    industry: "Technology",
+    logo: "/clients/odessa.png",
+  },
 ];
