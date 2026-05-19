@@ -5,6 +5,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { consumeSkipHomeIntro } from "@/lib/home-intro";
+import { TechnologyLogos } from "@/components/TechnologyLogos";
+import { TECHNOLOGIES } from "@/data/technologies";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -892,52 +894,7 @@ export default function Home() {
                 border: '1px solid rgba(200, 190, 170, 0.2)',
                 textAlign: 'center',
               }}>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
-                  gap: '20px',
-                  marginBottom: '30px',
-                }}>
-                  {[
-                    'Google Analytics', 'Power BI', 'Salesforce', 'Python', 'R', 'AWS',
-                    'Azure', 'SQL', 'HTML', 'GitHub', 'HubSpot', 'Tableau',
-                    'QuickBooks', 'Jira', 'Confluence', 'Monday.com', 'Excel', 'Canva'
-                  ].map((tech, index) => (
-                    <div key={index} style={{
-                      background: 'rgba(200, 190, 170, 0.1)',
-                      padding: '10px 15px',
-                      borderRadius: '8px',
-                      border: '1px solid rgba(200, 190, 170, 0.2)',
-                      fontFamily: 'var(--font-body), system-ui, sans-serif',
-                      fontSize: '0.9rem',
-                      fontWeight: '500',
-                      color: 'rgba(255, 255, 255, 0.9)',
-                      transition: 'all 0.3s ease',
-                      cursor: 'pointer',
-                    }}
-                    onMouseEnter={(e) => {
-                      gsap.to(e.currentTarget, {
-                        scale: 1.05,
-                        backgroundColor: 'rgba(200, 190, 170, 0.2)',
-                        borderColor: 'rgba(200, 190, 170, 0.4)',
-                        color: '#d4cfc4',
-                        duration: 0.2,
-                      });
-                    }}
-                    onMouseLeave={(e) => {
-                      gsap.to(e.currentTarget, {
-                        scale: 1,
-                        backgroundColor: 'rgba(200, 190, 170, 0.1)',
-                        borderColor: 'rgba(200, 190, 170, 0.2)',
-                        color: 'rgba(255, 255, 255, 0.9)',
-                        duration: 0.2,
-                      });
-                    }}
-                    >
-                      {tech}
-                    </div>
-                  ))}
-                </div>
+                <TechnologyLogos technologies={TECHNOLOGIES} />
                 <p style={{
                   fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontSize: '1rem',
