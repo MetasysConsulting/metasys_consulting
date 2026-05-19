@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Metasys Consulting — Engineering, AI & Embedded Systems",
     description:
-      "We build products. We ship code. Strategy, engineering, and AI under one roof.",
+      "Strategy, engineering, and AI — from idea to deployment.",
     type: "website",
     url: "https://metasysconsulting.com",
   },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Metasys Consulting — Engineering, AI & Embedded Systems",
     description:
-      "We build products. We ship code. Strategy, engineering, and AI under one roof.",
+      "Strategy, engineering, and AI — from idea to deployment.",
   },
 };
 

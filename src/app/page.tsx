@@ -7,6 +7,8 @@ import Link from "next/link";
 import { consumeSkipHomeIntro } from "@/lib/home-intro";
 import { ServiceCard } from "@/components/ServiceCard";
 import { TechnologyLogos } from "@/components/TechnologyLogos";
+import { ClientLogo } from "@/components/ClientLogo";
+import { CLIENTS } from "@/data/clients";
 import { HOME_SERVICES } from "@/data/services";
 import { TECHNOLOGIES } from "@/data/technologies";
 
@@ -235,17 +237,7 @@ export default function Home() {
 
   const services = HOME_SERVICES;
 
-  const clients = [
-    { name: "Barclays", industry: "Financial Services" },
-    { name: "Everstell", industry: "Technology" },
-    { name: "Al Jazeera", industry: "Media & Broadcasting" },
-    { name: "EY", industry: "Professional Services" },
-    { name: "Prepay Nation", industry: "Fintech" },
-    { name: "Innova Analytics", industry: "Data Analytics" },
-    { name: "TimeBox", industry: "Software Solutions" },
-    { name: "Odessa", industry: "Technology" },
-    { name: "Trusum Visions", industry: "Business Solutions" }
-  ];
+  const clients = CLIENTS;
 
   return (
     <>
@@ -598,22 +590,13 @@ export default function Home() {
                   }}
                 >
                   <p style={{
-                    fontSize: '1.35rem',
-                    fontWeight: '500',
-                    color: 'rgba(255, 255, 255, 0.92)',
-                    lineHeight: 1.45,
-                    marginBottom: '12px',
-                  }}>
-                    We build products. We ship code. We solve hard problems.
-                  </p>
-                  <p style={{
-                    fontSize: '1.15rem',
+                    fontSize: '1.25rem',
                     fontWeight: '400',
                     color: '#d4cfc4',
-                    lineHeight: 1.5,
+                    lineHeight: 1.55,
                     margin: 0,
                   }}>
-                    Strategy, engineering, and AI — under one roof.
+                    Strategy, engineering, and AI — from idea to deployment.
                   </p>
                 </div>
 
@@ -1065,51 +1048,36 @@ export default function Home() {
                     background: 'linear-gradient(90deg, #d4cfc4, #0080ff)',
                   }} />
                   
-                  {/* Client Name */}
+                  <div style={{
+                    marginBottom: '20px',
+                    minHeight: 56,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                    <ClientLogo name={client.name} logo={client.logo} size={56} />
+                  </div>
+
                   <div style={{
                     fontFamily: 'var(--font-body), system-ui, sans-serif',
-                    fontSize: '1.5rem',
+                    fontSize: '1.25rem',
                     fontWeight: '700',
                     color: '#ffffff',
-                    marginBottom: '8px',
+                    marginBottom: '6px',
                     textAlign: 'center',
                   }}>
                     {client.name}
                   </div>
-                  
-                  {/* Industry */}
+
                   <div style={{
                     fontFamily: 'var(--font-body), system-ui, sans-serif',
-                    fontSize: '0.9rem',
+                    fontSize: '0.85rem',
                     fontWeight: '400',
                     color: '#d4cfc4',
                     textAlign: 'center',
                     opacity: 0.8,
                   }}>
                     {client.industry}
-                  </div>
-
-                  {/* Logo placeholder area */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '15px',
-                    right: '15px',
-                    width: '40px',
-                    height: '40px',
-                    background: 'linear-gradient(135deg, rgba(200, 190, 170, 0.1), rgba(0, 128, 255, 0.1))',
-                    borderRadius: '8px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: '1px solid rgba(200, 190, 170, 0.2)',
-                  }}>
-                    <div style={{
-                      width: '20px',
-                      height: '20px',
-                      background: 'linear-gradient(45deg, #d4cfc4, #0080ff)',
-                      borderRadius: '4px',
-                      opacity: 0.6,
-                    }} />
                   </div>
                 </div>
               ))}
