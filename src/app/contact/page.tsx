@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import { SiteHeader } from "@/components/site/SiteHeader";
+import { AppNavigation } from "@/components/site/AppNavigation";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -91,7 +91,7 @@ export default function ContactPage() {
   return (
     <>
       <div style={{ backgroundColor: '#0a0a0a', minHeight: '100vh' }}>
-        <SiteHeader />
+        <AppNavigation variant="static" />
 
         {/* Hero Section */}
         <section className="scroll-section" style={{

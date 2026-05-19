@@ -667,7 +667,7 @@ export default function Home() {
         </div>
 
         {/* About Section */}
-        <section className="scroll-section" style={{
+        <section id="about" className="scroll-section" style={{
           padding: '120px 40px',
           background: 'linear-gradient(135deg, #0a0a0a, #1a1a2e)',
         }}>
@@ -973,7 +973,7 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="scroll-section" style={{
+        <section id="services" className="scroll-section" style={{
           padding: '120px 40px',
           background: 'linear-gradient(135deg, #1a1a2e, #16213e)',
         }}>

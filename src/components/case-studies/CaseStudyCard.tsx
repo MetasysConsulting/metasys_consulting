@@ -1,60 +1,116 @@
+"use client";
+
 import Link from "next/link";
+import { gsap } from "gsap";
 import type { CaseStudy } from "@/data/case-studies";
 
 type CaseStudyCardProps = {
   study: CaseStudy;
-  index: number;
 };
 
-export function CaseStudyCard({ study, index }: CaseStudyCardProps) {
+export function CaseStudyCard({ study }: CaseStudyCardProps) {
   const preview =
-    study.challenge[0]?.length > 140
-      ? `${study.challenge[0].slice(0, 137)}…`
+    study.challenge[0]?.length > 200
+      ? `${study.challenge[0].slice(0, 197)}…`
       : study.challenge[0];
 
-  const number = String(index + 1).padStart(2, "0");
-
   return (
-    <Link
-      href={`/case-studies/${study.slug}`}
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[rgba(200,190,170,0.2)] bg-[rgba(0,20,40,0.45)] backdrop-blur-[15px] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(200,190,170,0.4)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
-    >
+    <Link href={`/case-studies/${study.slug}`} style={{ textDecoration: "none" }}>
       <div
-        className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#d4cfc4] to-[#b8a88a]"
-        aria-hidden
-      />
-      <div className="flex flex-1 flex-col p-8 md:p-9">
-        <div className="mb-5 flex items-start justify-between gap-4">
-          <span className="font-display text-3xl font-light text-white/25">{number}</span>
-          <span className="font-body text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[#d4cfc4] opacity-80 transition-opacity group-hover:opacity-100">
-            View project
-          </span>
-        </div>
-
-        <div className="mb-4 flex flex-wrap gap-2">
-          {study.sectors.slice(0, 2).map((sector) => (
-            <span
-              key={sector}
-              className="font-body rounded-md border border-[rgba(200,190,170,0.25)] bg-[rgba(0,20,40,0.5)] px-2.5 py-1 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-white/70"
-            >
-              {sector}
-            </span>
-          ))}
-        </div>
-
-        <h2 className="font-display mb-3 text-2xl font-medium leading-snug text-white md:text-[1.65rem]">
+        className="service-card"
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          background: "rgba(0, 20, 40, 0.4)",
+          backdropFilter: "blur(15px)",
+          padding: "40px",
+          borderRadius: "20px",
+          border: "1px solid rgba(200, 190, 170, 0.2)",
+          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
+          cursor: "pointer",
+          transition: "all 0.3s ease",
+          height: "100%",
+        }}
+        onMouseEnter={(e) => {
+          gsap.to(e.currentTarget, {
+            y: -10,
+            scale: 1.02,
+            boxShadow: "0 20px 40px rgba(200, 190, 170, 0.2)",
+            duration: 0.3,
+          });
+        }}
+        onMouseLeave={(e) => {
+          gsap.to(e.currentTarget, {
+            y: 0,
+            scale: 1,
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
+            duration: 0.3,
+          });
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "4px",
+            background: "linear-gradient(90deg, #d4cfc4, #b8a88a)",
+            borderRadius: "20px 20px 0 0",
+          }}
+        />
+        <h3
+          style={{
+            fontFamily: "var(--font-body), system-ui, sans-serif",
+            fontSize: "1.8rem",
+            fontWeight: "600",
+            color: "#d4cfc4",
+            marginBottom: "15px",
+            marginTop: "8px",
+          }}
+        >
           {study.title}
-        </h2>
-
-        <p className="font-body mb-4 text-sm leading-relaxed text-[#d4cfc4]">{study.tagline}</p>
-
-        <p className="font-body mt-auto text-sm leading-relaxed text-white/65">{preview}</p>
-
-        <div className="mt-7 border-t border-[rgba(200,190,170,0.15)] pt-4">
-          <span className="font-body text-sm font-medium text-[#d4cfc4] transition-colors group-hover:text-white">
-            Read case study →
-          </span>
-        </div>
+        </h3>
+        <p
+          style={{
+            fontFamily: "var(--font-body), system-ui, sans-serif",
+            color: "rgba(255, 255, 255, 0.8)",
+            lineHeight: "1.6",
+            marginBottom: "20px",
+            fontSize: "1rem",
+          }}
+        >
+          {study.tagline}
+        </p>
+        <p
+          style={{
+            fontFamily: "var(--font-body), system-ui, sans-serif",
+            color: "rgba(255, 255, 255, 0.65)",
+            lineHeight: "1.6",
+            marginBottom: "25px",
+            fontSize: "0.95rem",
+          }}
+        >
+          {preview}
+        </p>
+        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          {study.impact.slice(0, 3).map((item) => (
+            <li
+              key={item}
+              style={{
+                fontFamily: "var(--font-body), system-ui, sans-serif",
+                color: "rgba(255, 255, 255, 0.7)",
+                marginBottom: "8px",
+                paddingLeft: "20px",
+                position: "relative",
+                fontSize: "0.9rem",
+              }}
+            >
+              <span style={{ position: "absolute", left: 0, color: "#d4cfc4" }}>•</span>
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     </Link>
   );
