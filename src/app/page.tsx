@@ -9,6 +9,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { ContactSection } from "@/components/ContactSection";
 import { TechnologyLogos } from "@/components/TechnologyLogos";
 import { ClientsSection } from "@/components/ClientsSection";
+import { SiteLogo } from "@/components/site/SiteLogo";
 import { HOME_SERVICES } from "@/data/services";
 import { TECHNOLOGIES } from "@/data/technologies";
 
@@ -309,21 +310,8 @@ export default function Home() {
               maxWidth: '1400px',
               margin: '0 auto',
             }}>
-              {/* Logo */}
-              <div 
-                className="nav-item"
-                style={{
-                  fontFamily: 'var(--font-display), system-ui, sans-serif',
-                  fontSize: '24px',
-                  fontWeight: '700',
-                  background: 'linear-gradient(135deg, #e8e4dc, #b8a88a)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  textShadow: '0 0 20px rgba(200, 190, 170, 0.3)',
-                }}
-              >
-                Metasys Consulting
+              <div className="nav-item">
+                <SiteLogo linkToHome={false} />
               </div>
 
               {/* Navigation Items */}

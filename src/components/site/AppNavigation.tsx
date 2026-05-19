@@ -4,6 +4,7 @@ import type { CSSProperties, MouseEvent, ReactNode } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { markSkipHomeIntro } from "@/lib/home-intro";
+import { SiteLogo } from "@/components/site/SiteLogo";
 
 type AppNavigationProps = {
   variant?: "hero" | "static";
@@ -34,17 +35,6 @@ const navItemStyle: CSSProperties = {
   transition: "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
   position: "relative",
   overflow: "hidden",
-};
-
-const logoStyle: CSSProperties = {
-  fontFamily: "var(--font-display), system-ui, sans-serif",
-  fontSize: "24px",
-  fontWeight: "800",
-  letterSpacing: "-0.02em",
-  background: "linear-gradient(90deg, #2563eb 0%, #e89b2b 100%)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  backgroundClip: "text",
 };
 
 function hoverNavItem(e: MouseEvent<HTMLElement>, enter: boolean) {
@@ -103,9 +93,7 @@ export function AppNavigation({ variant = "static" }: AppNavigationProps) {
           margin: "0 auto",
         }}
       >
-        <Link href="/" style={{ textDecoration: "none" }} onClick={markSkipHomeIntro}>
-          <div style={logoStyle}>Metasys Consulting</div>
-        </Link>
+        <SiteLogo />
 
         <div style={{ display: "flex", gap: "40px", alignItems: "center" }}>
           <NavItem href="/case-studies">Case studies</NavItem>
