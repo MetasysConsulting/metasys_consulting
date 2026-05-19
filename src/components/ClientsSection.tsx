@@ -108,23 +108,24 @@ export function ClientsSection() {
 
               <div
                 style={{
-                  marginBottom: "20px",
-                  minHeight: 56,
+                  marginBottom: "22px",
+                  minHeight: 88,
+                  width: "100%",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
               >
-                <ClientLogo name={client.name} logo={client.logo} size={56} />
+                <ClientLogo name={client.name} logo={client.logo} size={80} />
               </div>
 
               <div
                 style={{
                   fontFamily: "var(--font-body), system-ui, sans-serif",
-                  fontSize: "1.25rem",
+                  fontSize: "1.4rem",
                   fontWeight: 700,
                   color: "#ffffff",
-                  marginBottom: "6px",
+                  marginBottom: "8px",
                   textAlign: "center",
                 }}
               >
@@ -134,12 +135,12 @@ export function ClientsSection() {
               <div
                 style={{
                   fontFamily: "var(--font-body), system-ui, sans-serif",
-                  fontSize: "0.85rem",
+                  fontSize: "0.95rem",
                   fontWeight: 400,
                   color: "#9ec8e8",
                   textAlign: "center",
                   opacity: 0.9,
-                  marginBottom: "12px",
+                  marginBottom: "14px",
                 }}
               >
                 {client.industry}
@@ -148,7 +149,7 @@ export function ClientsSection() {
               <p
                 style={{
                   fontFamily: "var(--font-body), system-ui, sans-serif",
-                  fontSize: "0.8rem",
+                  fontSize: "0.92rem",
                   fontWeight: 400,
                   color: "rgba(255, 255, 255, 0.65)",
                   lineHeight: 1.55,

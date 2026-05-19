@@ -8,7 +8,7 @@ type ClientLogoProps = {
   size?: number;
 };
 
-export function ClientLogo({ name, logo, size = 56 }: ClientLogoProps) {
+export function ClientLogo({ name, logo, size = 72 }: ClientLogoProps) {
   const [failed, setFailed] = useState(false);
   const initial = name.charAt(0).toUpperCase();
 
@@ -40,31 +40,26 @@ export function ClientLogo({ name, logo, size = 56 }: ClientLogoProps) {
   return (
     <div
       style={{
-        width: size + 16,
-        height: size + 16,
-        borderRadius: 14,
-        background: "rgba(255, 255, 255, 0.96)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: 10,
-        boxShadow: "0 2px 12px rgba(0, 0, 0, 0.15)",
+        width: "100%",
+        minHeight: size,
+        maxHeight: size + 24,
       }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={logo}
         alt={`${name} logo`}
-        width={size}
-        height={size}
         loading="lazy"
         decoding="async"
         onError={() => setFailed(true)}
         style={{
           width: "auto",
           height: "auto",
-          maxWidth: size,
-          maxHeight: size,
+          maxHeight: size + 16,
+          maxWidth: "min(100%, 240px)",
           objectFit: "contain",
           display: "block",
         }}
