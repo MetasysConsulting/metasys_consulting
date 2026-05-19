@@ -1,23 +1,20 @@
 export type HomeService = {
-  icon: HomeServiceIcon;
+  /** Simple Icons slug — colored logos via cdn.simpleicons.org */
+  iconSlug: string;
+  iconColor: string;
+  iconLegacy?: boolean;
   title: string;
   description: string;
   features: string[];
   link: string;
 };
 
-export type HomeServiceIcon =
-  | "ai-ml"
-  | "web-development"
-  | "data-analytics"
-  | "program-management"
-  | "talent-resourcing"
-  | "embedded-systems";
-
 /** Home page service cards */
 export const HOME_SERVICES: HomeService[] = [
   {
-    icon: "ai-ml",
+    iconSlug: "openai",
+    iconColor: "412991",
+    iconLegacy: true,
     title: "AI & Machine Learning",
     description:
       "LLM integration, custom AI agents, RAG pipelines, and production AI systems for chatbots, automation, and intelligent products.",
@@ -31,7 +28,8 @@ export const HOME_SERVICES: HomeService[] = [
     link: "/services/ai-machine-learning",
   },
   {
-    icon: "web-development",
+    iconSlug: "nextdotjs",
+    iconColor: "FFFFFF",
     title: "Full-Stack Development",
     description:
       "End-to-end web and mobile products with modern stacks, cloud deployment, UI/UX, and DevOps practices clients search for on Upwork.",
@@ -45,7 +43,8 @@ export const HOME_SERVICES: HomeService[] = [
     link: "/services/web-development",
   },
   {
-    icon: "data-analytics",
+    iconSlug: "python",
+    iconColor: "3776AB",
     title: "Data Analytics & Science",
     description:
       "Turn raw data into decisions with analytics, machine learning, BI dashboards, and reliable data pipelines.",
@@ -59,21 +58,23 @@ export const HOME_SERVICES: HomeService[] = [
     link: "/services/data-analytics",
   },
   {
-    icon: "program-management",
+    iconSlug: "jira",
+    iconColor: "0052CC",
     title: "Product & Project Management",
     description:
-      "From product strategy and roadmaps to agile delivery and change management—we align teams, timelines, and outcomes.",
+      "Product strategy and agile delivery—from roadmaps and prioritization to Scrum execution and transformation programs.",
     features: [
       "Agile / Scrum delivery",
       "Product strategy & roadmaps",
       "Feature prioritization & UX",
-      "Change & transformation programs",
-      "Performance improvement",
+      "Change & transformation leadership",
+      "Technology enablement",
     ],
     link: "/services/project-management",
   },
   {
-    icon: "talent-resourcing",
+    iconSlug: "upwork",
+    iconColor: "6FDA44",
     title: "Talent Resourcing",
     description:
       "Find and onboard the right specialists for critical technical and leadership roles.",
@@ -87,7 +88,8 @@ export const HOME_SERVICES: HomeService[] = [
     link: "/services/talent-resourcing",
   },
   {
-    icon: "embedded-systems",
+    iconSlug: "espressif",
+    iconColor: "E7352C",
     title: "Embedded Systems & IoT",
     description:
       "Firmware, connected devices, and hardware–software integration from prototype to production—including edge AI on microcontrollers.",

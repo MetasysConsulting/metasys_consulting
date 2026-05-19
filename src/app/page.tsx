@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { consumeSkipHomeIntro } from "@/lib/home-intro";
-import { ServiceCardsGrid } from "@/components/ServiceCardsGrid";
+import { ServiceCard } from "@/components/ServiceCard";
 import { TechnologyLogos } from "@/components/TechnologyLogos";
 import { HOME_SERVICES } from "@/data/services";
 import { TECHNOLOGIES } from "@/data/technologies";
@@ -232,6 +232,8 @@ export default function Home() {
       clearTimeout(scrollTimer);
     };
   }, []);
+
+  const services = HOME_SERVICES;
 
   const clients = [
     { name: "Barclays", industry: "Financial Services" },
@@ -957,11 +959,19 @@ export default function Home() {
                 maxWidth: '800px',
                 margin: '0 auto',
               }}>
-                AI, full-stack, data, delivery leadership, talent, and embedded systems—built for how clients search on Upwork.
+                Comprehensive solutions spanning data analytics, project management, product innovation, talent acquisition, and web development.
               </p>
             </div>
 
-            <ServiceCardsGrid services={HOME_SERVICES} />
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+              gap: '40px',
+            }}>
+                                           {services.map((service) => (
+                <ServiceCard key={service.title} service={service} />
+              ))}
+               </div>
           </div>
         </section>
 

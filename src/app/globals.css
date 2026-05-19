@@ -226,77 +226,81 @@ body {
   margin: 0.75rem 0 1rem;
 }
 
-/* Animated border shine for service cards */
-@property --service-shine-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-@keyframes service-shine-spin {
-  to {
-    --service-shine-angle: 360deg;
-  }
+/* Service cards — subtle outer glow outside the border */
+.service-card-shine-wrap {
+  position: relative;
+  border-radius: 20px;
+  isolation: isolate;
 }
 
 .service-card-shine {
-  --service-shine-angle: 0deg;
-  background: conic-gradient(
-    from var(--service-shine-angle),
-    rgba(212, 207, 196, 0.08) 0deg,
-    rgba(212, 207, 196, 0.55) 55deg,
-    rgba(184, 168, 138, 0.35) 110deg,
-    rgba(212, 207, 196, 0.08) 180deg,
-    rgba(100, 160, 220, 0.2) 240deg,
-    rgba(212, 207, 196, 0.08) 360deg
+  position: absolute;
+  inset: -4px;
+  border-radius: 24px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(212, 207, 196, 0.08) 20%,
+    rgba(212, 207, 196, 0.28) 45%,
+    rgba(184, 168, 138, 0.22) 55%,
+    rgba(212, 207, 196, 0.08) 80%,
+    transparent 100%
   );
-  animation: service-shine-spin 10s linear infinite;
+  background-size: 220% 220%;
+  filter: blur(10px);
+  animation: service-card-shine-drift 9s ease-in-out infinite;
 }
 
-.service-card-shine:hover,
-.service-card-shine:has(:focus-visible) {
-  animation-duration: 5s;
+.service-card-shine-wrap .service-card {
+  position: relative;
+  z-index: 1;
+}
+
+.service-card-shine-wrap::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  z-index: 0;
+  pointer-events: none;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 207, 196, 0.35),
+    rgba(212, 207, 196, 0.05) 40%,
+    rgba(184, 168, 138, 0.2) 60%,
+    rgba(212, 207, 196, 0.3)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.45;
+  transition: opacity 0.35s ease;
+}
+
+.service-card-shine-wrap:hover::after {
+  opacity: 0.75;
+}
+
+@keyframes service-card-shine-drift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.45;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.65;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .service-card-shine {
     animation: none;
-    background: linear-gradient(
-      135deg,
-      rgba(212, 207, 196, 0.35),
-      rgba(212, 207, 196, 0.12)
-    );
   }
-}
-
-.service-card-inner {
-  background: rgba(0, 20, 40, 0.55);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 207, 196, 0.08);
-}
-
-.service-icon-ring {
-  background: linear-gradient(
-    145deg,
-    rgba(232, 228, 220, 0.22),
-    rgba(184, 168, 138, 0.12)
-  );
-  border: 1px solid rgba(212, 207, 196, 0.28);
-  box-shadow:
-    0 0 24px rgba(212, 207, 196, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-.service-icon-ring::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(
-    circle at 30% 20%,
-    rgba(255, 255, 255, 0.12),
-    transparent 55%
-  );
-  pointer-events: none;
 }
