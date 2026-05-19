@@ -4,24 +4,21 @@ import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import { consumeSkipHomeIntro } from "@/lib/home-intro";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-/** Persists for the tab session; reset on full page reload. */
-let homeHasMountedInSession = false;
-
-function shouldPlayHeroIntro(): boolean {
-  if (homeHasMountedInSession) return false;
-  homeHasMountedInSession = true;
-  return true;
+function getPlayIntroOnMount(): boolean {
+  if (typeof window === "undefined") return false;
+  return !consumeSkipHomeIntro();
 }
 
 export default function Home() {
-  const playIntro = useRef(shouldPlayHeroIntro()).current;
-  const [startAnimation, setStartAnimation] = useState(!playIntro);
+  const playIntro = useRef(getPlayIntroOnMount()).current;
+  const [startAnimation, setStartAnimation] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const heroHeadingRef = useRef<HTMLDivElement>(null);
   const heroDescriptionRef = useRef<HTMLDivElement>(null);
@@ -297,8 +294,14 @@ export default function Home() {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              clipPath: startAnimation ? 'none' : 'inset(75% 35% 5% 35% round 24px)',
-              animation: startAnimation ? 'revealVideo 1.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards' : 'none',
+              clipPath:
+                playIntro && !startAnimation
+                  ? 'inset(75% 35% 5% 35% round 24px)'
+                  : 'none',
+              animation:
+                playIntro && startAnimation
+                  ? 'revealVideo 1.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards'
+                  : 'none',
             }}
             autoPlay
             muted

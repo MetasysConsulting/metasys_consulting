@@ -3,6 +3,7 @@
 import type { CSSProperties, MouseEvent, ReactNode } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
+import { markSkipHomeIntro } from "@/lib/home-intro";
 
 type AppNavigationProps = {
   variant?: "hero" | "static";
@@ -69,8 +70,14 @@ function hoverCta(e: MouseEvent<HTMLElement>, enter: boolean) {
 }
 
 function NavItem({ href, children }: { href: string; children: ReactNode }) {
+  const goesHome = href === "/" || href.startsWith("/#");
+
   return (
-    <Link href={href} style={{ textDecoration: "none" }}>
+    <Link
+      href={href}
+      style={{ textDecoration: "none" }}
+      onClick={goesHome ? markSkipHomeIntro : undefined}
+    >
       <div
         style={navItemStyle}
         onMouseEnter={(e) => hoverNavItem(e, true)}
@@ -96,7 +103,7 @@ export function AppNavigation({ variant = "static" }: AppNavigationProps) {
           margin: "0 auto",
         }}
       >
-        <Link href="/" style={{ textDecoration: "none" }}>
+        <Link href="/" style={{ textDecoration: "none" }} onClick={markSkipHomeIntro}>
           <div style={logoStyle}>Metasys Consulting</div>
         </Link>
 
