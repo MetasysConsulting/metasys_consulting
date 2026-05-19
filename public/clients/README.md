@@ -18,4 +18,7 @@ If a logo file is missing, the site shows a letter fallback. Replace or add PNG/
 | `designer-metals.png` | Designer Metals | **Missing** — add official logo |
 | `empire-sports.png` | Empire Sports | **Missing** — add official logo |
 
-Legacy files (`barclays.svg`, `al-jazeera.svg`, etc.) are unused by the current client list.
+| `barclays.svg` | Barclays | Official brand asset |
+| `al-jazeera.svg` | Al Jazeera | Wikimedia |
+| `ey.svg` | EY | Wikimedia |
+| `odessa.png` | Odessa | Site favicon |

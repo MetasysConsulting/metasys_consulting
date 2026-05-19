@@ -8,6 +8,34 @@ export type Client = {
 
 export const CLIENTS: Client[] = [
   {
+    name: "Barclays",
+    industry: "Financial Services",
+    description:
+      "Enterprise data, analytics, and technology delivery for global banking operations.",
+    logo: "/clients/barclays.svg",
+  },
+  {
+    name: "Al Jazeera",
+    industry: "Media & Broadcasting",
+    description:
+      "Digital platforms, content systems, and audience analytics for international media.",
+    logo: "/clients/al-jazeera.svg",
+  },
+  {
+    name: "EY",
+    industry: "Professional Services",
+    description:
+      "Consulting and technology programs — data engineering, reporting, and client delivery tooling.",
+    logo: "/clients/ey.svg",
+  },
+  {
+    name: "Odessa",
+    industry: "Technology",
+    description:
+      "Software and analytics engagements for lease-management and asset-finance platforms.",
+    logo: "/clients/odessa.png",
+  },
+  {
     name: "Community Connect Labs",
     industry: "Civic Tech · SaaS",
     description:
