@@ -49,7 +49,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
           padding: "20px 40px",
           background: "rgba(0, 20, 40, 0.9)",
           backdropFilter: "blur(20px)",
-          borderBottom: "1px solid rgba(200, 190, 170, 0.2)",
+          borderBottom: "1px solid rgba(140, 200, 235, 0.2)",
         }}
       >
         <div
@@ -67,7 +67,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
                 fontFamily: "var(--font-display), system-ui, sans-serif",
                 fontSize: "1.35rem",
                 fontWeight: 600,
-                color: "#d4cfc4",
+                color: "#9ec8e8",
                 letterSpacing: "0.06em",
               }}
             >
@@ -81,7 +81,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
                 fontSize: "0.95rem",
                 fontWeight: 600,
                 color: "#0a0a0a",
-                background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
+                background: "linear-gradient(135deg, #d0e8f8, #6eaed4)",
                 padding: "10px 20px",
                 borderRadius: "10px",
               }}
@@ -106,7 +106,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
               fontFamily: "var(--font-display), system-ui, sans-serif",
               fontSize: "clamp(2.25rem, 5vw, 3.5rem)",
               fontWeight: 600,
-              color: "#d4cfc4",
+              color: "#9ec8e8",
               marginBottom: "16px",
             }}
           >
@@ -128,7 +128,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
               backdropFilter: "blur(15px)",
               padding: "36px",
               borderRadius: "16px",
-              border: "1px solid rgba(200, 190, 170, 0.2)",
+              border: "1px solid rgba(140, 200, 235, 0.2)",
               textAlign: "left",
             }}
           >
@@ -158,9 +158,9 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
                     fontSize: "0.85rem",
                     padding: "8px 14px",
                     borderRadius: "8px",
-                    background: "rgba(200, 190, 170, 0.12)",
-                    border: "1px solid rgba(200, 190, 170, 0.25)",
-                    color: "#d4cfc4",
+                    background: "rgba(140, 200, 235, 0.12)",
+                    border: "1px solid rgba(140, 200, 235, 0.25)",
+                    color: "#9ec8e8",
                   }}
                 >
                   {item}
@@ -179,7 +179,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
           style={{
             fontFamily: "var(--font-display), system-ui, sans-serif",
             fontSize: "2rem",
-            color: "#d4cfc4",
+            color: "#9ec8e8",
             marginBottom: "32px",
             textAlign: "center",
           }}
@@ -197,7 +197,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
                 backdropFilter: "blur(12px)",
                 padding: "28px 32px",
                 borderRadius: "14px",
-                border: "1px solid rgba(200, 190, 170, 0.2)",
+                border: "1px solid rgba(140, 200, 235, 0.2)",
               }}
             >
               <h3
@@ -205,7 +205,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
                   fontFamily: "var(--font-body), system-ui, sans-serif",
                   fontSize: "1.25rem",
                   fontWeight: 600,
-                  color: "#d4cfc4",
+                  color: "#9ec8e8",
                   marginBottom: "10px",
                 }}
               >
@@ -234,7 +234,7 @@ export function ServiceDetailPage({ content }: ServiceDetailPageProps) {
                 fontSize: "1rem",
                 padding: "14px 32px",
                 borderRadius: "10px",
-                background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
+                background: "linear-gradient(135deg, #d0e8f8, #6eaed4)",
                 color: "#0a0a0a",
               }}
             >

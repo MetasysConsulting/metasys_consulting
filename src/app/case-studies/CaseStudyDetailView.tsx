@@ -40,7 +40,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
     fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)",
     fontWeight: "700",
     letterSpacing: "-0.015em",
-    background: "linear-gradient(135deg, #f0ece4 0%, #e0d4bc 40%, #c9a96e 100%)",
+    background: "linear-gradient(135deg, #e8f4fc 0%, #b8daf0 40%, #6eb8e8 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     backgroundClip: "text",
@@ -59,7 +59,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
     fontFamily: ffd,
     fontSize: "1.05rem",
     fontWeight: "700",
-    color: "#e8d9b8",
+    color: "#b4daf4",
     marginBottom: "10px",
     letterSpacing: "-0.01em",
   } as const;
@@ -86,7 +86,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
               fontFamily: ff,
               fontSize: "0.88rem",
               fontWeight: "500",
-              color: "rgba(201,169,110,0.75)",
+              color: "rgba(110,184,232,0.75)",
               textDecoration: "none",
               marginBottom: "28px",
               display: "inline-flex",
@@ -95,8 +95,8 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
               letterSpacing: "0.01em",
               transition: "color 0.2s ease",
             }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#c9a96e"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(201,169,110,0.75)"; }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#6eb8e8"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(110,184,232,0.75)"; }}
           >
             ← All case studies
           </Link>
@@ -115,7 +115,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
             fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
             fontWeight: "700",
             letterSpacing: "-0.025em",
-            background: "linear-gradient(135deg, #f5f0e8 0%, #e8dfc8 40%, #c9a96e 100%)",
+            background: "linear-gradient(135deg, #eef6fc 0%, #c5e8fa 40%, #6eb8e8 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -128,7 +128,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
           <p style={{
             fontFamily: ff,
             fontSize: "1.2rem",
-            color: "rgba(201,169,110,0.8)",
+            color: "rgba(110,184,232,0.8)",
             maxWidth: "820px",
             lineHeight: "1.65",
             fontStyle: "italic",
@@ -171,18 +171,18 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
                   backdropFilter: "blur(14px)",
                   padding: "28px 32px",
                   borderRadius: "16px",
-                  border: "1px solid rgba(201, 169, 110, 0.14)",
+                  border: "1px solid rgba(110, 184, 232, 0.14)",
                   marginBottom: "20px",
                   position: "relative",
                   overflow: "hidden",
                   transition: "border-color 0.3s ease",
                 }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,169,110,0.32)"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,169,110,0.14)"; }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(110,184,232,0.32)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(110,184,232,0.14)"; }}
               >
                 <div style={{
                   position: "absolute", top: 0, left: 0, width: "100%", height: "2.5px",
-                  background: "linear-gradient(90deg, #c9a96e, #4f8ef7 60%, transparent)",
+                  background: "linear-gradient(90deg, #6eb8e8, #4f8ef7 60%, transparent)",
                 }} />
                 <h3 style={highlightTitle}>{item.title}</h3>
                 <p style={{ ...bodyText, marginBottom: 0 }}>{item.description}</p>
@@ -207,7 +207,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
                   >
                     <span style={{
                       fontFamily: "var(--font-mono)", fontSize: "0.78rem",
-                      color: "#c9a96e", fontWeight: 600,
+                      color: "#6eb8e8", fontWeight: 600,
                       minWidth: 28, paddingTop: 3,
                     }}>
                       {String(i + 1).padStart(2, "0")}
@@ -242,7 +242,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
                 fontStyle: "italic",
                 marginTop: "44px",
                 lineHeight: "1.78",
-                borderTop: "1px solid rgba(201,169,110,0.14)",
+                borderTop: "1px solid rgba(110,184,232,0.14)",
                 paddingTop: "32px",
               }}
             >
@@ -254,7 +254,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
             <Link href="/#contact" style={{ textDecoration: "none" }}>
               <div
                 style={{
-                  background: "linear-gradient(135deg, #e8dfc8, #c9a96e)",
+                  background: "linear-gradient(135deg, #c5e8fa, #6eb8e8)",
                   padding: "15px 34px",
                   borderRadius: "11px",
                   fontFamily: ff,
@@ -262,11 +262,11 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
                   fontWeight: "600",
                   color: "#0a0a0a",
                   display: "inline-block",
-                  boxShadow: "0 8px 28px rgba(201,169,110,0.42)",
+                  boxShadow: "0 8px 28px rgba(110,184,232,0.42)",
                   letterSpacing: "0.01em",
                 }}
-                onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.05, boxShadow: "0 12px 38px rgba(201,169,110,0.62)", duration: 0.28 })}
-                onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, boxShadow: "0 8px 28px rgba(201,169,110,0.42)", duration: 0.28 })}
+                onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.05, boxShadow: "0 12px 38px rgba(110,184,232,0.62)", duration: 0.28 })}
+                onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, boxShadow: "0 8px 28px rgba(110,184,232,0.42)", duration: 0.28 })}
               >
                 Schedule Your Consultation
               </div>

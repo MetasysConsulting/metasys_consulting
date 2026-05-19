@@ -13,10 +13,10 @@ function TechLogoCard({ tech }: { tech: Technology }) {
     <div
       className="tech-logo-card"
       style={{
-        background: "rgba(200, 190, 170, 0.1)",
+        background: "rgba(140, 200, 235, 0.1)",
         padding: "20px 16px 14px",
         borderRadius: "12px",
-        border: "1px solid rgba(200, 190, 170, 0.2)",
+        border: "1px solid rgba(140, 200, 235, 0.2)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -29,16 +29,16 @@ function TechLogoCard({ tech }: { tech: Technology }) {
       onMouseEnter={(e) => {
         gsap.to(e.currentTarget, {
           scale: 1.05,
-          backgroundColor: "rgba(200, 190, 170, 0.2)",
-          borderColor: "rgba(200, 190, 170, 0.4)",
+          backgroundColor: "rgba(140, 200, 235, 0.2)",
+          borderColor: "rgba(140, 200, 235, 0.4)",
           duration: 0.2,
         });
       }}
       onMouseLeave={(e) => {
         gsap.to(e.currentTarget, {
           scale: 1,
-          backgroundColor: "rgba(200, 190, 170, 0.1)",
-          borderColor: "rgba(200, 190, 170, 0.2)",
+          backgroundColor: "rgba(140, 200, 235, 0.1)",
+          borderColor: "rgba(140, 200, 235, 0.2)",
           duration: 0.2,
         });
       }}

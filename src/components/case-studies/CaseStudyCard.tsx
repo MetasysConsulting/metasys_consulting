@@ -30,7 +30,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
           WebkitBackdropFilter: "blur(16px) saturate(1.2)",
           padding: "36px 36px 32px",
           borderRadius: "20px",
-          border: "1px solid rgba(201, 169, 110, 0.14)",
+          border: "1px solid rgba(110, 184, 232, 0.14)",
           boxShadow: "0 8px 36px rgba(0, 0, 0, 0.35)",
           cursor: "pointer",
           transition: "border-color 0.3s ease",
@@ -40,10 +40,10 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
         onMouseEnter={(e) => {
           gsap.to(e.currentTarget, {
             y: -8, scale: 1.015,
-            boxShadow: "0 24px 50px rgba(201,169,110,0.18)",
+            boxShadow: "0 24px 50px rgba(110,184,232,0.18)",
             duration: 0.3, ease: "power2.out",
           });
-          (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,169,110,0.35)";
+          (e.currentTarget as HTMLElement).style.borderColor = "rgba(110,184,232,0.35)";
         }}
         onMouseLeave={(e) => {
           gsap.to(e.currentTarget, {
@@ -51,13 +51,13 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
             boxShadow: "0 8px 36px rgba(0,0,0,0.35)",
             duration: 0.3, ease: "power2.out",
           });
-          (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,169,110,0.14)";
+          (e.currentTarget as HTMLElement).style.borderColor = "rgba(110,184,232,0.14)";
         }}
       >
         {/* top accent line */}
         <div style={{
           position: "absolute", top: 0, left: 0, width: "100%", height: "3px",
-          background: "linear-gradient(90deg, #c9a96e 0%, #4f8ef7 60%, transparent 100%)",
+          background: "linear-gradient(90deg, #6eb8e8 0%, #4f8ef7 60%, transparent 100%)",
           borderRadius: "20px 20px 0 0",
         }} />
 
@@ -74,7 +74,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
           fontFamily: ffd,
           fontSize: "1.22rem",
           fontWeight: "700",
-          color: "#e8d9b8",
+          color: "#b4daf4",
           marginBottom: "10px",
           letterSpacing: "-0.01em",
           lineHeight: 1.3,
@@ -84,7 +84,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
 
         <p style={{
           fontFamily: ff,
-          color: "rgba(201,169,110,0.85)",
+          color: "rgba(110,184,232,0.85)",
           lineHeight: "1.55",
           marginBottom: "14px",
           fontSize: "0.88rem",
@@ -125,7 +125,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
           marginTop: 20,
           display: "flex", alignItems: "center", gap: 6,
           fontFamily: ff, fontSize: "0.82rem", fontWeight: "600",
-          color: "#c9a96e", letterSpacing: "0.04em",
+          color: "#6eb8e8", letterSpacing: "0.04em",
         }}>
           Read case study
           <span style={{ fontSize: "0.9rem" }}>→</span>

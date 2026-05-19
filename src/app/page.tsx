@@ -49,7 +49,7 @@ function ParticleCanvas() {
         vy: (Math.random() - 0.5) * 0.28,
         size: Math.random() * 1.6 + 0.4,
         alpha: Math.random() * 0.35 + 0.08,
-        hue: Math.random() < 0.45 ? 220 : 38,
+        hue: Math.random() < 0.45 ? 220 : 195,
       });
     }
 
@@ -78,7 +78,7 @@ function ParticleCanvas() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(201,169,110,${0.055 * (1 - dist / 110)})`;
+            ctx.strokeStyle = `rgba(110,184,232,${0.055 * (1 - dist / 110)})`;
             ctx.lineWidth = 0.6;
             ctx.stroke();
           }
@@ -283,7 +283,7 @@ export default function Home() {
               background: "rgba(6, 9, 18, 0.35)",
               backdropFilter: "blur(20px) saturate(1.4)",
               WebkitBackdropFilter: "blur(20px) saturate(1.4)",
-              borderBottom: "1px solid rgba(201, 169, 110, 0.15)",
+              borderBottom: "1px solid rgba(110, 184, 232, 0.15)",
               boxShadow: "0 1px 40px rgba(0, 0, 0, 0.4)",
             }}
           >
@@ -318,8 +318,8 @@ export default function Home() {
                         letterSpacing: "0.01em",
                       }}
                       onMouseEnter={(e) => gsap.to(e.currentTarget, {
-                        scale: 1.04, backgroundColor: "rgba(201,169,110,0.09)",
-                        borderColor: "rgba(201,169,110,0.25)", color: "#e8d9b8",
+                        scale: 1.04, backgroundColor: "rgba(110,184,232,0.09)",
+                        borderColor: "rgba(110,184,232,0.25)", color: "#b4daf4",
                         duration: 0.25, ease: "power2.out",
                       })}
                       onMouseLeave={(e) => gsap.to(e.currentTarget, {
@@ -344,20 +344,20 @@ export default function Home() {
                     style={{
                       fontFamily: ff, fontSize: "15px", fontWeight: "600",
                       color: "#0a0a0a",
-                      background: "linear-gradient(135deg, #e8dfc8 0%, #c9a96e 100%)",
+                      background: "linear-gradient(135deg, #c5e8fa 0%, #6eb8e8 100%)",
                       padding: "10px 22px",
                       borderRadius: "10px",
                       cursor: "pointer",
-                      boxShadow: "0 4px 18px rgba(201,169,110,0.35)",
+                      boxShadow: "0 4px 18px rgba(110,184,232,0.35)",
                       marginLeft: "8px",
                       letterSpacing: "0.01em",
                     }}
                     onMouseEnter={(e) => gsap.to(e.currentTarget, {
-                      scale: 1.05, boxShadow: "0 6px 28px rgba(201,169,110,0.55)",
+                      scale: 1.05, boxShadow: "0 6px 28px rgba(110,184,232,0.55)",
                       duration: 0.25, ease: "power2.out",
                     })}
                     onMouseLeave={(e) => gsap.to(e.currentTarget, {
-                      scale: 1, boxShadow: "0 4px 18px rgba(201,169,110,0.35)",
+                      scale: 1, boxShadow: "0 4px 18px rgba(110,184,232,0.35)",
                       duration: 0.25, ease: "power2.out",
                     })}
                   >
@@ -386,12 +386,12 @@ export default function Home() {
                   display: "inline-flex", alignItems: "center", gap: "10px",
                   marginBottom: "28px",
                 }}>
-                  <div style={{ width: 28, height: 1, background: "linear-gradient(90deg, #c9a96e, transparent)" }} />
+                  <div style={{ width: 28, height: 1, background: "linear-gradient(90deg, #6eb8e8, transparent)" }} />
                   <span style={{
                     fontFamily: "var(--font-mono), ui-monospace, monospace",
                     fontSize: "0.68rem", fontWeight: 500,
                     letterSpacing: "0.22em", textTransform: "uppercase",
-                    color: "#c9a96e",
+                    color: "#6eb8e8",
                   }}>
                     Technical Agency
                   </span>
@@ -419,13 +419,13 @@ export default function Home() {
                     fontFamily: ff,
                     fontSize: "1.2rem",
                     fontWeight: "400",
-                    color: "rgba(228, 218, 196, 0.85)",
+                    color: "rgba(180, 220, 245, 0.88)",
                     lineHeight: 1.6,
                     margin: 0,
                     letterSpacing: "0.01em",
                   }}>
                     Strategy, engineering, and AI —{" "}
-                    <span style={{ color: "#c9a96e", fontWeight: 500 }}>from idea to deployment.</span>
+                    <span style={{ color: "#6eb8e8", fontWeight: 500 }}>from idea to deployment.</span>
                   </p>
                 </div>
 
@@ -436,20 +436,20 @@ export default function Home() {
                       style={{
                         fontFamily: ff, fontSize: "16px", fontWeight: "600",
                         color: "#0a0a0a",
-                        background: "linear-gradient(135deg, #e8dfc8 0%, #c9a96e 100%)",
+                        background: "linear-gradient(135deg, #c5e8fa 0%, #6eb8e8 100%)",
                         padding: "15px 30px",
                         borderRadius: "11px",
                         cursor: "pointer",
-                        boxShadow: "0 8px 28px rgba(201,169,110,0.45)",
+                        boxShadow: "0 8px 28px rgba(110,184,232,0.45)",
                         display: "inline-block",
                         letterSpacing: "0.01em",
                       }}
                       onMouseEnter={(e) => gsap.to(e.currentTarget, {
-                        scale: 1.05, boxShadow: "0 12px 38px rgba(201,169,110,0.65)",
+                        scale: 1.05, boxShadow: "0 12px 38px rgba(110,184,232,0.65)",
                         duration: 0.28, ease: "power2.out",
                       })}
                       onMouseLeave={(e) => gsap.to(e.currentTarget, {
-                        scale: 1, boxShadow: "0 8px 28px rgba(201,169,110,0.45)",
+                        scale: 1, boxShadow: "0 8px 28px rgba(110,184,232,0.45)",
                         duration: 0.28, ease: "power2.out",
                       })}
                     >
@@ -462,22 +462,22 @@ export default function Home() {
                       className="hero-cta"
                       style={{
                         fontFamily: ff, fontSize: "16px", fontWeight: "500",
-                        color: "rgba(228, 218, 196, 0.9)",
+                        color: "rgba(180, 220, 245, 0.92)",
                         background: "transparent",
                         padding: "15px 30px",
                         borderRadius: "11px",
                         cursor: "pointer",
-                        border: "1px solid rgba(201,169,110,0.35)",
+                        border: "1px solid rgba(110,184,232,0.35)",
                         display: "inline-block",
                         letterSpacing: "0.01em",
                       }}
                       onMouseEnter={(e) => gsap.to(e.currentTarget, {
-                        scale: 1.04, borderColor: "rgba(201,169,110,0.7)",
-                        backgroundColor: "rgba(201,169,110,0.08)",
+                        scale: 1.04, borderColor: "rgba(110,184,232,0.7)",
+                        backgroundColor: "rgba(110,184,232,0.08)",
                         duration: 0.25, ease: "power2.out",
                       })}
                       onMouseLeave={(e) => gsap.to(e.currentTarget, {
-                        scale: 1, borderColor: "rgba(201,169,110,0.35)",
+                        scale: 1, borderColor: "rgba(110,184,232,0.35)",
                         backgroundColor: "transparent",
                         duration: 0.25, ease: "power2.out",
                       })}
@@ -499,7 +499,7 @@ export default function Home() {
                   {/* top shimmer accent */}
                   <div style={{
                     position: "absolute", top: 0, left: 0, width: "100%", height: "3px",
-                    background: "linear-gradient(90deg, transparent, #c9a96e 35%, #4f8ef7 65%, transparent)",
+                    background: "linear-gradient(90deg, transparent, #6eb8e8 35%, #4f8ef7 65%, transparent)",
                     opacity: 0.7,
                   }} />
                   <p style={{
@@ -511,7 +511,7 @@ export default function Home() {
                     letterSpacing: "0.01em",
                   }}>
                     Metasys is a{" "}
-                    <span style={{ color: "#e8d9b8", fontWeight: "600" }}>technical agency</span>{" "}
+                    <span style={{ color: "#b4daf4", fontWeight: "600" }}>technical agency</span>{" "}
                     that works with startups, scaleups, and enterprises to design, build, and ship digital products. We bring together full-stack engineering, AI integration, data science, and embedded systems expertise to help businesses move faster and build smarter — from early-stage MVPs to production-scale platforms.
                   </p>
                   {/* bottom decorative row */}
@@ -533,10 +533,10 @@ export default function Home() {
             zIndex: 20, display: "flex", flexDirection: "column", alignItems: "center", gap: 8,
             opacity: showHeroChrome ? 0.55 : 0,
           }}>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.62rem", letterSpacing: "0.2em", color: "#c9a96e", textTransform: "uppercase" }}>scroll</span>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.62rem", letterSpacing: "0.2em", color: "#6eb8e8", textTransform: "uppercase" }}>scroll</span>
             <div style={{
               width: 1, height: 32,
-              background: "linear-gradient(180deg, #c9a96e, transparent)",
+              background: "linear-gradient(180deg, #6eb8e8, transparent)",
               animation: "scrollPulse 1.6s ease-in-out infinite",
             }} />
           </div>
@@ -551,9 +551,9 @@ export default function Home() {
             {/* header */}
             <div style={{ textAlign: "center", marginBottom: "80px" }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-                <div style={{ width: 32, height: 1, background: "linear-gradient(90deg, transparent, #c9a96e)" }} />
+                <div style={{ width: 32, height: 1, background: "linear-gradient(90deg, transparent, #6eb8e8)" }} />
                 <span className="section-label">Who We Are</span>
-                <div style={{ width: 32, height: 1, background: "linear-gradient(90deg, #c9a96e, transparent)" }} />
+                <div style={{ width: 32, height: 1, background: "linear-gradient(90deg, #6eb8e8, transparent)" }} />
               </div>
               <h2 className="heading-gradient" style={{
                 fontFamily: ffd,
@@ -587,7 +587,7 @@ export default function Home() {
               backdropFilter: "blur(18px) saturate(1.2)",
               padding: "56px 64px",
               borderRadius: "22px",
-              border: "1px solid rgba(201,169,110,0.18)",
+              border: "1px solid rgba(110,184,232,0.18)",
               textAlign: "center",
               marginBottom: "80px",
               boxShadow: "0 12px 50px rgba(0,0,0,0.35)",
@@ -596,7 +596,7 @@ export default function Home() {
               <div className="shimmer-line" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "3px" }} />
               <h3 style={{
                 fontFamily: ffd, fontSize: "1.5rem", fontWeight: "700",
-                color: "#e8d9b8", marginBottom: "20px", letterSpacing: "-0.01em",
+                color: "#b4daf4", marginBottom: "20px", letterSpacing: "-0.01em",
               }}>
                 Our Core Mission
               </h3>
@@ -604,7 +604,7 @@ export default function Home() {
                 fontFamily: ff, fontSize: "1.35rem", fontWeight: "400",
                 color: "rgba(244,241,236,0.88)", lineHeight: "1.65", margin: 0,
               }}>
-                <span style={{ color: "#c9a96e", fontWeight: "600" }}>Help businesses build faster, smarter, and at scale.</span>
+                <span style={{ color: "#6eb8e8", fontWeight: "600" }}>Help businesses build faster, smarter, and at scale.</span>
               </p>
             </div>
 
@@ -652,32 +652,32 @@ export default function Home() {
                     backdropFilter: "blur(14px)",
                     padding: "36px 40px",
                     borderRadius: "18px",
-                    border: "1px solid rgba(201,169,110,0.14)",
+                    border: "1px solid rgba(110,184,232,0.14)",
                     position: "relative", overflow: "hidden",
                     transition: "border-color 0.3s ease, box-shadow 0.3s ease",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,169,110,0.38)";
-                    (e.currentTarget as HTMLElement).style.boxShadow = "0 16px 48px rgba(0,0,0,0.3), 0 0 0 1px rgba(201,169,110,0.12)";
+                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(110,184,232,0.38)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 16px 48px rgba(0,0,0,0.3), 0 0 0 1px rgba(110,184,232,0.12)";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,169,110,0.14)";
+                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(110,184,232,0.14)";
                     (e.currentTarget as HTMLElement).style.boxShadow = "none";
                   }}
                 >
                   <div style={{
                     position: "absolute", top: 0, left: 0, width: "100%", height: "3px",
-                    background: "linear-gradient(90deg, #c9a96e, #4f8ef7)",
+                    background: "linear-gradient(90deg, #6eb8e8, #4f8ef7)",
                   }} />
                   <div style={{
-                    fontFamily: ff, fontSize: "1.5rem", color: "#c9a96e",
+                    fontFamily: ff, fontSize: "1.5rem", color: "#6eb8e8",
                     marginBottom: "14px", lineHeight: 1,
                   }}>
                     {item.icon}
                   </div>
                   <h3 style={{
                     fontFamily: ffd, fontSize: "1.15rem", fontWeight: "600",
-                    color: "#e8d9b8", marginBottom: "14px", letterSpacing: "-0.01em",
+                    color: "#b4daf4", marginBottom: "14px", letterSpacing: "-0.01em",
                   }}>
                     {item.title}
                   </h3>
@@ -704,7 +704,7 @@ export default function Home() {
               backdropFilter: "blur(14px)",
               padding: "40px",
               borderRadius: "18px",
-              border: "1px solid rgba(201,169,110,0.14)",
+              border: "1px solid rgba(110,184,232,0.14)",
               textAlign: "center",
               marginBottom: "72px",
             }}>
@@ -719,13 +719,13 @@ export default function Home() {
 
             {/* CTA banner */}
             <div style={{
-              background: "linear-gradient(135deg, rgba(201,169,110,0.1) 0%, rgba(79,142,247,0.08) 100%)",
+              background: "linear-gradient(135deg, rgba(110,184,232,0.1) 0%, rgba(79,142,247,0.08) 100%)",
               backdropFilter: "blur(16px)",
               padding: "52px 60px",
               borderRadius: "22px",
-              border: "1px solid rgba(201,169,110,0.25)",
+              border: "1px solid rgba(110,184,232,0.25)",
               textAlign: "center",
-              boxShadow: "0 12px 40px rgba(201,169,110,0.08)",
+              boxShadow: "0 12px 40px rgba(110,184,232,0.08)",
               position: "relative", overflow: "hidden",
             }}>
               <div className="shimmer-line" style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "2px" }} />
@@ -735,23 +735,23 @@ export default function Home() {
                 lineHeight: "1.65", marginBottom: "28px",
               }}>
                 Have a project in mind? Tell us what you&apos;re building — we&apos;ll show you how we can help you ship it,{" "}
-                <span style={{ color: "#c9a96e", fontWeight: "600" }}>schedule an introductory meeting with us today.</span>
+                <span style={{ color: "#6eb8e8", fontWeight: "600" }}>schedule an introductory meeting with us today.</span>
               </p>
               <a href="#contact" style={{ textDecoration: "none" }}>
                 <div
                   style={{
-                    background: "linear-gradient(135deg, #e8dfc8, #c9a96e)",
+                    background: "linear-gradient(135deg, #c5e8fa, #6eb8e8)",
                     padding: "15px 32px",
                     borderRadius: "11px",
                     cursor: "pointer",
                     fontFamily: ff, fontSize: "1.05rem", fontWeight: "600",
                     color: "#0a0a0a",
                     display: "inline-block",
-                    boxShadow: "0 8px 28px rgba(201,169,110,0.4)",
+                    boxShadow: "0 8px 28px rgba(110,184,232,0.4)",
                     letterSpacing: "0.01em",
                   }}
-                  onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.05, boxShadow: "0 12px 38px rgba(201,169,110,0.62)", duration: 0.28 })}
-                  onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, boxShadow: "0 8px 28px rgba(201,169,110,0.4)", duration: 0.28 })}
+                  onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.05, boxShadow: "0 12px 38px rgba(110,184,232,0.62)", duration: 0.28 })}
+                  onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, boxShadow: "0 8px 28px rgba(110,184,232,0.4)", duration: 0.28 })}
                 >
                   Schedule Your Consultation
                 </div>
@@ -768,9 +768,9 @@ export default function Home() {
           <div style={{ maxWidth: "1400px", margin: "0 auto", width: "100%" }}>
             <div style={{ textAlign: "center", marginBottom: "72px" }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-                <div style={{ width: 32, height: 1, background: "linear-gradient(90deg, transparent, #c9a96e)" }} />
+                <div style={{ width: 32, height: 1, background: "linear-gradient(90deg, transparent, #6eb8e8)" }} />
                 <span className="section-label">What We Do</span>
-                <div style={{ width: 32, height: 1, background: "linear-gradient(90deg, #c9a96e, transparent)" }} />
+                <div style={{ width: 32, height: 1, background: "linear-gradient(90deg, #6eb8e8, transparent)" }} />
               </div>
               <h2 className="heading-gradient" style={{
                 fontFamily: ffd,

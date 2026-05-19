@@ -71,9 +71,9 @@ export function CaseStudiesView() {
 
         <div style={{ maxWidth: "1400px", margin: "0 auto", width: "100%", textAlign: "center", position: "relative", zIndex: 2 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-            <div style={{ width: 32, height: 1, background: "linear-gradient(90deg, transparent, #c9a96e)" }} />
+            <div style={{ width: 32, height: 1, background: "linear-gradient(90deg, transparent, #6eb8e8)" }} />
             <span className="section-label">Client Work</span>
-            <div style={{ width: 32, height: 1, background: "linear-gradient(90deg, #c9a96e, transparent)" }} />
+            <div style={{ width: 32, height: 1, background: "linear-gradient(90deg, #6eb8e8, transparent)" }} />
           </div>
 
           <h1
@@ -150,7 +150,7 @@ export function CaseStudiesView() {
           <Link href="/#contact" style={{ textDecoration: "none" }} onClick={() => { /* markSkipHomeIntro called via Link */ }}>
             <div
               style={{
-                background: "linear-gradient(135deg, #e8dfc8, #c9a96e)",
+                background: "linear-gradient(135deg, #c5e8fa, #6eb8e8)",
                 padding: "15px 34px",
                 borderRadius: "11px",
                 cursor: "pointer",
@@ -159,11 +159,11 @@ export function CaseStudiesView() {
                 fontWeight: "600",
                 color: "#0a0a0a",
                 display: "inline-block",
-                boxShadow: "0 8px 28px rgba(201,169,110,0.42)",
+                boxShadow: "0 8px 28px rgba(110,184,232,0.42)",
                 letterSpacing: "0.01em",
               }}
-              onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.05, boxShadow: "0 12px 38px rgba(201,169,110,0.62)", duration: 0.28 })}
-              onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, boxShadow: "0 8px 28px rgba(201,169,110,0.42)", duration: 0.28 })}
+              onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.05, boxShadow: "0 12px 38px rgba(110,184,232,0.62)", duration: 0.28 })}
+              onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, boxShadow: "0 8px 28px rgba(110,184,232,0.42)", duration: 0.28 })}
             >
               Schedule Your Consultation
             </div>

@@ -26,7 +26,7 @@ export function ClientsSection() {
             fontFamily: "var(--font-display), system-ui, sans-serif",
             fontSize: "clamp(2.5rem, 5vw, 4rem)",
             fontWeight: 700,
-            background: "linear-gradient(135deg, #e8e4dc, #b8a88a)",
+            background: "linear-gradient(135deg, #d0e8f8, #6eaed4)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -64,7 +64,7 @@ export function ClientsSection() {
                 backdropFilter: "blur(15px)",
                 padding: "40px 30px",
                 borderRadius: "20px",
-                border: "1px solid rgba(200, 190, 170, 0.2)",
+                border: "1px solid rgba(140, 200, 235, 0.2)",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
                 position: "relative",
@@ -80,8 +80,8 @@ export function ClientsSection() {
                 gsap.to(e.currentTarget, {
                   y: -8,
                   scale: 1.03,
-                  boxShadow: "0 20px 40px rgba(200, 190, 170, 0.2)",
-                  borderColor: "rgba(200, 190, 170, 0.4)",
+                  boxShadow: "0 20px 40px rgba(140, 200, 235, 0.2)",
+                  borderColor: "rgba(140, 200, 235, 0.4)",
                   duration: 0.3,
                 });
               }}
@@ -90,7 +90,7 @@ export function ClientsSection() {
                   y: 0,
                   scale: 1,
                   boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
-                  borderColor: "rgba(200, 190, 170, 0.2)",
+                  borderColor: "rgba(140, 200, 235, 0.2)",
                   duration: 0.3,
                 });
               }}
@@ -102,7 +102,7 @@ export function ClientsSection() {
                   left: 0,
                   width: "100%",
                   height: "3px",
-                  background: "linear-gradient(90deg, #d4cfc4, #0080ff)",
+                  background: "linear-gradient(90deg, #9ec8e8, #0080ff)",
                 }}
               />
 
@@ -136,7 +136,7 @@ export function ClientsSection() {
                   fontFamily: "var(--font-body), system-ui, sans-serif",
                   fontSize: "0.85rem",
                   fontWeight: 400,
-                  color: "#d4cfc4",
+                  color: "#9ec8e8",
                   textAlign: "center",
                   opacity: 0.8,
                 }}

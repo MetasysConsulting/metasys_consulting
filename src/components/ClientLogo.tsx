@@ -20,15 +20,15 @@ export function ClientLogo({ name, logo, size = 56 }: ClientLogoProps) {
           height: size,
           borderRadius: 12,
           background:
-            "linear-gradient(135deg, rgba(232, 228, 220, 0.2), rgba(184, 168, 138, 0.12))",
-          border: "1px solid rgba(200, 190, 170, 0.3)",
+            "linear-gradient(135deg, rgba(232, 228, 220, 0.2), rgba(100, 180, 220, 0.12))",
+          border: "1px solid rgba(140, 200, 235, 0.3)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           fontFamily: "var(--font-display), system-ui, sans-serif",
           fontSize: size * 0.42,
           fontWeight: 600,
-          color: "#d4cfc4",
+          color: "#9ec8e8",
         }}
         aria-hidden
       >

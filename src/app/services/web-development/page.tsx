@@ -100,12 +100,12 @@ export default function WebDevelopmentPage() {
               width: '120px',
               height: '120px',
               margin: '0 auto 40px auto',
-              background: 'linear-gradient(135deg, #e8dfc8, #c9a96e)',
+              background: 'linear-gradient(135deg, #c5e8fa, #6eb8e8)',
               borderRadius: '20px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 20px 40px rgba(201, 169, 110, 0.3)',
+              boxShadow: '0 20px 40px rgba(110, 184, 232, 0.3)',
             }}>
               <div style={{
                 width: '80px',
@@ -119,7 +119,7 @@ export default function WebDevelopmentPage() {
                 fontSize: '40px',
                 fontWeight: 'bold',
                 fontFamily: 'monospace',
-                color: '#c9a96e',
+                color: '#6eb8e8',
               }}>
                 {'</>'}
               </div>
@@ -129,12 +129,12 @@ export default function WebDevelopmentPage() {
               fontFamily: 'var(--font-display), system-ui, sans-serif',
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: '900',
-              background: 'linear-gradient(135deg, #f0ece4, #e8dfc8, #c9a96e)',
+              background: 'linear-gradient(135deg, #e8f4fc, #c5e8fa, #6eb8e8)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               marginBottom: '30px',
-              textShadow: '0 0 40px rgba(201, 169, 110, 0.4)',
+              textShadow: '0 0 40px rgba(110, 184, 232, 0.4)',
             }}>
               Full-Stack Development
             </h1>
@@ -142,7 +142,7 @@ export default function WebDevelopmentPage() {
             <p style={{
               fontFamily: 'var(--font-body), system-ui, sans-serif',
               fontSize: '1.4rem',
-              color: '#c9a96e',
+              color: '#6eb8e8',
               marginBottom: '40px',
               fontWeight: '500',
             }}>
@@ -154,7 +154,7 @@ export default function WebDevelopmentPage() {
               backdropFilter: 'blur(15px)',
               padding: '50px',
               borderRadius: '20px',
-              border: '1px solid rgba(201, 169, 110, 0.2)',
+              border: '1px solid rgba(110, 184, 232, 0.2)',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
               textAlign: 'left',
             }}>
@@ -165,7 +165,7 @@ export default function WebDevelopmentPage() {
                 lineHeight: '1.7',
                 marginBottom: '30px',
               }}>
-                Our approach to web development is <span style={{ color: '#c9a96e', fontWeight: '600' }}>comprehensive, encompassing everything</span> from web design and content to coding and markup. As a group of seasoned professionals working together, we take great pride in our teamwork. Our objective is to develop your website such that it not only ranks higher in search engines but also provides your users with the best possible experience.
+                Our approach to web development is <span style={{ color: '#6eb8e8', fontWeight: '600' }}>comprehensive, encompassing everything</span> from web design and content to coding and markup. As a group of seasoned professionals working together, we take great pride in our teamwork. Our objective is to develop your website such that it not only ranks higher in search engines but also provides your users with the best possible experience.
               </p>
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function WebDevelopmentPage() {
               fontFamily: 'var(--font-display), system-ui, sans-serif',
               fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: '700',
-              background: 'linear-gradient(135deg, #e8dfc8, #c9a96e)',
+              background: 'linear-gradient(135deg, #c5e8fa, #6eb8e8)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -208,7 +208,7 @@ export default function WebDevelopmentPage() {
                     backdropFilter: 'blur(15px)',
                     padding: '40px',
                     borderRadius: '20px',
-                    border: '1px solid rgba(201, 169, 110, 0.2)',
+                    border: '1px solid rgba(110, 184, 232, 0.2)',
                     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
@@ -219,7 +219,7 @@ export default function WebDevelopmentPage() {
                     gsap.to(e.currentTarget, {
                       y: -5,
                       scale: 1.02,
-                      boxShadow: '0 15px 40px rgba(201, 169, 110, 0.2)',
+                      boxShadow: '0 15px 40px rgba(110, 184, 232, 0.2)',
                       duration: 0.3,
                     });
                   }}
@@ -238,14 +238,14 @@ export default function WebDevelopmentPage() {
                     left: 0,
                     width: '100%',
                     height: '4px',
-                    background: 'linear-gradient(90deg, #c9a96e, #4f8ef7)',
+                    background: 'linear-gradient(90deg, #6eb8e8, #4f8ef7)',
                   }} />
 
                   <h3 style={{
                     fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '1.8rem',
                     fontWeight: '600',
-                    color: '#c9a96e',
+                    color: '#6eb8e8',
                     marginBottom: '20px',
                   }}>
                     {service.title}
@@ -276,18 +276,18 @@ export default function WebDevelopmentPage() {
             textAlign: 'center',
           }}>
             <div style={{
-              background: 'linear-gradient(135deg, rgba(201, 169, 110, 0.1), rgba(0, 128, 255, 0.1))',
+              background: 'linear-gradient(135deg, rgba(110, 184, 232, 0.1), rgba(0, 128, 255, 0.1))',
               backdropFilter: 'blur(15px)',
               padding: '60px',
               borderRadius: '20px',
-              border: '1px solid rgba(201, 169, 110, 0.3)',
-              boxShadow: '0 8px 32px rgba(201, 169, 110, 0.1)',
+              border: '1px solid rgba(110, 184, 232, 0.3)',
+              boxShadow: '0 8px 32px rgba(110, 184, 232, 0.1)',
             }}>
               <h2 style={{
                 fontFamily: 'var(--font-display), system-ui, sans-serif',
                 fontSize: '2.5rem',
                 fontWeight: '700',
-                background: 'linear-gradient(135deg, #e8dfc8, #c9a96e)',
+                background: 'linear-gradient(135deg, #c5e8fa, #6eb8e8)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -307,7 +307,7 @@ export default function WebDevelopmentPage() {
               </p>
 
               <div style={{
-                background: 'linear-gradient(135deg, #e8dfc8, #c9a96e)',
+                background: 'linear-gradient(135deg, #c5e8fa, #6eb8e8)',
                 padding: '20px 40px',
                 borderRadius: '12px',
                 cursor: 'pointer',
@@ -316,7 +316,7 @@ export default function WebDevelopmentPage() {
                 fontWeight: '700',
                 color: '#000',
                 display: 'inline-block',
-                boxShadow: '0 8px 25px rgba(201, 169, 110, 0.4)',
+                boxShadow: '0 8px 25px rgba(110, 184, 232, 0.4)',
                 transition: 'all 0.3s ease',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
@@ -324,7 +324,7 @@ export default function WebDevelopmentPage() {
               onMouseEnter={(e) => {
                 gsap.to(e.currentTarget, {
                   scale: 1.05,
-                  boxShadow: '0 12px 35px rgba(201, 169, 110, 0.6)',
+                  boxShadow: '0 12px 35px rgba(110, 184, 232, 0.6)',
                   duration: 0.3,
                   ease: "power2.out"
                 });
@@ -332,7 +332,7 @@ export default function WebDevelopmentPage() {
               onMouseLeave={(e) => {
                 gsap.to(e.currentTarget, {
                   scale: 1,
-                  boxShadow: '0 8px 25px rgba(201, 169, 110, 0.4)',
+                  boxShadow: '0 8px 25px rgba(110, 184, 232, 0.4)',
                   duration: 0.3,
                   ease: "power2.out"
                 });

@@ -20,7 +20,7 @@ const navShellStyle: CSSProperties = {
   background: "rgba(6, 9, 18, 0.5)",
   backdropFilter: "blur(20px) saturate(1.4)",
   WebkitBackdropFilter: "blur(20px) saturate(1.4)",
-  borderBottom: "1px solid rgba(201, 169, 110, 0.15)",
+  borderBottom: "1px solid rgba(110, 184, 232, 0.15)",
   boxShadow: "0 1px 40px rgba(0, 0, 0, 0.45)",
 };
 
@@ -42,9 +42,9 @@ const navItemStyle: CSSProperties = {
 function hoverNavItem(e: MouseEvent<HTMLElement>, enter: boolean) {
   gsap.to(e.currentTarget, {
     scale: enter ? 1.04 : 1,
-    backgroundColor: enter ? "rgba(201,169,110,0.09)" : "transparent",
-    borderColor: enter ? "rgba(201,169,110,0.25)" : "transparent",
-    color: enter ? "#e8d9b8" : "rgba(244,241,236,0.82)",
+    backgroundColor: enter ? "rgba(110,184,232,0.09)" : "transparent",
+    borderColor: enter ? "rgba(110,184,232,0.25)" : "transparent",
+    color: enter ? "#b4daf4" : "rgba(244,241,236,0.82)",
     duration: 0.25,
     ease: "power2.out",
   });
@@ -54,8 +54,8 @@ function hoverCta(e: MouseEvent<HTMLElement>, enter: boolean) {
   gsap.to(e.currentTarget, {
     scale: enter ? 1.05 : 1,
     boxShadow: enter
-      ? "0 6px 28px rgba(201,169,110,0.55)"
-      : "0 4px 18px rgba(201,169,110,0.35)",
+      ? "0 6px 28px rgba(110,184,232,0.55)"
+      : "0 4px 18px rgba(110,184,232,0.35)",
     duration: 0.25,
     ease: "power2.out",
   });
@@ -115,12 +115,12 @@ export function AppNavigation({ variant = "static" }: AppNavigationProps) {
                 fontSize: "15px",
                 fontWeight: "600",
                 color: "#0a0a0a",
-                background: "linear-gradient(135deg, #e8dfc8 0%, #c9a96e 100%)",
+                background: "linear-gradient(135deg, #c5e8fa 0%, #6eb8e8 100%)",
                 padding: "10px 22px",
                 borderRadius: "10px",
                 cursor: "pointer",
                 border: "none",
-                boxShadow: "0 4px 18px rgba(201,169,110,0.35)",
+                boxShadow: "0 4px 18px rgba(110,184,232,0.35)",
                 letterSpacing: "0.01em",
               }}
               onMouseEnter={(e) => hoverCta(e, true)}

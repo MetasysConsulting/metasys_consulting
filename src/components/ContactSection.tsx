@@ -6,8 +6,8 @@ import { CONTACT_EMAIL } from "@/lib/site-config";
 const fieldStyle: CSSProperties = {
   width: "100%",
   padding: "14px 16px",
-  background: "rgba(200, 190, 170, 0.08)",
-  border: "1px solid rgba(200, 190, 170, 0.25)",
+  background: "rgba(140, 200, 235, 0.08)",
+  border: "1px solid rgba(140, 200, 235, 0.25)",
   borderRadius: "10px",
   color: "white",
   fontFamily: "var(--font-body), system-ui, sans-serif",
@@ -20,18 +20,18 @@ const labelStyle: CSSProperties = {
   fontFamily: "var(--font-body), system-ui, sans-serif",
   fontSize: "0.9rem",
   fontWeight: 600,
-  color: "#d4cfc4",
+  color: "#9ec8e8",
   display: "block",
   marginBottom: "8px",
 };
 
 function focusField(e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) {
-  e.target.style.borderColor = "#d4cfc4";
-  e.target.style.boxShadow = "0 0 0 3px rgba(200, 190, 170, 0.15)";
+  e.target.style.borderColor = "#9ec8e8";
+  e.target.style.boxShadow = "0 0 0 3px rgba(140, 200, 235, 0.15)";
 }
 
 function blurField(e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) {
-  e.target.style.borderColor = "rgba(200, 190, 170, 0.25)";
+  e.target.style.borderColor = "rgba(140, 200, 235, 0.25)";
   e.target.style.boxShadow = "none";
 }
 
@@ -70,7 +70,7 @@ export function ContactSection({ showHeading = true }: ContactSectionProps) {
                 fontFamily: "var(--font-display), system-ui, sans-serif",
                 fontSize: "clamp(2.25rem, 5vw, 3.25rem)",
                 fontWeight: 700,
-                background: "linear-gradient(90deg, #2563eb 0%, #e89b2b 100%)",
+                background: "linear-gradient(90deg, #2563eb 0%, #38bdf8 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -100,7 +100,7 @@ export function ContactSection({ showHeading = true }: ContactSectionProps) {
             backdropFilter: "blur(15px)",
             padding: "40px",
             borderRadius: "20px",
-            border: "1px solid rgba(200, 190, 170, 0.2)",
+            border: "1px solid rgba(140, 200, 235, 0.2)",
             boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
           }}
         >
@@ -192,7 +192,7 @@ export function ContactSection({ showHeading = true }: ContactSectionProps) {
                   Opening your email app… If it didn&apos;t open, write us at{" "}
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
-                    style={{ color: "#d4cfc4" }}
+                    style={{ color: "#9ec8e8" }}
                   >
                     {CONTACT_EMAIL}
                   </a>
@@ -213,7 +213,7 @@ export function ContactSection({ showHeading = true }: ContactSectionProps) {
               Or email us at{" "}
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                style={{ color: "#d4cfc4", textDecoration: "none" }}
+                style={{ color: "#9ec8e8", textDecoration: "none" }}
               >
                 {CONTACT_EMAIL}
               </a>

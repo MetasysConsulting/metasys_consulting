@@ -26,7 +26,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
             backdropFilter: "blur(15px)",
             padding: "40px",
             borderRadius: "20px",
-            border: "1px solid rgba(200, 190, 170, 0.2)",
+            border: "1px solid rgba(140, 200, 235, 0.2)",
             boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
             cursor: "pointer",
             transition: "all 0.3s ease",
@@ -36,7 +36,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
             gsap.to(cardRef.current, {
               y: -10,
               scale: 1.02,
-              boxShadow: "0 20px 40px rgba(200, 190, 170, 0.2)",
+              boxShadow: "0 20px 40px rgba(140, 200, 235, 0.2)",
               duration: 0.3,
             });
             gsap.to(shineRef.current, {
@@ -69,9 +69,9 @@ export function ServiceCard({ service }: ServiceCardProps) {
               alignItems: "center",
               justifyContent: "center",
               background:
-                "linear-gradient(135deg, rgba(232, 228, 220, 0.15), rgba(184, 168, 138, 0.08))",
+                "linear-gradient(135deg, rgba(232, 228, 220, 0.15), rgba(100, 180, 220, 0.08))",
               borderRadius: 16,
-              border: "1px solid rgba(200, 190, 170, 0.2)",
+              border: "1px solid rgba(140, 200, 235, 0.2)",
             }}
           >
             <ServiceCategoryIcon id={service.icon} size={44} />
@@ -82,7 +82,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
               fontFamily: "var(--font-body), system-ui, sans-serif",
               fontSize: "1.8rem",
               fontWeight: 600,
-              color: "#d4cfc4",
+              color: "#9ec8e8",
               marginBottom: "15px",
             }}
           >
@@ -114,7 +114,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
                   style={{
                     position: "absolute",
                     left: 0,
-                    color: "#d4cfc4",
+                    color: "#9ec8e8",
                   }}
                 >
                   •
