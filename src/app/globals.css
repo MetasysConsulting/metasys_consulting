@@ -225,3 +225,78 @@ body {
   padding-left: 1.25rem;
   margin: 0.75rem 0 1rem;
 }
+
+/* Animated border shine for service cards */
+@property --service-shine-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes service-shine-spin {
+  to {
+    --service-shine-angle: 360deg;
+  }
+}
+
+.service-card-shine {
+  --service-shine-angle: 0deg;
+  background: conic-gradient(
+    from var(--service-shine-angle),
+    rgba(212, 207, 196, 0.08) 0deg,
+    rgba(212, 207, 196, 0.55) 55deg,
+    rgba(184, 168, 138, 0.35) 110deg,
+    rgba(212, 207, 196, 0.08) 180deg,
+    rgba(100, 160, 220, 0.2) 240deg,
+    rgba(212, 207, 196, 0.08) 360deg
+  );
+  animation: service-shine-spin 10s linear infinite;
+}
+
+.service-card-shine:hover,
+.service-card-shine:has(:focus-visible) {
+  animation-duration: 5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card-shine {
+    animation: none;
+    background: linear-gradient(
+      135deg,
+      rgba(212, 207, 196, 0.35),
+      rgba(212, 207, 196, 0.12)
+    );
+  }
+}
+
+.service-card-inner {
+  background: rgba(0, 20, 40, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 207, 196, 0.08);
+}
+
+.service-icon-ring {
+  background: linear-gradient(
+    145deg,
+    rgba(232, 228, 220, 0.22),
+    rgba(184, 168, 138, 0.12)
+  );
+  border: 1px solid rgba(212, 207, 196, 0.28);
+  box-shadow:
+    0 0 24px rgba(212, 207, 196, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.service-icon-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(255, 255, 255, 0.12),
+    transparent 55%
+  );
+  pointer-events: none;
+}

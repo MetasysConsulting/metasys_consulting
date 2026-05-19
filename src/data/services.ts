@@ -1,13 +1,20 @@
 export type HomeService = {
-  icon: string;
+  icon: HomeServiceIcon;
   title: string;
   description: string;
   features: string[];
   link: string;
-  isNew?: boolean;
 };
 
-/** Home page service cards — growth areas first, then core delivery */
+export type HomeServiceIcon =
+  | "ai-ml"
+  | "web-development"
+  | "data-analytics"
+  | "program-management"
+  | "talent-resourcing"
+  | "embedded-systems";
+
+/** Home page service cards */
 export const HOME_SERVICES: HomeService[] = [
   {
     icon: "ai-ml",
@@ -22,22 +29,6 @@ export const HOME_SERVICES: HomeService[] = [
       "Model fine-tuning & deployment",
     ],
     link: "/services/ai-machine-learning",
-    isNew: true,
-  },
-  {
-    icon: "embedded-systems",
-    title: "Embedded Systems & IoT",
-    description:
-      "Firmware, connected devices, and hardware–software integration from prototype to production—including edge AI on microcontrollers.",
-    features: [
-      "ESP32, STM32, Arduino & Raspberry Pi",
-      "Embedded C/C++ & FreeRTOS",
-      "IoT connectivity (MQTT, BLE, Wi‑Fi)",
-      "Edge AI & TensorFlow Lite (TinyML)",
-      "PCB design support (KiCad)",
-    ],
-    link: "/services/embedded-systems",
-    isNew: true,
   },
   {
     icon: "web-development",
@@ -68,30 +59,16 @@ export const HOME_SERVICES: HomeService[] = [
     link: "/services/data-analytics",
   },
   {
-    icon: "product-management",
-    title: "Product Management",
+    icon: "program-management",
+    title: "Product & Project Management",
     description:
-      "Optimize strategies to achieve product-market fit and drive business success.",
-    features: [
-      "Market research",
-      "Product strategy",
-      "Feature prioritization",
-      "User experience",
-      "Growth analytics",
-    ],
-    link: "/services/product-management",
-  },
-  {
-    icon: "project-management",
-    title: "Project Management",
-    description:
-      "Delivery leadership from agile software teams to large transformation programs.",
+      "From product strategy and roadmaps to agile delivery and change management—we align teams, timelines, and outcomes.",
     features: [
       "Agile / Scrum delivery",
+      "Product strategy & roadmaps",
+      "Feature prioritization & UX",
+      "Change & transformation programs",
       "Performance improvement",
-      "Technology enablement",
-      "Change management",
-      "Workforce & culture transformation",
     ],
     link: "/services/project-management",
   },
@@ -108,6 +85,20 @@ export const HOME_SERVICES: HomeService[] = [
       "Industry specialists",
     ],
     link: "/services/talent-resourcing",
+  },
+  {
+    icon: "embedded-systems",
+    title: "Embedded Systems & IoT",
+    description:
+      "Firmware, connected devices, and hardware–software integration from prototype to production—including edge AI on microcontrollers.",
+    features: [
+      "ESP32, STM32, Arduino & Raspberry Pi",
+      "Embedded C/C++ & FreeRTOS",
+      "IoT connectivity (MQTT, BLE, Wi‑Fi)",
+      "Edge AI & TensorFlow Lite (TinyML)",
+      "PCB design support (KiCad)",
+    ],
+    link: "/services/embedded-systems",
   },
 ];
 
