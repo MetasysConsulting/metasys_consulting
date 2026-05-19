@@ -11,19 +11,19 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-function getPlayIntroOnMount(): boolean {
-  if (typeof window === "undefined") return false;
-  return !consumeSkipHomeIntro();
-}
-
 export default function Home() {
-  const playIntro = useRef(getPlayIntroOnMount()).current;
+  /** Default true so SSR/first paint hides hero chrome until client knows to skip. */
+  const [playIntro, setPlayIntro] = useState(true);
   const [startAnimation, setStartAnimation] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const heroHeadingRef = useRef<HTMLDivElement>(null);
   const heroDescriptionRef = useRef<HTMLDivElement>(null);
 
+  const showHeroChrome = !playIntro;
+
   useEffect(() => {
+    const skipIntro = consumeSkipHomeIntro();
+
     const setupScrollAnimations = () => {
       gsap.utils.toArray(".scroll-section").forEach((section) => {
         gsap.fromTo(
@@ -82,7 +82,10 @@ export default function Home() {
       });
     };
 
-    if (!playIntro) {
+    if (skipIntro) {
+      setPlayIntro(false);
+      setStartAnimation(true);
+
       if (navRef.current) {
         gsap.set(navRef.current, {
           y: 0,
@@ -103,6 +106,8 @@ export default function Home() {
       const scrollTimer = setTimeout(setupScrollAnimations, 100);
       return () => clearTimeout(scrollTimer);
     }
+
+    setPlayIntro(true);
 
     // Start video reveal animation (full page load / refresh only)
     const timer = setTimeout(() => {
@@ -222,7 +227,7 @@ export default function Home() {
       clearTimeout(heroTimer);
       clearTimeout(scrollTimer);
     };
-  }, [playIntro]);
+  }, []);
 
   const services = [
     {
@@ -331,7 +336,7 @@ export default function Home() {
               left: '0',
               width: '100%',
               zIndex: 1000,
-              opacity: playIntro ? 0 : 1,
+              opacity: showHeroChrome ? 1 : 0,
               padding: '20px 40px',
               background: 'rgba(0, 20, 40, 0.1)',
               backdropFilter: 'blur(20px)',
@@ -599,7 +604,7 @@ export default function Home() {
               alignItems: 'center',
             }}>
               {/* Left Side - Heading */}
-              <div ref={heroHeadingRef} style={{ opacity: playIntro ? 0 : 1 }}>
+              <div ref={heroHeadingRef} style={{ opacity: showHeroChrome ? 1 : 0 }}>
                 <h1 style={{
                   fontFamily: 'var(--font-display), Georgia, serif',
                   fontSize: 'clamp(3rem, 6vw, 5rem)',
@@ -624,7 +629,7 @@ export default function Home() {
                     fontWeight: '400',
                     color: '#d4cfc4',
                     marginBottom: '30px',
-                    opacity: playIntro ? 0 : 1,
+                    opacity: showHeroChrome ? 1 : 0,
                   }}
                 >
                   Digital Agency & Product Innovation Organization
@@ -644,7 +649,7 @@ export default function Home() {
                     border: 'none',
                     boxShadow: '0 8px 25px rgba(200, 190, 170, 0.4)',
                     display: 'inline-block',
-                    opacity: playIntro ? 0 : 1,
+                    opacity: showHeroChrome ? 1 : 0,
                     transform: 'perspective(1000px)',
                   }}
                   onMouseEnter={(e) => {
@@ -669,7 +674,7 @@ export default function Home() {
               </div>
 
               {/* Right Side - Description */}
-              <div ref={heroDescriptionRef} style={{ opacity: playIntro ? 0 : 1 }}>
+              <div ref={heroDescriptionRef} style={{ opacity: showHeroChrome ? 1 : 0 }}>
                 <p style={{
                   fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
