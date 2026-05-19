@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, startTransition } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
@@ -87,8 +87,10 @@ export default function Home() {
     };
 
     if (skipIntro) {
-      setPlayIntro(false);
-      setStartAnimation(true);
+      startTransition(() => {
+        setPlayIntro(false);
+        setStartAnimation(true);
+      });
 
       if (navRef.current) {
         gsap.set(navRef.current, {
@@ -110,8 +112,6 @@ export default function Home() {
       const scrollTimer = setTimeout(setupScrollAnimations, 100);
       return () => clearTimeout(scrollTimer);
     }
-
-    setPlayIntro(true);
 
     // Start video reveal animation (full page load / refresh only)
     const timer = setTimeout(() => {
