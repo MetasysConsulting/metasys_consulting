@@ -109,14 +109,21 @@ export function ClientsSection() {
               <div
                 style={{
                   marginBottom: "22px",
-                  minHeight: 88,
                   width: "100%",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  ...(client.logoDisplay === "direct"
+                    ? { minHeight: "auto", padding: "4px 12px 0" }
+                    : { minHeight: 88 }),
                 }}
               >
-                <ClientLogo name={client.name} logo={client.logo} size={80} />
+                <ClientLogo
+                  name={client.name}
+                  logo={client.logo}
+                  size={client.logoDisplay === "direct" ? 72 : 80}
+                  variant={client.logoDisplay ?? "standard"}
+                />
               </div>
 
               <div

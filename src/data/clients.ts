@@ -4,6 +4,8 @@ export type Client = {
   description: string;
   /** Path under /public/clients — letter fallback if missing or broken */
   logo: string;
+  /** Full-width brand mark on dark background (no tile), like the site nav logo */
+  logoDisplay?: "direct" | "standard";
 };
 
 export const CLIENTS: Client[] = [
@@ -69,6 +71,7 @@ export const CLIENTS: Client[] = [
     description:
       "Healthcare reimbursement data product — schema design, ingestion automation, and analyst-facing dashboards.",
     logo: "/clients/medirate.png",
+    logoDisplay: "direct",
   },
   {
     name: "Trusum Solutions",
@@ -104,6 +107,7 @@ export const CLIENTS: Client[] = [
     description:
       "Order-management product redesign and inventory analytics — built quoting workflow + reporting for ops team.",
     logo: "/clients/designer-metals.jpeg",
+    logoDisplay: "direct",
   },
   {
     name: "Empire Sports",

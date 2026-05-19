@@ -1,14 +1,21 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type ClientLogoProps = {
   name: string;
   logo: string;
   size?: number;
+  variant?: "standard" | "direct";
 };
 
-export function ClientLogo({ name, logo, size = 72 }: ClientLogoProps) {
+export function ClientLogo({
+  name,
+  logo,
+  size = 72,
+  variant = "standard",
+}: ClientLogoProps) {
   const [failed, setFailed] = useState(false);
   const initial = name.charAt(0).toUpperCase();
 
@@ -18,10 +25,15 @@ export function ClientLogo({ name, logo, size = 72 }: ClientLogoProps) {
         style={{
           width: size,
           height: size,
-          borderRadius: 12,
+          borderRadius: variant === "direct" ? 0 : 12,
           background:
-            "linear-gradient(135deg, rgba(232, 228, 220, 0.2), rgba(100, 180, 220, 0.12))",
-          border: "1px solid rgba(140, 200, 235, 0.3)",
+            variant === "direct"
+              ? "transparent"
+              : "linear-gradient(135deg, rgba(232, 228, 220, 0.2), rgba(100, 180, 220, 0.12))",
+          border:
+            variant === "direct"
+              ? "none"
+              : "1px solid rgba(140, 200, 235, 0.3)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -34,6 +46,28 @@ export function ClientLogo({ name, logo, size = 72 }: ClientLogoProps) {
       >
         {initial}
       </div>
+    );
+  }
+
+  if (variant === "direct") {
+    const height = size;
+    return (
+      <Image
+        src={logo}
+        alt={`${name} logo`}
+        width={320}
+        height={100}
+        loading="lazy"
+        onError={() => setFailed(true)}
+        style={{
+          width: "auto",
+          height,
+          maxWidth: "100%",
+          maxHeight: height,
+          objectFit: "contain",
+          display: "block",
+        }}
+      />
     );
   }
 
