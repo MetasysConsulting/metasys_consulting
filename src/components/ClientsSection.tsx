@@ -43,8 +43,8 @@ export function ClientsSection() {
             marginBottom: "60px",
           }}
         >
-          Trusted by world-class organizations across finance, technology, media,
-          and analytics
+          Product, data, and growth partners across civic tech, healthcare,
+          fintech, and commerce
         </p>
 
         <div
@@ -69,7 +69,7 @@ export function ClientsSection() {
                 transition: "all 0.3s ease",
                 position: "relative",
                 overflow: "hidden",
-                minHeight: "120px",
+                minHeight: "200px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -138,11 +138,27 @@ export function ClientsSection() {
                   fontWeight: 400,
                   color: "#9ec8e8",
                   textAlign: "center",
-                  opacity: 0.8,
+                  opacity: 0.9,
+                  marginBottom: "12px",
                 }}
               >
                 {client.industry}
               </div>
+
+              <p
+                style={{
+                  fontFamily: "var(--font-body), system-ui, sans-serif",
+                  fontSize: "0.8rem",
+                  fontWeight: 400,
+                  color: "rgba(255, 255, 255, 0.65)",
+                  lineHeight: 1.55,
+                  textAlign: "center",
+                  margin: 0,
+                  maxWidth: "100%",
+                }}
+              >
+                {client.description}
+              </p>
             </div>
           ))}
         </div>

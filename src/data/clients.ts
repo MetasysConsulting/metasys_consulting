@@ -1,54 +1,87 @@
 export type Client = {
   name: string;
   industry: string;
-  /** Logo in /public/clients — add your own SVG/PNG to replace placeholders */
+  description: string;
+  /** Path under /public/clients — letter fallback if missing or broken */
   logo: string;
 };
 
 export const CLIENTS: Client[] = [
   {
-    name: "Barclays",
-    industry: "Financial Services",
-    logo: "/clients/barclays.svg",
+    name: "Community Connect Labs",
+    industry: "Civic Tech · SaaS",
+    description:
+      "Product discovery and roadmap for SMS-first outreach SaaS — feature scoping, user-journey mapping, and analytics instrumentation.",
+    logo: "/clients/community-connect-labs.png",
   },
   {
-    name: "Al Jazeera",
-    industry: "Media & Broadcasting",
-    logo: "/clients/al-jazeera.svg",
-  },
-  {
-    name: "EY",
-    industry: "Professional Services",
-    logo: "/clients/ey.svg",
+    name: "Cook & Boardman",
+    industry: "Construction · Supply",
+    description:
+      "Sales-ops analytics and dashboard build — pipeline health, regional performance, and quoting velocity for the field team.",
+    logo: "/clients/cook-boardman.png",
   },
   {
     name: "Prepay Nation",
-    industry: "Fintech",
+    industry: "Fintech · Telecom",
+    description:
+      "Product analytics, partner-portal UX, and reporting automation for cross-border airtime transfer flows.",
     logo: "/clients/prepay-nation.png",
   },
   {
-    name: "Trusum Visions",
-    industry: "Business Solutions",
-    logo: "/clients/trusum-visions.png",
+    name: "Innovative Analytics — CDAP",
+    industry: "Consulting · CDAP",
+    description:
+      "Led 12+ Digital Adoption Plans under Canada Digital Adoption Program — gap analysis, ROI modeling, CRM/ERP blueprints.",
+    logo: "/clients/innovative-analytics.png",
+  },
+  {
+    name: "MediRate",
+    industry: "Healthcare · Data",
+    description:
+      "Healthcare reimbursement data product — schema design, ingestion automation, and analyst-facing dashboards.",
+    logo: "/clients/medirate.png",
+  },
+  {
+    name: "Trusum Solutions",
+    industry: "Tech Services",
+    description:
+      "Discovery & BA for a workforce-management SaaS — user stories, wireframes, and acceptance criteria across 3 modules.",
+    logo: "/clients/trusum-solutions.png",
+  },
+  {
+    name: "Timebox Solutions",
+    industry: "SaaS · Productivity",
+    description:
+      "End-to-end product management for a B2B scheduling SaaS — onboarding, billing, and analytics instrumentation.",
+    logo: "/clients/timebox-solutions.png",
   },
   {
     name: "Everstell",
-    industry: "Technology",
+    industry: "E-commerce · SaaS",
+    description:
+      "Storefront analytics + GenAI-assisted merchandising research — competitor scraping pipelines and Hex notebooks.",
     logo: "/clients/everstell.svg",
   },
   {
-    name: "Innova Analytics",
-    industry: "Data Analytics",
-    logo: "/clients/innova.png",
+    name: "Ebunch Marketing",
+    industry: "Digital Marketing",
+    description:
+      "Marketing-ops dashboards (GA4, Looker, Mixpanel) and campaign performance attribution for multi-channel agencies.",
+    logo: "/clients/ebunch-marketing.png",
   },
   {
-    name: "TimeBox",
-    industry: "Software Solutions",
-    logo: "/clients/timebox.png",
+    name: "Designer Metals",
+    industry: "Manufacturing · Retail",
+    description:
+      "Order-management product redesign and inventory analytics — built quoting workflow + reporting for ops team.",
+    logo: "/clients/designer-metals.png",
   },
   {
-    name: "Odessa",
-    industry: "Technology",
-    logo: "/clients/odessa.png",
+    name: "Empire Sports",
+    industry: "E-commerce · Retail",
+    description:
+      "Shopify analytics, GenAI product-description automation, and SEO/conversion dashboards.",
+    logo: "/clients/empire-sports.png",
   },
 ];
