@@ -1,6 +1,7 @@
 "use client";
 
 import type { CaseStudyRich } from "@/data/case-study-types";
+import { CaseStudyVideoEmbed } from "@/components/case-studies/CaseStudyVideoEmbed";
 
 const ff = "var(--font-body), system-ui, sans-serif";
 const ffd = "var(--font-display), system-ui, sans-serif";
@@ -98,19 +99,9 @@ export function CaseStudyRichSections({ rich }: CaseStudyRichSectionsProps) {
             background: "#000",
           }}
         >
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${rich.video.embedId}`}
+          <CaseStudyVideoEmbed
+            embedId={rich.video.embedId}
             title={rich.video.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              border: "none",
-            }}
           />
         </div>
         <p style={{ margin: "14px 28px 24px", fontFamily: mono, fontSize: "0.75rem" }}>
