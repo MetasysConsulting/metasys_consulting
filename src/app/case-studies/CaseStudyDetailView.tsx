@@ -207,6 +207,44 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
             <p key={`c-${i}`} style={bodyText}>{p}</p>
           ))}
 
+          {study.rich?.testimonial && (
+            <blockquote
+              style={{
+                background: "rgba(10, 15, 28, 0.7)",
+                backdropFilter: "blur(14px)",
+                margin: "36px 0 0",
+                padding: "28px 32px",
+                borderRadius: "16px",
+                border: "1px solid rgba(110, 184, 232, 0.14)",
+                borderLeft: "3px solid #6eb8e8",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: ff,
+                  fontSize: "1.08rem",
+                  fontStyle: "italic",
+                  color: "rgba(244,241,236,0.9)",
+                  lineHeight: 1.7,
+                  margin: "0 0 14px",
+                }}
+              >
+                &ldquo;{study.rich.testimonial.quote}&rdquo;
+              </p>
+              <cite
+                style={{
+                  fontFamily: ff,
+                  fontSize: "0.88rem",
+                  color: "rgba(110,184,232,0.85)",
+                  fontStyle: "normal",
+                  fontWeight: 500,
+                }}
+              >
+                — {study.rich.testimonial.attribution}
+              </cite>
+            </blockquote>
+          )}
+
           <h2 style={{ ...sectionTitle, marginTop: "52px" }}>Solution</h2>
           {study.solutionIntro.map((p, i) => (
             <p key={`s-${i}`} style={bodyText}>{p}</p>

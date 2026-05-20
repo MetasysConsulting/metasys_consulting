@@ -3,106 +3,99 @@ import type { CaseStudy } from "@/data/case-study-types";
 export const MEDIRATE_CASE_STUDY: CaseStudy = {
   slug: "medirate",
   title: "MediRate",
-  tagline: "Medicaid Rate Tracking Made Easy — production SaaS across all 50 states + DC",
+  tagline:
+    "Medicaid reimbursement intelligence — from automated nationwide collection to production SaaS across all 50 states + DC",
   sectors: ["Healthcare", "Medicaid policy", "SaaS", "Full-stack"],
   challenge: [
-    "Medicaid covers more than 80 million Americans and approaches $1 trillion in annual spend — the largest government-funded healthcare program in the U.S. Yet reimbursement intelligence remains fragmented: every state runs different program designs, fee schedules arrive in inconsistent formats, and legislative or administrative changes are easy to miss.",
-    "Provider organizations, consultants, and investors routinely need answers that take weeks to assemble manually: Are we reimbursed accurately? How do our rates compare across states and programs? Where should we expand? How often do rates change, and what is the historical trend? Teams were scouring state websites, PDFs, and bulletins — often learning about rate changes too late.",
-    "The market needed more than another spreadsheet. It needed a production platform that aggregates authoritative rate data, surfaces policy developments, and delivers customizable alerts — at national scale.",
+    "Medicaid covers more than 80 million Americans and approaches roughly $1 trillion in annual program spend — the largest government-funded healthcare program in the United States — yet there is no single source of truth for how providers are paid. Every state publishes fee schedules differently: Excel workbooks, PDF bulletins, provider manuals, and ad-hoc portals, each with its own coding conventions and effective-date rules.",
+    "Strategy teams need answers in days, not weeks: reimbursement accuracy, cross-state benchmarks, expansion economics, and the trajectory of rates over time. Without a dedicated platform, analysts manually chase documents across all jurisdictions — and often learn about material changes too late.",
   ],
   solutionIntro: [
-    "Metasys partnered with MediRate to design, build, and operate a full-stack Medicaid reimbursement intelligence platform: a public marketing site, a subscriber SaaS application, Stripe billing, and a comprehensive admin operations suite.",
-    "MediRate is the only platform offering automated access to Medicaid fee schedule data — searchable and monitorable by state, service line, billing code, program, and date, with real-time updates, trending tools, and policy monitoring across all 50 states and the District of Columbia.",
+    "Metasys partnered with MediRate to design and ship a full-stack platform: public marketing and SEO, subscriber SaaS, Stripe billing, and an internal operations suite for curators and campaigns.",
+    "Today MediRate is positioned as the dedicated Medicaid fee-schedule intelligence layer — searchable by state, service line, billing code, program, and date, with comparison analytics, historical views, exports, and policy monitoring nationwide.",
   ],
   highlights: [
     {
-      title: "National master data model",
+      title: "National master data",
       description:
-        "Unified fee schedule rows (CPT/HCPCS, modifiers, programs, regions, effective dates) curated from state agency sources, provider manuals, bulletins, appropriations, and regulatory actions.",
+        "A single schema holds fee-for-service payment data across 51 jurisdictions — codes, modifiers, programs, regions, and effective dates — with filters and exports tuned for analyst workflows.",
     },
     {
-      title: "Subscriber analytics suite",
+      title: "Point-in-time & multi-snapshot exports",
       description:
-        "Dashboard rate lookup, multi-state comparison charts (ECharts), rate history time-series, recent rate change tracking, and state profiles — with saved filter templates and code-definition reference.",
+        "“Rates in Effect As Of” and multi-date Excel exports reconstruct which rate applied on each snapshot date without forcing users to download full history — a non-trivial product and data problem at this scale.",
     },
     {
-      title: "Rate Developments & alerts",
+      title: "Reliable alert pipeline",
       description:
-        "Provider alerts, legislative bill tracking, and State Plan Amendments (SPAs) with customizable email preferences matched by state and service line.",
+        "Subscriber preferences match state and service-line dimensions; operational tooling sends preview-identical HTML, deduplicates newly ingested items, and tracks delivery — treating alerts as a data pipeline, not a one-off mail merge.",
     },
     {
-      title: "Data Export Center",
+      title: "Enterprise access model",
       description:
-        "Excel exports with date-range, fee-schedule-date, and “Rates in Effect As Of” multi-snapshot modes; subscription-tier row quotas (5k–20k/month) with template save/load.",
+        "Primary users, sub-users, and subscription managers with export quotas tied to plan tier — so teams scale seats and Excel volume without losing control.",
     },
     {
-      title: "Documents library",
+      title: "Documents & state resources",
       description:
-        "Hierarchical state resource library (billing manuals, service-line folders) with cloud blob storage and full admin file-manager tooling.",
+        "A hierarchical library (billing manuals, service-line folders) on cloud storage, with full admin tooling for moves, archives, and state-level links.",
     },
     {
-      title: "Admin operations layer",
+      title: "Operations & growth tooling",
       description:
-        "Azure Excel ingestion sync, email alert campaigns (Brevo), marketing digest builder, master data version control, user analytics, and legislative change-log workflows.",
+        "Excel-driven ingestion sync, legislative change logging, marketing digest workflow, and usage analytics so the operator team can run the product day to day.",
     },
   ],
-  process: {
-    title: "Platform delivery flow",
-    steps: [
-      "Ingest and normalize state fee schedules, provider alerts, bills, and SPAs into Supabase master data tables.",
-      "Serve ultra-compressed filter bundles (~12MB → ~440KB gzip) for fast dashboard first paint.",
-      "Enable subscriber search, comparison, history, export, and alert preferences on production APIs.",
-      "Operate admin pipelines: database sync, email campaigns, document library, and release/version control.",
-    ],
-  },
   techStack: [
-    "Next.js 16",
-    "React 19",
+    "Next.js",
+    "React",
     "TypeScript",
-    "Tailwind CSS",
     "Supabase",
     "PostgreSQL",
     "Prisma",
     "Stripe",
-    "Kinde Auth",
+    "Tailwind CSS",
     "Apache ECharts",
-    "ExcelJS",
-    "Brevo",
     "Azure Blob",
     "Playwright",
+    "Serverless deployment",
   ],
   impact: [
-    "Reduced Medicaid rate research from weeks of manual state-portal work to minutes of filtered search and export.",
-    "Single platform for 50-state + DC fee schedules, historical trends, cross-state comparison, and policy monitoring.",
-    "Customizable daily alerts keep teams ahead of provider bulletins, legislative activity, and SPAs in their markets.",
-    "Multi-seat subscriptions with role-based access (Primary User, Sub User, Subscription Manager) and export quotas for enterprise teams.",
-    "Gzip filter bundles cut payload size ~97% for faster dashboard load on large national datasets.",
-    "120+ API routes power auth, billing webhooks, admin ingestion, analytics, and export — deployed on serverless infrastructure.",
+    "A national reimbursement dataset bootstrapped through systematic browser automation across state portals, then transitioned to a curator-owned workflow as operations matured — without throwing away the unified schema.",
+    "Subscribers move from weeks of fragmented manual research to minutes of filtered search, comparison, and governed export.",
+    "Policy and rate-change signals (bulletins, SPAs, legislation) reach the right inbox through a preference-matched, production alert pipeline.",
   ],
   closing: [
-    "MediRate is an enterprise-grade Medicaid data platform combining subscriber SaaS, admin operations, and a modern web stack — built for healthcare reimbursement analysts, provider organizations, and consulting firms who need accurate, timely, and comparable rate intelligence.",
+    "MediRate is an enterprise-grade example of how we pair data engineering, product judgment, and full-stack delivery for regulated, high-stakes domains — the kind of build consulting buyers hire for when “digital product” means data truth, not just a landing page.",
   ],
   rich: {
     stats: [
       { value: "51", label: "States + DC" },
-      { value: "80M+", label: "Americans on Medicaid" },
-      { value: "120+", label: "API endpoints" },
-      { value: "~97%", label: "Filter payload reduction" },
+      { value: "~$1T", label: "Approx. annual Medicaid scale" },
+      { value: "80M+", label: "Americans covered" },
+      { value: "~97%", label: "Lighter filter delivery to browser" },
     ],
     executiveSummary: [
-      "MediRate serves healthcare providers, consultants, and policy analysts who need authoritative Medicaid payment answers without manually tracking 50+ state fee schedules.",
-      "The platform aggregates master rate data, provider alerts, state plan amendments, and legislative bill tracking into one searchable, exportable, and alert-driven experience — with Kinde identity, Stripe subscriptions, Brevo email, and Supabase as the primary data store.",
+      "MediRate helps providers, consultants, and policy analysts answer Medicaid payment questions without hand-maintaining spreadsheets for fifty-plus fee schedules.",
+      "The product combines master rate data, provider alerts, state plan amendments, and legislative tracking in one searchable, exportable surface — with billing, team seats, and an internal admin layer for ongoing operations.",
+    ],
+    dataFoundation: [
+      "Before the polished SaaS experience, the platform’s data foundation was built with custom automation: Selenium-based scripts systematically traversed state Medicaid portals and related sources, extracting rate schedules from heterogeneous files — Excel workbooks, PDF bulletins, and agency downloads — and normalizing them into a single growing dataset.",
+      "That pipeline was the fastest honest path to national coverage: repeatable runs across jurisdictions, with human review where sources were ambiguous. As MediRate’s operations team matured and stayed ahead of changes day to day, day-to-day curation shifted toward a streamlined manual workflow — editorial control over what ships, without abandoning the unified model the automation era proved out.",
+    ],
+    unifiedSchemaNote: [
+      "Designing one schema for fifty-one jurisdictions is the hard part behind the demos. States disagree on how CPT/HCPCS codes are grouped, how modifiers stack, how effective dates are expressed, and what “program” means locally. The platform has to represent that nuance without flattening it into misleading averages — while still letting analysts filter, compare, and export at speed.",
     ],
     video: {
       url: "https://www.youtube.com/watch?v=i_agfm1GaK8",
       embedId: "i_agfm1GaK8",
       title: "See MediRate in Action",
       description:
-        "Platform walkthrough: search, compare, and monitor Medicaid payment rates across all 50 states — featured on the MediRate marketing site.",
+        "Walkthrough of search, comparison, and monitoring across state Medicaid rates — as shown on the MediRate marketing site.",
     },
     keyQuestions: [
       "Are we being reimbursed accurately for the services we offer and populations we serve?",
-      "How do payment rates in our market compare to other geographies and programs — is there room to advocate for higher amounts?",
+      "How do payment rates in our market compare to other geographies and programs — and is there room to advocate for higher amounts?",
       "How do managed care payment rates compare to fee-for-service reimbursement?",
       "Can we design value-based contracting models with managed care payers to drive improved outcomes?",
       "Are there other service lines we can offer to broaden treatment options?",
@@ -114,81 +107,86 @@ export const MEDIRATE_CASE_STUDY: CaseStudy = {
       {
         challenge: "Rates vary by state, program, code, modifier, and effective date",
         response:
-          "Unified master data model with advanced filtering and cross-state comparison",
+          "One master model with advanced filtering, cross-state comparison, and governed exports",
       },
       {
-        challenge: "Legislative and administrative changes are hard to monitor",
+        challenge: "Administrative and legislative changes are easy to miss",
         response:
-          "Rate Developments module + customizable email alerts (provider alerts, bills, SPAs)",
+          "Rate Developments (alerts, bills, SPAs) plus subscriber email preferences matched by geography and line of business",
       },
       {
-        challenge: "Analysts need historical trends and point-in-time snapshots",
+        challenge: "Analysts need defensible snapshots, not only “current” screens",
         response:
-          "Rate History charts + “Rates in Effect As Of” export with multi-date comparison",
+          "Rate history visualizations and multi-date “as of” Excel workbooks for audit-ready comparisons",
       },
       {
-        challenge: "Large organizations need team access and export controls",
+        challenge: "Enterprises need seats, roles, and export discipline",
         response:
-          "Multi-seat subscriptions, sub-users, role-based access, monthly Excel row quotas",
+          "Primary vs sub-user vs subscription manager, with per-plan Excel row quotas and template save/load",
       },
       {
-        challenge: "Operations must ingest Excel from state sources",
+        challenge: "Operators must refresh authoritative sources on a schedule",
         response:
-          "Admin database sync from Azure Excel + refresh reports + change logging",
+          "Admin sync from structured source files, change logs, and tooling that reflects what actually shipped to subscribers",
       },
     ],
     productModules: [
       {
         title: "Dashboard & rate lookup",
         description:
-          "Cascading filters (service line, state, code, program, region, modifiers, effective date), saved templates, code definitions, pagination at California-scale volume.",
+          "Cascading filters (service line, state, code, program, region, modifiers, dates), saved templates, code-definition reference, and pagination tuned for very large states.",
       },
       {
         title: "State rate comparison",
         description:
-          "Compare all states or drill into individual states; ECharts bar charts, sort controls, Excel export with quota enforcement.",
+          "All-state or single-state comparison views with sortable analytics and export under plan limits.",
       },
       {
         title: "Rate history",
         description:
-          "Multi-series line charts by effective date, hourly-equivalent rate toggle, historical templates.",
+          "Time-series views of reimbursement movement with controls tuned for how analysts read Medicaid tables.",
+      },
+      {
+        title: "Rates in Effect As Of & multi-date export",
+        description:
+          "Reconstruct point-in-time reimbursement: pick snapshot date(s), deduplicate to the active row per key, and land a wide workbook for year-over-year or acquisition-era review — the kind of feature that signals serious product thinking, not just a CSV dump.",
       },
       {
         title: "Recent rate changes",
         description:
-          "Dashboard of master-data movements — old vs new rate, percent change, effective date, filterable summaries.",
+          "Operational view of material movements in master data — old vs new, percent change, effective dating — for teams tracking volatility.",
       },
       {
         title: "Data Export Center",
         description:
-          "Rate data and Rate Developments tabs; column picker; up to four “as-of” snapshot dates in one wide Excel workbook.",
+          "Rate data and policy-export paths with column picker, templates, and tier-aware monthly row budgets.",
       },
       {
-        title: "Subscription & team management",
+        title: "Subscription & teams",
         description:
-          "Stripe embedded checkout, wire-transfer path, sub-user slots, Subscription Manager role, portal integration.",
+          "Embedded checkout, portal management, optional alternate payment path, and seat administration aligned to how buyers actually procure.",
       },
     ],
     adminCapabilities: [
       {
-        title: "Database sync",
+        title: "Ingestion & source-of-truth sync",
         description:
-          "Azure Blob Excel ingestion for BillTrack, provider alerts, and SPAs with date-repair utilities and refresh reports.",
+          "Structured bulk updates from operator-maintained files, with repair utilities and traceability into what changed.",
       },
       {
-        title: "Email alert pipeline",
+        title: "Alert operations",
         description:
-          "Preview-identical HTML sends, test vs production lists, preference matching, post-send `is_new` workflow.",
+          "Preview matches production HTML; campaigns respect subscriber dimensions; post-send state keeps “new” rows from spamming repeat readers.",
       },
       {
-        title: "Marketing operations",
+        title: "Growth & digest tooling",
         description:
-          "List CRUD, Excel import/export, AI-assisted templates, Brevo analytics (opens, clicks, bounces), monthly digest builder.",
+          "List management, digest assembly, and analytics so marketing and product ops can run on the same stack as the core app.",
       },
       {
-        title: "Master data & analytics",
+        title: "Governance & quality",
         description:
-          "Environment version switching, user sign-in and page-view tracking, impersonation and auth diagnostics.",
+          "Environment-aware master-data versioning, user activity signals, and support-oriented diagnostics — not an afterthought once revenue is live.",
       },
     ],
     audiences: [
@@ -205,7 +203,7 @@ export const MEDIRATE_CASE_STUDY: CaseStudy = {
     ],
     serviceLines: [
       "Applied Behavior Analysis (ABA)",
-      "Early Intervention (EI)",
+      "Early intervention",
       "Home & community-based services",
       "Behavioral health",
       "Substance use disorder",
@@ -218,67 +216,52 @@ export const MEDIRATE_CASE_STUDY: CaseStudy = {
         "Before MediRate, our team manually scoured state websites for fee schedules, regulatory changes, and legislation — inconsistent formats, hard-to-find data, and late notice of rate changes. MediRate consolidates state-by-state schedules, historical and real-time data for trends, and regulatory context for market entry.",
       attribution: "Senior VP of Payor Development, multi-state ABA provider",
     },
-    techStackGroups: [
-      {
-        name: "Frontend",
-        items: [
-          "Next.js 16 App Router",
-          "React 19",
-          "TypeScript",
-          "Tailwind CSS",
-          "Framer Motion",
-          "Apache ECharts",
-          "ExcelJS",
-        ],
-      },
-      {
-        name: "Backend & data",
-        items: [
-          "120+ Next.js API routes",
-          "Supabase PostgreSQL",
-          "Prisma",
-          "Azure Blob ingestion",
-          "Gzip filter bundles",
-        ],
-      },
-      {
-        name: "Auth, billing & email",
-        items: ["Kinde Auth", "Stripe Checkout & webhooks", "Brevo campaigns", "DOMPurify"],
-      },
-      {
-        name: "Quality & ops",
-        items: ["Playwright E2E", "Serverless hosting", "RLS + admin service role", "Page-view analytics"],
-      },
+    techStackPills: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Prisma",
+      "Stripe",
+      "Tailwind CSS",
+      "Apache ECharts",
+      "ExcelJS",
+      "Azure Blob",
+      "Playwright",
+      "Serverless hosting",
     ],
-    architecture: `┌─────────────────────────────────────────────────────────┐
-│                   Client (Browser)                       │
-│     Next.js · React · ECharts · ExcelJS · gzip filters   │
-└──────────────────────────┬──────────────────────────────┘
-                           │
-┌──────────────────────────▼──────────────────────────────┐
-│            Next.js API Routes (Serverless)               │
-│   Auth · Stripe · Admin sync · Exports · Analytics       │
-└─────┬────────────┬─────────────┬─────────────┬──────────┘
-      ▼            ▼             ▼             ▼
-  Supabase     Stripe        Brevo       Cloud storage
- (PostgreSQL)  (Billing)     (Email)     (Files/Blobs)`,
+    architectureProse: [
+      "Visitors and subscribers hit a single Next.js application: marketing routes for acquisition and SEO, authenticated routes for the product, and API routes on the same serverless deployment for auth checks, billing webhooks, exports, and internal tools.",
+      "PostgreSQL (via Supabase) holds master reimbursement rows, subscription linkage, and operational metadata; object storage holds large source files and document-library assets. The browser loads heavily precomputed filter bundles so national dashboards stay responsive without round-tripping impossible payloads.",
+    ],
     performanceNotes: [
       {
-        title: "Compressed filter bundles",
-        description: "~12MB JSON compressed to ~440KB gzip — faster dashboard first paint nationally.",
+        title: "Compressed filter delivery",
+        description:
+          "Filter metadata ships in a gzip bundle orders of magnitude smaller than raw JSON — meaning faster first meaningful paint on data-heavy dashboards.",
       },
       {
-        title: "ECharts SVG renderer",
-        description: "Crisp comparison and history charts at any zoom level.",
+        title: "Vector-quality charting",
+        description:
+          "Comparison and history charts render crisply at any zoom — important when executives screenshot slides from the product.",
       },
       {
-        title: "Paginated rate APIs",
-        description: "SQL pagination handles large state datasets (e.g. California) without choking the UI.",
+        title: "Pagination that respects reality",
+        description:
+          "Largest states don’t collapse the UI: APIs page through result sets instead of pretending every jurisdiction fits in memory.",
       },
       {
-        title: "Client-side as-of dedup",
-        description: "Accurate snapshot exports without shipping full historical tables.",
+        title: "Snapshot exports without shipping all history",
+        description:
+          "“As of” reconstruction runs over the minimum data needed so analysts get defensible workbooks without downloading the entire longitudinal warehouse.",
       },
+    ],
+    keyProductDecisions: [
+      "Stay on one codebase for marketing and product — fewer integration seams for SEO, auth handoffs, and brand consistency.",
+      "Push pre-aggregation and compression to the edge of the browser where national filter cardinality would otherwise choke latency.",
+      "Model subscriptions, seats, and export quotas in the data layer so monetization rules stay enforceable — not a spreadsheet the team hopes people follow.",
+      "Prefer managed Postgres and storage over bespoke clusters until throughput demands it — operational focus stays on the Medicaid domain, not racking servers.",
     ],
   },
 };

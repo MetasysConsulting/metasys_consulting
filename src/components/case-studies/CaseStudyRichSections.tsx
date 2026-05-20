@@ -66,6 +66,28 @@ export function CaseStudyRichSections({ rich }: CaseStudyRichSectionsProps) {
         </p>
       ))}
 
+      {rich.dataFoundation && rich.dataFoundation.length > 0 && (
+        <>
+          <h2 style={{ ...sectionTitle, marginTop: 48 }}>Data foundation</h2>
+          {rich.dataFoundation.map((p, i) => (
+            <p key={`df-${i}`} style={bodyText}>
+              {p}
+            </p>
+          ))}
+        </>
+      )}
+
+      {rich.unifiedSchemaNote && rich.unifiedSchemaNote.length > 0 && (
+        <>
+          <h2 style={{ ...sectionTitle, marginTop: 48 }}>One model, fifty-one jurisdictions</h2>
+          {rich.unifiedSchemaNote.map((p, i) => (
+            <p key={`us-${i}`} style={bodyText}>
+              {p}
+            </p>
+          ))}
+        </>
+      )}
+
       <div style={{ ...cardShell, marginTop: 32, marginBottom: 40, padding: 0 }}>
         <CardAccent />
         <h2
@@ -223,39 +245,6 @@ export function CaseStudyRichSections({ rich }: CaseStudyRichSectionsProps) {
         </table>
       </div>
 
-      <blockquote
-        style={{
-          ...cardShell,
-          margin: "0 0 48px",
-          borderLeft: "3px solid #6eb8e8",
-          padding: "32px 36px",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: ff,
-            fontSize: "1.1rem",
-            fontStyle: "italic",
-            color: "rgba(244,241,236,0.88)",
-            lineHeight: 1.7,
-            margin: "0 0 16px",
-          }}
-        >
-          &ldquo;{rich.testimonial.quote}&rdquo;
-        </p>
-        <cite
-          style={{
-            fontFamily: ff,
-            fontSize: "0.88rem",
-            color: "rgba(110,184,232,0.85)",
-            fontStyle: "normal",
-            fontWeight: 500,
-          }}
-        >
-          — {rich.testimonial.attribution}
-        </cite>
-      </blockquote>
-
       <h2 style={sectionTitle}>Subscriber product</h2>
       <div
         style={{
@@ -312,18 +301,17 @@ export function CaseStudyRichSections({ rich }: CaseStudyRichSectionsProps) {
         ))}
       </div>
 
-      <h2 style={sectionTitle}>Who MediRate serves</h2>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 32 }}>
+      <h2 style={sectionTitle}>Who MediRate serves &amp; what we track</h2>
+      <p style={{ ...bodyText, marginBottom: 12 }}>
+        Stakeholder segments and representative service lines covered in the product:
+      </p>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 14 }}>
         {rich.audiences.map((a) => (
           <span key={a} className="sector-tag">
             {a}
           </span>
         ))}
       </div>
-
-      <h2 style={{ ...sectionTitle, fontSize: "clamp(1.2rem, 2vw, 1.5rem)" }}>
-        Service lines tracked
-      </h2>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 48 }}>
         {rich.serviceLines.map((s) => (
           <span
@@ -343,68 +331,98 @@ export function CaseStudyRichSections({ rich }: CaseStudyRichSectionsProps) {
         ))}
       </div>
 
-      <h2 style={sectionTitle}>Technology stack</h2>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: 18,
-          marginBottom: 40,
-        }}
-      >
-        {rich.techStackGroups.map((group) => (
-          <div key={group.name} style={cardShell}>
-            <CardAccent />
-            <h3
-              style={{
-                fontFamily: mono,
-                fontSize: "0.72rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "#6eb8e8",
-                marginBottom: 14,
-              }}
-            >
-              {group.name}
-            </h3>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {group.items.map((item) => (
-                <span
-                  key={item}
+      <h2 style={sectionTitle}>Technology &amp; architecture</h2>
+      {rich.architectureProse && rich.architectureProse.length > 0 && (
+        <>
+          {rich.architectureProse.map((p, i) => (
+            <p key={`arch-${i}`} style={bodyText}>
+              {p}
+            </p>
+          ))}
+        </>
+      )}
+      {rich.techStackPills && rich.techStackPills.length > 0 ? (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 16, marginBottom: 40 }}>
+          {rich.techStackPills.map((item) => (
+            <span key={item} className="sector-tag">
+              {item}
+            </span>
+          ))}
+        </div>
+      ) : (
+        rich.techStackGroups &&
+        rich.techStackGroups.length > 0 && (
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: 18,
+              marginBottom: 40,
+            }}
+          >
+            {rich.techStackGroups.map((group) => (
+              <div key={group.name} style={cardShell}>
+                <CardAccent />
+                <h3
                   style={{
-                    fontFamily: ff,
-                    fontSize: "0.78rem",
-                    color: "rgba(244,241,236,0.8)",
-                    background: "rgba(0,0,0,0.25)",
-                    padding: "4px 10px",
-                    borderRadius: 6,
+                    fontFamily: mono,
+                    fontSize: "0.72rem",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    color: "#6eb8e8",
+                    marginBottom: 14,
                   }}
                 >
-                  {item}
-                </span>
-              ))}
-            </div>
+                  {group.name}
+                </h3>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      style={{
+                        fontFamily: ff,
+                        fontSize: "0.78rem",
+                        color: "rgba(244,241,236,0.8)",
+                        background: "rgba(0,0,0,0.25)",
+                        padding: "4px 10px",
+                        borderRadius: 6,
+                      }}
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        )
+      )}
 
-      <h2 style={sectionTitle}>Architecture</h2>
-      <pre
-        style={{
-          ...cardShell,
-          fontFamily: mono,
-          fontSize: "0.72rem",
-          lineHeight: 1.5,
-          color: "rgba(180, 218, 244, 0.9)",
-          overflowX: "auto",
-          whiteSpace: "pre",
-          marginBottom: 40,
-        }}
-      >
-        {rich.architecture}
-      </pre>
+      {rich.keyProductDecisions && rich.keyProductDecisions.length > 0 && (
+        <>
+          <h2 style={{ ...sectionTitle, marginTop: 8 }}>Key product decisions</h2>
+          <p style={{ ...bodyText, marginBottom: 20 }}>
+            Judgment matters as much as features — a few deliberate choices that kept the build credible at enterprise scale:
+          </p>
+          <ul style={{ listStyle: "none", padding: 0, margin: "0 0 40px" }}>
+            {rich.keyProductDecisions.map((line, i) => (
+              <li
+                key={`kpd-${i}`}
+                className="impact-item"
+                style={{
+                  ...bodyText,
+                  marginBottom: 14,
+                  paddingLeft: 22,
+                }}
+              >
+                {line}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
 
-      <h2 style={sectionTitle}>Performance & engineering</h2>
+      <h2 style={sectionTitle}>Performance &amp; engineering</h2>
       <div
         style={{
           display: "grid",

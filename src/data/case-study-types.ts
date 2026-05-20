@@ -11,6 +11,10 @@ export type CaseStudyStat = {
 export type CaseStudyRich = {
   stats: CaseStudyStat[];
   executiveSummary: string[];
+  /** How the dataset was bootstrapped (e.g. automation → curation) */
+  dataFoundation?: string[];
+  /** Unified schema / multi-jurisdiction normalization */
+  unifiedSchemaNote?: string[];
   video: {
     url: string;
     embedId: string;
@@ -21,12 +25,21 @@ export type CaseStudyRich = {
   problemSolution: { challenge: string; response: string }[];
   productModules: CaseStudyHighlight[];
   adminCapabilities: CaseStudyHighlight[];
+  /** Stakeholder segments */
   audiences: string[];
+  /** Coverage areas / service lines — rendered with audiences in one section */
   serviceLines: string[];
   testimonial: { quote: string; attribution: string };
-  techStackGroups: { name: string; items: string[] }[];
-  architecture: string;
+  /** Grouped tech (optional); prefer techStackPills for a cleaner case study */
+  techStackGroups?: { name: string; items: string[] }[];
+  /** Single-row professional stack callout */
+  techStackPills?: string[];
+  /** Legacy ASCII diagram — avoid for client-facing pages */
+  architecture?: string;
+  /** Plain-language architecture tiers */
+  architectureProse?: string[];
   performanceNotes: CaseStudyHighlight[];
+  keyProductDecisions?: string[];
 };
 
 export type CaseStudy = {
