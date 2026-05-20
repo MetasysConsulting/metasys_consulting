@@ -1,21 +1,12 @@
-export type CaseStudyHighlight = {
-  title: string;
-  description: string;
-};
+export type {
+  CaseStudy,
+  CaseStudyHighlight,
+  CaseStudyRich,
+  CaseStudyStat,
+} from "@/data/case-study-types";
 
-export type CaseStudy = {
-  slug: string;
-  title: string;
-  tagline: string;
-  sectors: string[];
-  challenge: string[];
-  solutionIntro: string[];
-  highlights: CaseStudyHighlight[];
-  process?: { title: string; steps: string[] };
-  techStack?: string[];
-  impact: string[];
-  closing?: string[];
-};
+import type { CaseStudy } from "@/data/case-study-types";
+import { MEDIRATE_CASE_STUDY } from "@/data/medirate-case-study";
 
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
   return CASE_STUDIES.find((study) => study.slug === slug);
@@ -26,44 +17,7 @@ export function getAllCaseStudySlugs(): string[] {
 }
 
 export const CASE_STUDIES: CaseStudy[] = [
-  {
-    slug: "medirate",
-    title: "MediRate",
-    tagline: "Medicaid reimbursement intelligence at national scale",
-    sectors: ["Healthcare", "Health policy", "SaaS"],
-    challenge: [
-      "Medicaid is the largest government-funded health program in the United States, covering more than 80 million Americans and approaching one trillion dollars in annual spend. Despite that scale, the ecosystem is highly fragmented. State-specific program designs, inconsistent formats, and limited comparability across jurisdictions make it difficult for providers, payors, and policy stakeholders to track reimbursement rates and trends with confidence.",
-      "Organizations routinely need to know whether reimbursement is accurate, how local rates compare across states or programs, where expansion is financially viable, and how often rates change with historical context. Traditionally, answering those questions meant weeks of work across state portals, PDFs, and legislative documents, with persistent risk of incomplete or outdated insight.",
-    ],
-    solutionIntro: [
-      "MediRate is a SaaS platform built to make Medicaid reimbursement data searchable, comparable, and actionable in near real time.",
-    ],
-    highlights: [
-      {
-        title: "Data aggregation at scale",
-        description:
-          "Curates payment rates by CPT and HCPCS billing code across all 50 states and the District of Columbia from fee schedules, provider manuals, bulletins, appropriations, and regulatory sources.",
-      },
-      {
-        title: "Payment rate analysis",
-        description:
-          "Subscribers search by service line, code, program, and date; track reimbursement trends over time; and benchmark rates against national averages.",
-      },
-      {
-        title: "Policy monitoring",
-        description:
-          "Configurable alerts help stakeholders stay current on payment changes and policy developments in their markets.",
-      },
-    ],
-    impact: [
-      "Reduced data collection and normalization from weeks to minutes.",
-      "A single platform for search, comparison, and monitoring of Medicaid rates.",
-      "Trend and policy signals that support advocacy, value-based contracting, and expansion planning.",
-    ],
-    closing: [
-      "For providers, payors, and policymakers, MediRate functions as a strategic layer on top of one of the most complex reimbursement markets in healthcare.",
-    ],
-  },
+  MEDIRATE_CASE_STUDY,
   {
     slug: "clinical-research-assistant",
     title: "AI-Powered Clinical Research Assistant",

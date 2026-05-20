@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { AppNavigation } from "@/components/site/AppNavigation";
 import type { CaseStudy } from "@/data/case-studies";
+import { CaseStudyRichSections } from "@/components/case-studies/CaseStudyRichSections";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -137,7 +138,56 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
             {study.tagline}
           </p>
 
-          {/* shimmer divider */}
+          {study.rich?.stats && study.rich.stats.length > 0 && (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+                gap: 20,
+                marginTop: 40,
+                maxWidth: 720,
+              }}
+            >
+              {study.rich.stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  style={{
+                    background: "rgba(10, 20, 40, 0.5)",
+                    border: "1px solid rgba(110, 184, 232, 0.2)",
+                    borderRadius: 14,
+                    padding: "20px 16px",
+                    textAlign: "center",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: ffd,
+                      fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
+                      fontWeight: 800,
+                      letterSpacing: "-0.03em",
+                      color: "#eef6fc",
+                      lineHeight: 1.1,
+                      marginBottom: 6,
+                    }}
+                  >
+                    {stat.value}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-mono), ui-monospace, monospace",
+                      fontSize: "0.68rem",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "rgba(110,184,232,0.75)",
+                    }}
+                  >
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
           <div className="shimmer-line" style={{ marginTop: 36, maxWidth: 400 }} />
         </div>
       </section>
@@ -150,7 +200,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
           background: "linear-gradient(160deg, #0d1120 0%, #101828 100%)",
         }}
       >
-        <div style={{ maxWidth: "860px", margin: "0 auto", width: "100%" }}>
+        <div style={{ maxWidth: study.rich ? "960px" : "860px", margin: "0 auto", width: "100%" }}>
 
           <h2 style={sectionTitle}>Challenge</h2>
           {study.challenge.map((p, i) => (
@@ -162,6 +212,9 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
             <p key={`s-${i}`} style={bodyText}>{p}</p>
           ))}
 
+          {study.rich && <CaseStudyRichSections rich={study.rich} />}
+
+          <h2 style={{ ...sectionTitle, marginTop: study.rich ? 48 : 52 }}>Platform capabilities</h2>
           <div style={{ marginTop: 8 }}>
             {study.highlights.map((item) => (
               <div
@@ -189,6 +242,19 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
               </div>
             ))}
           </div>
+
+          {study.techStack && study.techStack.length > 0 && (
+            <>
+              <h2 style={{ ...sectionTitle, marginTop: "52px" }}>Tech at a glance</h2>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 8 }}>
+                {study.techStack.map((tech) => (
+                  <span key={tech} className="sector-tag">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </>
+          )}
 
           {study.process && (
             <>
