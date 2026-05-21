@@ -6,6 +6,7 @@ export type {
 } from "@/data/case-study-types";
 
 import type { CaseStudy } from "@/data/case-study-types";
+import { CLINICAL_RESEARCH_CASE_STUDY } from "@/data/clinical-research-case-study";
 import { MEDIRATE_CASE_STUDY } from "@/data/medirate-case-study";
 
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
@@ -18,65 +19,7 @@ export function getAllCaseStudySlugs(): string[] {
 
 export const CASE_STUDIES: CaseStudy[] = [
   MEDIRATE_CASE_STUDY,
-  {
-    slug: "clinical-research-assistant",
-    title: "AI-Powered Clinical Research Assistant",
-    tagline: "GenAI and agentic workflows for protocol-heavy research",
-    sectors: ["Life sciences", "Clinical research", "Regulated AI"],
-    challenge: [
-      "Clinical research sits at the intersection of science, regulation, and patient care, and is defined by information overload. Studies generate thousands of pages across protocols, investigator brochures, literature, agency guidance, and real-world evidence. Keyword search is slow, brittle, and often incomplete, stretching review cycles and delaying decisions that affect patients.",
-      "The industry needed an intelligence layer that could read, reason, and return answers with context and traceability, not only another static repository.",
-    ],
-    solutionIntro: [
-      "We delivered a GenAI and agentic research assistant that turns static documentation into on-demand, citation-grounded intelligence.",
-    ],
-    highlights: [
-      {
-        title: "LLMs with domain adaptation",
-        description:
-          "Large language models adapted with biomedical corpora for scientific precision in summaries and extractions.",
-      },
-      {
-        title: "Retrieval-augmented generation",
-        description:
-          "Vector databases such as pgvector and Pinecone ground responses in verified trial and regulatory documents.",
-      },
-      {
-        title: "Multi-agent orchestration",
-        description:
-          "LangChain and crewAI coordinate subtasks including citation validation, endpoint extraction, and cross-study comparison.",
-      },
-      {
-        title: "Cloud-native delivery",
-        description:
-          "Serverless patterns on AWS and Azure support elastic scale with controls aligned to HIPAA expectations.",
-      },
-      {
-        title: "Researcher experience",
-        description:
-          "A React and Next.js interface emphasizes explainability, drill-downs, and exportable summaries.",
-      },
-    ],
-    process: {
-      title: "Process flow",
-      steps: [
-        "Aggregate sources including PubMed, NCBI resources, regulatory PDFs, and internal repositories.",
-        "Index and embed unstructured content into searchable vectors.",
-        "Retrieve and ground answers with full citations.",
-        "Reason and synthesize through a multi-agent pipeline that reconciles evidence and flags conflicts.",
-        "Deliver literature summaries, structured tables, and decision-ready narratives.",
-      ],
-    },
-    impact: [
-      "Materially faster literature and protocol review cycles.",
-      "Outputs anchored in citations to support audit and reproduction.",
-      "Global teams share a unified research knowledge surface.",
-      "Researchers spend less time searching and more time on scientific judgment.",
-    ],
-    closing: [
-      "The system is positioned as a collaborative research partner: domain-specialized, explainable, and embedded in regulated workflows rather than a generic chat interface.",
-    ],
-  },
+  CLINICAL_RESEARCH_CASE_STUDY,
   {
     slug: "public-health-outreach",
     title: "AI-Enabled Outreach for Public Health Programs",

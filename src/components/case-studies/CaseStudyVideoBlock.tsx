@@ -7,8 +7,9 @@ type CaseStudyVideoBlockProps = {
   description: string;
   embedId: string;
   url: string;
-  /** Wider layout for hero placement */
   variant?: "hero" | "inline";
+  placeholder?: boolean;
+  accent?: string;
 };
 
 const ff = "var(--font-body), system-ui, sans-serif";
@@ -21,8 +22,11 @@ export function CaseStudyVideoBlock({
   embedId,
   url,
   variant = "inline",
+  placeholder = false,
+  accent = "#6eb8e8",
 }: CaseStudyVideoBlockProps) {
   const isHero = variant === "hero";
+  const showPlaceholder = placeholder || !embedId;
 
   return (
     <div
@@ -33,7 +37,7 @@ export function CaseStudyVideoBlock({
         background: "rgba(10, 15, 28, 0.55)",
         backdropFilter: "blur(14px)",
         borderRadius: 16,
-        border: "1px solid rgba(110, 184, 232, 0.18)",
+        border: `1px solid ${accent}33`,
         overflow: "hidden",
         position: "relative",
       }}
@@ -45,7 +49,7 @@ export function CaseStudyVideoBlock({
           left: 0,
           width: "100%",
           height: "2.5px",
-          background: "linear-gradient(90deg, #6eb8e8, #4f8ef7 60%, transparent)",
+          background: `linear-gradient(90deg, ${accent}, transparent 70%)`,
         }}
       />
       <h2
@@ -78,21 +82,67 @@ export function CaseStudyVideoBlock({
           paddingBottom: "56.25%",
           height: 0,
           overflow: "hidden",
-          background: "#000",
+          background: "#0a0a12",
         }}
       >
-        <CaseStudyVideoEmbed embedId={embedId} title={title} />
+        {showPlaceholder ? (
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 16,
+              background: "linear-gradient(160deg, #12101c 0%, #0a0a12 100%)",
+            }}
+          >
+            <div
+              style={{
+                width: 72,
+                height: 72,
+                borderRadius: "50%",
+                background: `${accent}22`,
+                border: `2px solid ${accent}55`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill={accent}>
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            <p
+              style={{
+                fontFamily: ff,
+                fontSize: "0.9rem",
+                color: "rgba(255,255,255,0.55)",
+                textAlign: "center",
+                maxWidth: 280,
+                margin: 0,
+              }}
+            >
+              Walkthrough video coming soon — drop in YouTube, Loom, or Vimeo when ready.
+            </p>
+          </div>
+        ) : (
+          <CaseStudyVideoEmbed embedId={embedId} title={title} />
+        )}
       </div>
-      <p style={{ margin: "12px 24px 20px", fontFamily: mono, fontSize: "0.75rem" }}>
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "rgba(110,184,232,0.85)", textDecoration: "none" }}
-        >
-          Watch on YouTube →
-        </a>
-      </p>
+      {!showPlaceholder && url && (
+        <p style={{ margin: "12px 24px 20px", fontFamily: mono, fontSize: "0.75rem" }}>
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: `${accent}cc`, textDecoration: "none" }}
+          >
+            Watch on YouTube →
+          </a>
+        </p>
+      )}
     </div>
   );
 }

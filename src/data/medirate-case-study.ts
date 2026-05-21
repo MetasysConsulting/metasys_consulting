@@ -69,6 +69,10 @@ export const MEDIRATE_CASE_STUDY: CaseStudy = {
     "MediRate is an enterprise-grade example of how we pair data engineering, product judgment, and full-stack delivery for regulated, high-stakes domains — the kind of build consulting buyers hire for when “digital product” means data truth, not just a landing page.",
   ],
   rich: {
+    productLink: {
+      url: "https://www.medirate.net",
+      label: "Visit medirate.net →",
+    },
     stats: [
       { value: "51", label: "States + DC" },
       { value: "~$1T", label: "Approx. annual Medicaid scale" },
