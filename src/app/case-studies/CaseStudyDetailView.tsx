@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { AppNavigation } from "@/components/site/AppNavigation";
 import type { CaseStudy } from "@/data/case-studies";
 import { CaseStudyRichSections } from "@/components/case-studies/CaseStudyRichSections";
+import { CaseStudyVideoBlock } from "@/components/case-studies/CaseStudyVideoBlock";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -186,6 +187,16 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
                 </div>
               ))}
             </div>
+          )}
+
+          {study.rich?.video && (
+            <CaseStudyVideoBlock
+              variant="hero"
+              title={study.rich.video.title}
+              description={study.rich.video.description}
+              embedId={study.rich.video.embedId}
+              url={study.rich.video.url}
+            />
           )}
 
           <div className="shimmer-line" style={{ marginTop: 36, maxWidth: 400 }} />

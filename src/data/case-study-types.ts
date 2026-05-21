@@ -24,7 +24,8 @@ export type CaseStudyRich = {
   keyQuestions: string[];
   problemSolution: { challenge: string; response: string }[];
   productModules: CaseStudyHighlight[];
-  adminCapabilities: CaseStudyHighlight[];
+  /** Admin / ops area headings only (no card descriptions) */
+  adminHeadings: string[];
   /** Stakeholder segments */
   audiences: string[];
   /** Coverage areas / service lines — rendered with audiences in one section */

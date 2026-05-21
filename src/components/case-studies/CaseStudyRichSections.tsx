@@ -1,7 +1,6 @@
 "use client";
 
 import type { CaseStudyRich } from "@/data/case-study-types";
-import { CaseStudyVideoEmbed } from "@/components/case-studies/CaseStudyVideoEmbed";
 
 const ff = "var(--font-body), system-ui, sans-serif";
 const ffd = "var(--font-display), system-ui, sans-serif";
@@ -87,56 +86,6 @@ export function CaseStudyRichSections({ rich }: CaseStudyRichSectionsProps) {
           ))}
         </>
       )}
-
-      <div style={{ ...cardShell, marginTop: 32, marginBottom: 40, padding: 0 }}>
-        <CardAccent />
-        <h2
-          style={{
-            ...sectionTitle,
-            margin: 0,
-            padding: "28px 28px 12px",
-            WebkitTextFillColor: "unset",
-            color: "#eef6fc",
-            background: "none",
-          }}
-        >
-          {rich.video.title}
-        </h2>
-        <p
-          style={{
-            ...bodyText,
-            margin: "0 28px 20px",
-            fontSize: "0.95rem",
-          }}
-        >
-          {rich.video.description}
-        </p>
-        <div
-          style={{
-            position: "relative",
-            paddingBottom: "56.25%",
-            height: 0,
-            overflow: "hidden",
-            borderRadius: "0 0 16px 16px",
-            background: "#000",
-          }}
-        >
-          <CaseStudyVideoEmbed
-            embedId={rich.video.embedId}
-            title={rich.video.title}
-          />
-        </div>
-        <p style={{ margin: "14px 28px 24px", fontFamily: mono, fontSize: "0.75rem" }}>
-          <a
-            href={rich.video.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "rgba(110,184,232,0.85)", textDecoration: "none" }}
-          >
-            Watch on YouTube →
-          </a>
-        </p>
-      </div>
 
       <h2 style={sectionTitle}>Questions MediRate answers</h2>
       <p style={{ ...bodyText, marginBottom: 24 }}>
@@ -276,28 +225,28 @@ export function CaseStudyRichSections({ rich }: CaseStudyRichSectionsProps) {
       <h2 style={sectionTitle}>Admin & operations</h2>
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: 18,
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 12,
           marginBottom: 40,
         }}
       >
-        {rich.adminCapabilities.map((m) => (
-          <div key={m.title} style={cardShell}>
-            <CardAccent />
-            <h3
-              style={{
-                fontFamily: ffd,
-                fontSize: "1.05rem",
-                fontWeight: 700,
-                color: "#b4daf4",
-                marginBottom: 10,
-              }}
-            >
-              {m.title}
-            </h3>
-            <p style={{ ...bodyText, marginBottom: 0, fontSize: "0.92rem" }}>{m.description}</p>
-          </div>
+        {rich.adminHeadings.map((heading) => (
+          <span
+            key={heading}
+            style={{
+              fontFamily: ffd,
+              fontSize: "1rem",
+              fontWeight: 600,
+              color: "#d4e8f8",
+              background: "rgba(110, 184, 232, 0.1)",
+              border: "1px solid rgba(110, 184, 232, 0.28)",
+              padding: "12px 18px",
+              borderRadius: 10,
+            }}
+          >
+            {heading}
+          </span>
         ))}
       </div>
 

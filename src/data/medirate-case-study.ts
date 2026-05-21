@@ -167,27 +167,11 @@ export const MEDIRATE_CASE_STUDY: CaseStudy = {
           "Embedded checkout, portal management, optional alternate payment path, and seat administration aligned to how buyers actually procure.",
       },
     ],
-    adminCapabilities: [
-      {
-        title: "Ingestion & source-of-truth sync",
-        description:
-          "Structured bulk updates from operator-maintained files, with repair utilities and traceability into what changed.",
-      },
-      {
-        title: "Alert operations",
-        description:
-          "Preview matches production HTML; campaigns respect subscriber dimensions; post-send state keeps “new” rows from spamming repeat readers.",
-      },
-      {
-        title: "Growth & digest tooling",
-        description:
-          "List management, digest assembly, and analytics so marketing and product ops can run on the same stack as the core app.",
-      },
-      {
-        title: "Governance & quality",
-        description:
-          "Environment-aware master-data versioning, user activity signals, and support-oriented diagnostics — not an afterthought once revenue is live.",
-      },
+    adminHeadings: [
+      "Ingestion & source-of-truth sync",
+      "Alert operations",
+      "Growth & digest tooling",
+      "Governance & quality",
     ],
     audiences: [
       "Behavioral health providers",
