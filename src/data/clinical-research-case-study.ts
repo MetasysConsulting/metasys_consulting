@@ -98,12 +98,11 @@ export const CLINICAL_RESEARCH_CASE_STUDY: CaseStudy = {
       ],
     },
     video: {
-      url: "",
-      embedId: "",
+      url: "https://www.youtube.com/watch?v=dfmSzZyI4no",
+      embedId: "dfmSzZyI4no",
       title: "Platform walkthrough video",
       description:
-        "Embed a Loom, Vimeo, or YouTube link when your recording is ready — the player will appear here automatically.",
-      placeholder: true,
+        "Walkthrough of the research assistant query interface, agent pipeline, and citation-grounded responses.",
     },
     howItWorks: [
       {
